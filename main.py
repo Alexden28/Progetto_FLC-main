@@ -24,7 +24,7 @@ from pathlib import Path
 import owlready2
 import rdflib
 from owlready2 import (
-    DataPropertyClass,
+    DatatypeProperty,
     ObjectProperty,
     default_world,
     get_ontology,
@@ -93,7 +93,7 @@ def _dedup_dataprop_marks(onto) -> None:
     """Remove `ObjectProperty` declaration from entities also marked as datatype."""
     for prop in tqdm(list(onto.properties()), desc="Cleaning properties"):
         try:
-            if (ObjectProperty in prop.is_a) and (DataPropertyClass in prop.is_a):
+            if (ObjectProperty in prop.is_a) and (DatatypeProperty in prop.is_a):
                 prop.is_a.remove(ObjectProperty)
         except ValueError:
             continue

@@ -81,6 +81,19 @@ def _ensure_domain_and_range(prop) -> None:
         prop.range = [str if isinstance(prop, DataPropertyClass) else Thing]
 
 
+def _only_classes(items) -> bool:
+    """True when every element carries an owlready2 storid (i.e. is a class).
+
+    Properties marked both as ObjectProperty and DataProperty (a common UCO
+    quirk) end up with Python datatypes such as `float` or `str` in their
+    ranges. Those cannot become the domain/range of a new object property,
+    so the copy must be skipped rather than blindly propagated.
+    """
+    if not items:
+        return False
+    return all(hasattr(item, "storid") for item in items)
+
+
 def _ensure_inverse(prop) -> None:
     if not isinstance(prop, ObjectPropertyClass) or prop.inverse_property:
         return
@@ -88,9 +101,9 @@ def _ensure_inverse(prop) -> None:
     inv_name = f"is_{base}_of" if not base.startswith("has") else base.replace("has", "is") + "_of"
     new_inv = types.new_class(inv_name, (ObjectProperty,))
     new_inv.inverse_property = prop
-    if prop.range:
+    if _only_classes(prop.range):
         new_inv.domain = prop.range
-    if prop.domain:
+    if _only_classes(prop.domain):
         new_inv.range = prop.domain
 
 
