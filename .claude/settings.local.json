@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m py_compile config.py namespace_utils.py cooccorrenze.py cooccorrenzeclassifier.py findcouples.py addentities.py kbonto.py structural_validator.py competecy_questions.py kb_comparison.py main.py main_tag.py)",
+      "Bash(python -c ' *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh repo *)",
+      "Bash(where gh *)",
+      "Read(//c/Program Files/GitHub CLI/**)",
+      "Read(//c/Users/alexd/AppData/Local/GitHubCLI/**)",
+      "Bash(git credential *)"
+    ]
+  }
+}

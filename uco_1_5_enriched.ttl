@@ -1,0 +1,1956 @@
+@prefix cbx: <http://cybox.mitre.org/cybox_v1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uco: <http://ffrdc.ebiquity.umbc.edu/ns/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://capec.mitre.org/capec_v1#Indicator> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    owl:equivalentClass uco:Indicator .
+
+<http://capec.mitre.org/capec_v1#Observable> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    owl:equivalentClass cbx:Observable .
+
+<http://capec.mitre.org/capec_v1#Weakness> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    owl:equivalentClass <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CWE> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#AtError> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LogicExploit> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Backdoor> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#RemoteAccess> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MaliciousCodeExecution> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BoundaryCondition> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Off-by-one_error"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#InputValidationError> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BufferOverFlow> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Buffer_overflow"^^xsd:anyURI ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DenialOfService> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ConfigurationError> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DenialOfService> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DistributedCode> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MaliciousCodeExecution> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DomainExpert> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Source> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ExICMPEchoReq> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ExIPPacketSize> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ExceptionCondition> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Exception_handling"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LogicExploit> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ExcessForks> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DenialOfService> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#IPFrag> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/IP_fragmentation_attacks"^^xsd:anyURI ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DenialOfService> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#IPv4Address> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#IPAddress> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#IPv6Address> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#IPAddress> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MACAddress> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MalformedInput> a owl:Class ;
+    rdfs:seeAlso "http://sw.opencyc.org/concept/Mx4rwQShKJwpEbGdrcN5Y29ycA"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#InputValidationError> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MemoryConsumption> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DenialOfService> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ParisiticCode> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfIntegrity> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MaliciousCodeExecution> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#PingOfDeath> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Ping_of_death"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DenialOfService> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#PingScan> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Probe> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#RSTProbe> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Probe> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#RaceCondition> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Race_condition"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LogicExploit> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Rootkit> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Rootkit"^^xsd:anyURI ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DenialOfService> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfConf> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MaliciousCodeExecution> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#SerialError> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LogicExploit> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#SynFlood> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#NetFlood> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#SynScan> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Probe> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#SysCrash> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Fatal_system_error"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DenialOfService> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#TCPConnect> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Probe> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#TCPPortScan> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DirectoryExposure> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Probe> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Time> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#TriggeredCode> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Trojans> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfConf> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#RemoteAccess> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MaliciousCodeExecution> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UnauthRoot> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#PrivilegeEsc> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UserEnumeration> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#PrivilegeEsc> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Virus> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Computer_virus"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#SelfPropagatingCode> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#WebBrowser> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/class/yago/WebBrowser"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Software> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Worm> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Computer_worm"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#SelfPropagatingCode> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#affectsProduct> a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Product> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#anomolousDataOutFlow> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#NetworkState> ;
+    rdfs:range xsd:boolean .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#associatedCampaigns> a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#chgGid> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:boolean .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#chgPPid> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:boolean .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#chgSUid> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:boolean .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#chgUid> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:boolean .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#commonConsequences> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CWE> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#connectedTo> a owl:IrreflexiveProperty,
+        owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#cweExtendedSummary> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CWE> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#cweID> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CWE> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#cweName> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CWE> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#cweSummary> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CWE> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#dataSize> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:integer .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#description> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CWE> ;
+    rdfs:range xsd:string .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#exploitsVulnerability> a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#generated-on-datetime> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasSeverityScore> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasAccessComplexity> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasSeverityScore> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasAccessVector> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasSeverityScore> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasAuthentication> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasSeverityScore> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasAvailabilityImpact> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasSeverityScore> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasCodeSize> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:integer .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasConfidentialityImpact> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasSeverityScore> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasDataSize> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:integer .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasIPv4Address> a owl:ObjectProperty ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasIPAddress> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasIPv6Address> a owl:ObjectProperty ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasIPAddress> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasInformationSource> a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasIntegrityImpact> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasSeverityScore> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasLibSize> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:integer .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasMACAddress> a owl:DatatypeProperty,
+        owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasMitigation> a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasProduct> a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Product> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasSource> a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Source> ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasSeverityScore> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasTerms> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#OtherTechnicalTerms> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasVulnerability> a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ExploitTarget>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Product> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasVulnerabilityTerm> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> ;
+    rdfs:range xsd:boolean .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#isLaunchedBy> a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#isNew> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Hardware>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#KernelModule> ;
+    rdfs:range xsd:boolean .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#isResultOf> a owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> ;
+    owl:inverseOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#isUnderAttack> a owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#lastModifiedDateTime> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range xsd:dateTime .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#newDestIP> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#NetworkState> ;
+    rdfs:range xsd:boolean .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#newPortsOpened> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#NetworkState> ;
+    rdfs:range xsd:boolean .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#numChildProcesses> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:integer .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#numOpenFiles> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:integer .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#numProcessesRunning> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> ;
+    rdfs:range xsd:integer .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#opensPort> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:integer .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#publishedDateTime> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range xsd:dateTime .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#rstProbe> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Probe> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#score> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range xsd:float ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasSeverityScore> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#selfDist> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:integer .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#showsInfectionSigns> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> ;
+    rdfs:range xsd:boolean .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#summary> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range xsd:string .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#timeOfIntroduction> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CWE> ;
+    rdfs:range xsd:dateTime .
+
+uco:AbleAccess a owl:Class ;
+    rdfs:label "able access" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#RemoteAccess> .
+
+uco:AccessAttack a owl:Class ;
+    rdfs:label "access attack" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:AccessBreach a owl:Class ;
+    rdfs:label "access breach" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:AccessHacker a owl:Class ;
+    rdfs:label "access hacker" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:AccessNetwork a owl:Class ;
+    rdfs:label "access network" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#RemoteAccess> .
+
+uco:AccessSecurity a owl:Class ;
+    rdfs:label "access security" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#RemoteAccess> .
+
+uco:AccessService a owl:Class ;
+    rdfs:label "access service" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#RemoteAccess> .
+
+uco:AccessSystem a owl:Class ;
+    rdfs:label "access system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:AccountAttack a owl:Class ;
+    rdfs:label "account attack" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:AccountEmployee a owl:Class ;
+    rdfs:label "account employee" ;
+    rdfs:subClassOf uco:Account .
+
+uco:AccountGroup a owl:Class ;
+    rdfs:label "account group" ;
+    rdfs:subClassOf uco:BaseGroup .
+
+uco:AccountInformation a owl:Class ;
+    rdfs:label "account information" ;
+    rdfs:subClassOf uco:Account .
+
+uco:AccountUser a owl:Class ;
+    rdfs:label "account user" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UnauthUser> .
+
+uco:ActorMalware a owl:Class ;
+    rdfs:label "actor malware" ;
+    rdfs:subClassOf uco:Malware .
+
+uco:ActorSystem a owl:Class ;
+    rdfs:label "actor system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:ActorVictim a owl:Class ;
+    rdfs:label "actor victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:AddressData a owl:Class ;
+    rdfs:label "address data" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> .
+
+uco:AddressEmail a owl:Class ;
+    rdfs:label "address email" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> .
+
+uco:AddressName a owl:Class ;
+    rdfs:label "address name" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> .
+
+uco:AddressNumber a owl:Class ;
+    rdfs:label "address number" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> .
+
+uco:AgencyAttack a owl:Class ;
+    rdfs:label "agency attack" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AllegedlyData a owl:Class ;
+    rdfs:label "allegedly data" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DataCorruption> .
+
+uco:AmongVictim a owl:Class ;
+    rdfs:label "among victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:AnonymousAttack a owl:Class ;
+    rdfs:label "anonymous attack" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:AnonymousCollective a owl:Class ;
+    rdfs:label "anonymous collective" ;
+    rdfs:subClassOf uco:EnvironmentalGroup .
+
+uco:AttackAttacker a owl:Class ;
+    rdfs:label "attack attacker" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackBreach a owl:Class ;
+    rdfs:label "attack breach" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:AttackClaim a owl:Class ;
+    rdfs:label "attack claim" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackCollective a owl:Class ;
+    rdfs:label "attack collective" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackCompany a owl:Class ;
+    rdfs:label "attack company" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackComputer a owl:Class ;
+    rdfs:label "attack computer" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:AttackCyber a owl:Class ;
+    rdfs:label "attack cyber" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:AttackData a owl:Class ;
+    rdfs:label "attack data" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackDay a owl:Class ;
+    rdfs:label "attack day" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackDdos a owl:Class ;
+    rdfs:label "attack ddos" ;
+    rdfs:subClassOf uco:DDoS .
+
+uco:AttackDistrict a owl:Class ;
+    rdfs:label "attack district" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackEmail a owl:Class ;
+    rdfs:label "attack email" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:AttackFile a owl:Class ;
+    rdfs:label "attack file" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackGang a owl:Class ;
+    rdfs:label "attack gang" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackGroup a owl:Class ;
+    rdfs:label "attack group" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackHacker a owl:Class ;
+    rdfs:label "attack hacker" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:AttackHealth a owl:Class ;
+    rdfs:label "attack health" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> .
+
+uco:AttackInformation a owl:Class ;
+    rdfs:label "attack information" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackMalware a owl:Class ;
+    rdfs:label "attack malware" ;
+    rdfs:subClassOf uco:Malware .
+
+uco:AttackMinistry a owl:Class ;
+    rdfs:label "attack ministry" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackNetwork a owl:Class ;
+    rdfs:label "attack network" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:AttackNoname a owl:Class ;
+    rdfs:label "attack noname" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackNotifies a owl:Class ;
+    rdfs:label "attack notifies" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackOfficial a owl:Class ;
+    rdfs:label "attack official" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackOperation a owl:Class ;
+    rdfs:label "attack operation" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:AttackOrganization a owl:Class ;
+    rdfs:label "attack organization" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackPatient a owl:Class ;
+    rdfs:label "attack patient" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackPeople a owl:Class ;
+    rdfs:label "attack people" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackPhishing a owl:Class ;
+    rdfs:label "attack phishing" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:AttackProvider a owl:Class ;
+    rdfs:label "attack provider" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackResponsibility a owl:Class ;
+    rdfs:label "attack responsibility" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackSchool a owl:Class ;
+    rdfs:label "attack school" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackSecurity a owl:Class ;
+    rdfs:label "attack security" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackServer a owl:Class ;
+    rdfs:label "attack server" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:AttackService a owl:Class ;
+    rdfs:label "attack service" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackState a owl:Class ;
+    rdfs:label "attack state" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackSystem a owl:Class ;
+    rdfs:label "attack system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:AttackTarget a owl:Class ;
+    rdfs:label "attack target" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackThreat a owl:Class ;
+    rdfs:label "attack threat" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackTwo a owl:Class ;
+    rdfs:label "attack two" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:AttackVictim a owl:Class ;
+    rdfs:label "attack victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:AttackWebsite a owl:Class ;
+    rdfs:label "attack website" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:AttackerData a owl:Class ;
+    rdfs:label "attacker data" ;
+    rdfs:subClassOf uco:AttackPattern .
+
+uco:BreachComputer a owl:Class ;
+    rdfs:label "breach computer" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:BreachData a owl:Class ;
+    rdfs:label "breach data" ;
+    rdfs:subClassOf uco:DataBreach .
+
+uco:BreachFile a owl:Class ;
+    rdfs:label "breach file" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:BreachGroup a owl:Class ;
+    rdfs:label "breach group" ;
+    rdfs:subClassOf uco:BaseGroup .
+
+uco:BreachHacker a owl:Class ;
+    rdfs:label "breach hacker" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:BreachInformation a owl:Class ;
+    rdfs:label "breach information" ;
+    rdfs:subClassOf uco:DataBreach .
+
+uco:BreachSecurity a owl:Class ;
+    rdfs:label "breach security" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:BreachSensitive a owl:Class ;
+    rdfs:label "breach sensitive" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> .
+
+uco:BreachSystem a owl:Class ;
+    rdfs:label "breach system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:BreachThreat a owl:Class ;
+    rdfs:label "breach threat" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> .
+
+uco:BreachUser a owl:Class ;
+    rdfs:label "breach user" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:BreachVictim a owl:Class ;
+    rdfs:label "breach victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:BreachVulnerability a owl:Class ;
+    rdfs:label "breach vulnerability" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:CompanyComputer a owl:Class ;
+    rdfs:label "company computer" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Software> .
+
+uco:CompanyCyberattack a owl:Class ;
+    rdfs:label "company cyberattack" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:CompanyEmail a owl:Class ;
+    rdfs:label "company email" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> .
+
+uco:CompanyGroup a owl:Class ;
+    rdfs:label "company group" ;
+    rdfs:subClassOf uco:EnvironmentalGroup .
+
+uco:CompanyHacker a owl:Class ;
+    rdfs:label "company hacker" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:CompanyIncident a owl:Class ;
+    rdfs:label "company incident" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident> .
+
+uco:CompanyMalware a owl:Class ;
+    rdfs:label "company malware" ;
+    rdfs:subClassOf uco:Malware .
+
+uco:CompanySoftware a owl:Class ;
+    rdfs:label "company software" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Software> .
+
+uco:CompanyState a owl:Class ;
+    rdfs:label "company state" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#NetworkState> .
+
+uco:CompanySystem a owl:Class ;
+    rdfs:label "company system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:CompanyVictim a owl:Class ;
+    rdfs:label "company victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:CompanyWebsite a owl:Class ;
+    rdfs:label "company website" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:ComputerData a owl:Class ;
+    rdfs:label "computer data" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#File> .
+
+uco:ComputerFile a owl:Class ;
+    rdfs:label "computer file" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#File> .
+
+uco:ComputerInformation a owl:Class ;
+    rdfs:label "computer information" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Hardware> .
+
+uco:ComputerNetwork a owl:Class ;
+    rdfs:label "computer network" ;
+    rdfs:subClassOf uco:Network .
+
+uco:ComputerSystem a owl:Class ;
+    rdfs:label "computer system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:ComputerUnauthorized a owl:Class ;
+    rdfs:label "computer unauthorized" ;
+    rdfs:subClassOf uco:Malware .
+
+uco:ConfidentialFile a owl:Class ;
+    rdfs:label "confidential file" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#File> .
+
+uco:CustomerHacker a owl:Class ;
+    rdfs:label "customer hacker" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:CustomerSystem a owl:Class ;
+    rdfs:label "customer system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:CveVulnerability a owl:Class ;
+    rdfs:label "cve vulnerability" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> .
+
+uco:CyberGroup a owl:Class ;
+    rdfs:label "cyber group" ;
+    rdfs:subClassOf uco:EnvironmentalGroup .
+
+uco:CyberattackData a owl:Class ;
+    rdfs:label "cyberattack data" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:CyberattackHit a owl:Class ;
+    rdfs:label "cyberattack hit" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:CyberattackInformation a owl:Class ;
+    rdfs:label "cyberattack information" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:CyberattackService a owl:Class ;
+    rdfs:label "cyberattack service" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:CyberattackSystem a owl:Class ;
+    rdfs:label "cyberattack system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:DarkData a owl:Class ;
+    rdfs:label "dark data" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DataCorruption> .
+
+uco:DarkWeb a owl:Class ;
+    rdfs:label "dark web" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:DataFile a owl:Class ;
+    rdfs:label "data file" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#File> .
+
+uco:DataGroup a owl:Class ;
+    rdfs:label "data group" ;
+    rdfs:subClassOf uco:BaseGroup .
+
+uco:DataHacker a owl:Class ;
+    rdfs:label "data hacker" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DataCorruption> .
+
+uco:DataHealth a owl:Class ;
+    rdfs:label "data health" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DataCorruption> .
+
+uco:DataIncident a owl:Class ;
+    rdfs:label "data incident" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DataCorruption> .
+
+uco:DataMalware a owl:Class ;
+    rdfs:label "data malware" ;
+    rdfs:subClassOf uco:Malware .
+
+uco:DataNetwork a owl:Class ;
+    rdfs:label "data network" ;
+    rdfs:subClassOf uco:Network .
+
+uco:DataSecurity a owl:Class ;
+    rdfs:label "data security" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DataCorruption> .
+
+uco:DataSite a owl:Class ;
+    rdfs:label "data site" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:DataSociety a owl:Class ;
+    rdfs:label "data society" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DataCorruption> .
+
+uco:DataSoftware a owl:Class ;
+    rdfs:label "data software" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Software> .
+
+uco:DataState a owl:Class ;
+    rdfs:label "data state" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#NetworkState> .
+
+uco:DataSystem a owl:Class ;
+    rdfs:label "data system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:DataThirdparty a owl:Class ;
+    rdfs:label "data thirdparty" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DataCorruption> .
+
+uco:DataThreat a owl:Class ;
+    rdfs:label "data threat" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DataCorruption> .
+
+uco:DataUnauthorized a owl:Class ;
+    rdfs:label "data unauthorized" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DataCorruption> .
+
+uco:DataUser a owl:Class ;
+    rdfs:label "data user" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UnauthUser> .
+
+uco:DataVictim a owl:Class ;
+    rdfs:label "data victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:DataVulnerability a owl:Class ;
+    rdfs:label "data vulnerability" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> .
+
+uco:DataWeb a owl:Class ;
+    rdfs:label "data web" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:DataWebsite a owl:Class ;
+    rdfs:label "data website" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:DdosService a owl:Class ;
+    rdfs:label "ddos service" ;
+    rdfs:subClassOf uco:DDoS .
+
+uco:DefaceHacker a owl:Class ;
+    rdfs:label "deface hacker" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:EmailEmployee a owl:Class ;
+    rdfs:label "email employee" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> .
+
+uco:EmailHacker a owl:Class ;
+    rdfs:label "email hacker" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:EmailHealth a owl:Class ;
+    rdfs:label "email health" ;
+    rdfs:subClassOf uco:email .
+
+uco:EmailInformation a owl:Class ;
+    rdfs:label "email information" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> .
+
+uco:EmailName a owl:Class ;
+    rdfs:label "email name" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> .
+
+uco:EmailNumber a owl:Class ;
+    rdfs:label "email number" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> .
+
+uco:EmailPhishing a owl:Class ;
+    rdfs:label "email phishing" ;
+    rdfs:subClassOf uco:Phishing .
+
+uco:EmailSecurity a owl:Class ;
+    rdfs:label "email security" ;
+    rdfs:subClassOf uco:email .
+
+uco:EmailService a owl:Class ;
+    rdfs:label "email service" ;
+    rdfs:subClassOf uco:email .
+
+uco:EmailSystem a owl:Class ;
+    rdfs:label "email system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:FileNetwork a owl:Class ;
+    rdfs:label "file network" ;
+    rdfs:subClassOf uco:Network .
+
+uco:FileSystem a owl:Class ;
+    rdfs:label "file system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#OperatingSystem> .
+
+uco:GangVictim a owl:Class ;
+    rdfs:label "gang victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:GovernmentGroup a owl:Class ;
+    rdfs:label "government group" ;
+    rdfs:subClassOf uco:EnvironmentalGroup .
+
+uco:GroupHacker a owl:Class ;
+    rdfs:label "group hacker" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:GroupHacking a owl:Class ;
+    rdfs:label "group hacking" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:GroupInformation a owl:Class ;
+    rdfs:label "group information" ;
+    rdfs:subClassOf uco:BaseGroup .
+
+uco:GroupOrganization a owl:Class ;
+    rdfs:label "group organization" ;
+    rdfs:subClassOf uco:EnvironmentalGroup .
+
+uco:GroupService a owl:Class ;
+    rdfs:label "group service" ;
+    rdfs:subClassOf uco:BaseGroup .
+
+uco:GroupSystem a owl:Class ;
+    rdfs:label "group system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:GroupThreat a owl:Class ;
+    rdfs:label "group threat" ;
+    rdfs:subClassOf uco:EnvironmentalGroup .
+
+uco:GroupVictim a owl:Class ;
+    rdfs:label "group victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:GroupWebsite a owl:Class ;
+    rdfs:label "group website" ;
+    rdfs:subClassOf uco:EnvironmentalGroup .
+
+uco:HackUsernames a owl:Class ;
+    rdfs:label "hack usernames" ;
+    rdfs:subClassOf uco:Username .
+
+uco:HackerSecurity a owl:Class ;
+    rdfs:label "hacker security" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:HackerService a owl:Class ;
+    rdfs:label "hacker service" ;
+    rdfs:subClassOf uco:Malware .
+
+uco:HackerState a owl:Class ;
+    rdfs:label "hacker state" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#NetworkState> .
+
+uco:HackerSteal a owl:Class ;
+    rdfs:label "hacker steal" ;
+    rdfs:subClassOf uco:Exploit .
+
+uco:HackerSystem a owl:Class ;
+    rdfs:label "hacker system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:HackerUser a owl:Class ;
+    rdfs:label "hacker user" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UnauthUser> .
+
+uco:HackerWebsite a owl:Class ;
+    rdfs:label "hacker website" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:HealthIncident a owl:Class ;
+    rdfs:label "health incident" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident> .
+
+uco:HealthSystem a owl:Class ;
+    rdfs:label "health system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:High a owl:NamedIndividual .
+
+uco:IncidentInformation a owl:Class ;
+    rdfs:label "incident information" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident> .
+
+uco:InformationNetwork a owl:Class ;
+    rdfs:label "information network" ;
+    rdfs:subClassOf uco:Network .
+
+uco:InformationOnline a owl:Class ;
+    rdfs:label "information online" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:InformationParty a owl:Class ;
+    rdfs:label "information party" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#IDPS> .
+
+uco:InformationPhishing a owl:Class ;
+    rdfs:label "information phishing" ;
+    rdfs:subClassOf uco:Phishing .
+
+uco:InformationSystem a owl:Class ;
+    rdfs:label "information system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:InformationWebsite a owl:Class ;
+    rdfs:label "information website" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:KillChain a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    owl:equivalentClass <http://stix.mitre.org/STIX#KillChain> .
+
+uco:LeakWeb a owl:Class ;
+    rdfs:label "leak web" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:Low a owl:NamedIndividual .
+
+uco:MalwareState a owl:Class ;
+    rdfs:label "malware state" ;
+    rdfs:subClassOf uco:Malware .
+
+uco:MalwareThreat a owl:Class ;
+    rdfs:label "malware threat" ;
+    rdfs:subClassOf uco:Malware .
+
+uco:MalwareVictim a owl:Class ;
+    rdfs:label "malware victim" ;
+    rdfs:subClassOf uco:Malware .
+
+uco:Medium a owl:NamedIndividual .
+
+uco:NameWebsite a owl:Class ;
+    rdfs:label "name website" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:NetworkParty a owl:Class ;
+    rdfs:label "network party" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#NetworkState> .
+
+uco:NetworkSystem a owl:Class ;
+    rdfs:label "network system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:NetworkThreat a owl:Class ;
+    rdfs:label "network threat" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> .
+
+uco:NetworkWeb a owl:Class ;
+    rdfs:label "network web" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:None a owl:NamedIndividual .
+
+uco:OnlineService a owl:Class ;
+    rdfs:label "online service" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:OrganizationSystem a owl:Class ;
+    rdfs:label "organization system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:OrganizationVictim a owl:Class ;
+    rdfs:label "organization victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:OrganizationWebsite a owl:Class ;
+    rdfs:label "organization website" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:Password a owl:Class ;
+    rdfs:comment """A password is a string of characters used to verify the identity of a user during the authentication process. Passwords are typically used in tandem with a username; they are designed to be known only to the user and allow that user to gain access to a device, application or website.
+
+Source: https://www.techtarget.com/searchsecurity/definition/password""" ;
+    rdfs:subClassOf uco:Account .
+
+uco:PersonalSystem a owl:Class ;
+    rdfs:label "personal system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:PortalWeb a owl:Class ;
+    rdfs:label "portal web" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:RansomSystem a owl:Class ;
+    rdfs:label "ransom system" ;
+    rdfs:subClassOf uco:Malware .
+
+uco:Ransomware a owl:Class ;
+    rdfs:comment """Ransomware is a type of malware from cryptovirology that threatens to publish the victim's personal data or permanently block access to it unless a ransom is paid. While some simple ransomware may lock the system without damaging any files, more advanced malware uses a technique called cryptoviral extortion. It encrypts the victim's files, making them inaccessible, and demands a ransom payment to decrypt them.
+
+Source: https://dbpedia.org/page/Ransomware""" ;
+    rdfs:subClassOf uco:Malware .
+
+uco:SecuritySystem a owl:Class ;
+    rdfs:label "security system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:SecurityThreat a owl:Class ;
+    rdfs:label "security threat" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> .
+
+uco:SecurityVictim a owl:Class ;
+    rdfs:label "security victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:SecurityWebsite a owl:Class ;
+    rdfs:label "security website" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:ServiceSystem a owl:Class ;
+    rdfs:label "service system" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:ServiceWebsite a owl:Class ;
+    rdfs:label "service website" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:SeveralWebsite a owl:Class ;
+    rdfs:label "several website" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:SiteWeb a owl:Class ;
+    rdfs:label "site web" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:SiteWebsite a owl:Class ;
+    rdfs:label "site website" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:SocietyWeb a owl:Class ;
+    rdfs:label "society web" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:StateVictim a owl:Class ;
+    rdfs:label "state victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:SystemThreat a owl:Class ;
+    rdfs:label "system threat" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:SystemU a owl:Class ;
+    rdfs:label "system u" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> .
+
+uco:SystemVictim a owl:Class ;
+    rdfs:label "system victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:ThreatVictim a owl:Class ;
+    rdfs:label "threat victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:ToolVictim a owl:Class ;
+    rdfs:label "tool victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:UVictim a owl:Class ;
+    rdfs:label "u victim" ;
+    rdfs:subClassOf uco:Victim .
+
+uco:Unknown a owl:NamedIndividual .
+
+uco:ViceWeb a owl:Class ;
+    rdfs:label "vice web" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> .
+
+uco:discoveryTime a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range xsd:dateTime .
+
+uco:hasActor a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasActorCountry a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasActorType a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasAffectedSoftware a owl:ObjectProperty ;
+    rdfs:comment "The Affected_Software field captures the list of platforms and software that are affected by this vulnerability. It is implemented through the CybOX Observables, the suggested CybOX objects to use are the Product Object, the Device Object, the System Object, and the Code Object." ;
+    rdfs:seeAlso "http://stixproject.github.io/data-model/1.2/et/VulnerabilityType/" ;
+    owl:equivalentProperty uco:hasObservable .
+
+uco:hasAssociatedCampaign a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign> .
+
+uco:hasAttacker a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker> ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasMeans> .
+
+uco:hasCOAType a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> .
+
+uco:hasCVE_ID a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range uco:CVE .
+
+uco:hasCVSSScore a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range uco:CVSSScoreType .
+
+uco:hasCampaign a owl:ObjectProperty ;
+    rdfs:domain uco:Indicator ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign> .
+
+uco:hasConfidenceValue a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign>,
+        uco:Indicator,
+        uco:StatementType ;
+    rdfs:range uco:ConfidenceType,
+        xsd:float .
+
+uco:hasConfiguration a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ExploitTarget> ;
+    rdfs:range uco:CCE .
+
+uco:hasCost a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> ;
+    rdfs:range uco:StatementType ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+uco:hasCountry a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasCounty a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasDescription a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasEfficacy a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> ;
+    rdfs:range uco:StatementType .
+
+uco:hasEventDate a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasEventSubtype a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasEventType a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasImpact a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction>,
+        uco:Indicator ;
+    rdfs:range uco:StatementType .
+
+uco:hasIncident a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident> .
+
+uco:hasIndicator a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign> ;
+    rdfs:range uco:Indicator .
+
+uco:hasIndustry a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasIntendedEffect a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> ;
+    rdfs:range uco:StatementType .
+
+uco:hasKernel a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#OperatingSystem> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#KernelModule> .
+
+uco:hasKillChain a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> ;
+    rdfs:range <http://stix.mitre.org/STIX#KillChain> .
+
+uco:hasKillChainPhase a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means>,
+        uco:Indicator ;
+    rdfs:range uco:KillChainPhase .
+
+uco:hasMonth a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasMotivation a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker> ;
+    rdfs:range uco:StatementType .
+
+uco:hasMotive a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasOSVDB a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range uco:OSVDB .
+
+uco:hasObservedMeans a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+uco:hasOrganization a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasParameterObservables a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> .
+
+uco:hasRelatedCOA a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> .
+
+uco:hasRelatedIncident a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident> .
+
+uco:hasRelatedIndicator a owl:ObjectProperty ;
+    rdfs:domain uco:Indicator ;
+    rdfs:range uco:Indicator .
+
+uco:hasRelatedMeans a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+uco:hasRequestedCOA a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+uco:hasSoftware a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Observable> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Software> .
+
+uco:hasSophistication a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker> ;
+    rdfs:range uco:StatementType .
+
+uco:hasSourceURL a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack> ;
+    rdfs:range xsd:anyURI ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasStage a owl:ObjectProperty ;
+    rdfs:comment "hasStage is used to denote stage/phase of a particular course of action represented as nominals" ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> ;
+    rdfs:range [ a owl:Class ;
+            owl:oneOf ( uco:Remedy uco:Response ) ] .
+
+uco:hasState a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+uco:hasStatus a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign> .
+
+uco:hasSuggestedCOA a owl:ObjectProperty ;
+    rdfs:domain uco:Indicator ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> .
+
+uco:hasTakenCOA a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+uco:hasTime a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:dateTime .
+
+uco:hasTitle a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability>,
+        uco:Indicator ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasVendor> .
+
+uco:hasType a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker> ;
+    rdfs:range uco:StatementType .
+
+uco:hasWeakness a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ExploitTarget> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CWE> ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+uco:hasYear a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+cbx:Observable a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    owl:equivalentClass <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Observable> .
+
+uco: a owl:Ontology ;
+    owl:versionIRI uco: .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#IDPS> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Source> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Logic> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#TriggeredCode> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MitnickAttack> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/The_Art_of_Intrusion"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#NetFlood> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/describe/?url=http%3A%2F%2Fsw.opencyc.org%2F2008%2F06%2F10%2Fconcept%2Fen%2FTribeFloodNet_DenialOfServiceProgram&sid=7707"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DenialOfService> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#OtherTechnicalTerms> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ThreatActor> a owl:Class ;
+    rdfs:comment """ThreatActors are characterizations of malicious actors (or adversaries) representing a cyber attack threat including presumed intent and historically observed behavior.
+
+Source: https://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasConsequence> a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasVendor> a owl:DatatypeProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Product> ;
+    rdfs:range xsd:string .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#usesAttacks> a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack> .
+
+uco:CCE a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:CVE a owl:Class ;
+    rdfs:comment """The details of the CVE class are in another ontology yet to be imported.
+CVE is not equal to Vulnerability because Vulnerability also refers to OSVDB_ID""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:CVSSScoreType a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( uco:BaseGroup uco:EnvironmentalGroup uco:TemporalGroup ) ] .
+
+uco:ConfidenceType a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> .
+
+uco:KillChainPhase a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    owl:equivalentClass <http://stix.mitre.org/STIX#KillChainPhase> .
+
+uco:OSVDB a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:Remedy a owl:NamedIndividual .
+
+uco:Response a owl:NamedIndividual .
+
+uco:TemporalGroup a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:Username a owl:Class ;
+    rdfs:comment """A username is a phrase, word, or combination of characters used to identify and gain access to a computer or computer network. User accounts, user names, user IDs, and login IDs are all examples of usernames.
+
+Source: https://passcamp.com/blog/what-is-a-username/""" ;
+    rdfs:subClassOf uco:Account .
+
+uco:behaviour a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#TTP> ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( uco:AttackPattern uco:Exploit uco:Malware ) ] .
+
+uco:hasObservable a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability>,
+        uco:Indicator ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Observable> .
+
+<http://stix.mitre.org/STIX#KillChainPhase> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DirectoryExposure> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfConf> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#InputValidationError> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfConf> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#KernelModule> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Loadable_kernel_module"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Software> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MeansOrConsequence> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#OperatingSystem> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/ontology/operatingSystem"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Software> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#SelfPropagatingCode> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfConf> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MaliciousCodeExecution> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#TTP> a owl:Class ;
+    rdfs:comment """Tactics, Techniques and Procedures (TTP) are representations of the behavior or modus operandi of cyber adversaries.
+
+Source: https://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#TriggeredCode> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfConf> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfIntegrity> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MaliciousCodeExecution> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasIPAddress> a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#IPAddress> ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasMeans> a owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability>,
+        uco:Indicator ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+uco:DDoS a owl:Class ;
+    rdfs:comment """Distributed denial-of-service attacks are a type of denial-of-service attack (DoS attack), a category that includes all cyberattacks that slow or stop applications or services. DDoS attacks are unique in that they send attack traffic from multiple sources all at once—potentially making then harder to recognize and defend against—which puts the “distributed” into “distributed denial-of-service.”
+
+Source: https://www.ibm.com/think/topics/ddos""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack>,
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DenialOfService> .
+
+uco:DataBreach a owl:Class ;
+    rdfs:label "data breach" ;
+    rdfs:comment """A data breach is any security incident in which unauthorized parties access sensitive or confidential information, including personal data (Social Security numbers, bank account numbers, healthcare data) and corporate data (customer records, intellectual property, financial information).
+
+Source: https://www.ibm.com/think/topics/data-breach""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> ;
+    owl:equivalentClass uco:DataLeak .
+
+uco:DataLeak a owl:Class ;
+    rdfs:label "data leak" ;
+    rdfs:comment """Data leakage occurs when sensitive information is exposed to unauthorized parties. For example, a misconfigured cloud storage server might allow easy access to personally identifiable information (PII) and trade secrets. The most common vectors for data leakage stem from human error such as an employee misplacing their laptop or sharing sensitive information over email and messaging platforms. Hackers can use exposed data to commit identity theft, steal credit card details or sell the data on the dark web.
+
+Source: https://www.ibm.com/think/topics/data-leakage""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence>,
+        uco:DataLeak .
+
+uco:Phishing a owl:Class ;
+    rdfs:comment """Phishing is a type of cyberattack that uses fraudulent emails, text messages, phone calls or websites to trick people into sharing sensitive data, downloading malware or otherwise exposing themselves to cybercrime.
+
+Source: https://www.ibm.com/think/topics/phishing""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> .
+
+<http://stix.mitre.org/STIX#KillChain> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ExploitTarget> a owl:Class ;
+    rdfs:comment """ExploitTargets are vulnerabilities or weaknesses in software, systems, networks or configurations that are targeted for exploitation by the TTP of a ThreatActor.
+
+Source: https://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Hardware> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Computer_hardware"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#IPAddress> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/IP_address"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfIntegrity> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UnauthUser> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#PrivilegeEsc> .
+
+uco:email a owl:Class ;
+    rdfs:comment """Email or electronic mail is the method of sending messages from a computer or mobile device from one user to one or more users via the Internet. Emails travel across different time zones within a snap of a finger and hence are considered an effective mode of communication for both personal and professional purposes.
+
+Source: https://www.zoho.com/mail/glossary/what-is-email.html""" ;
+    rdfs:subClassOf uco:Account .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#File> a owl:Class ;
+    rdfs:comment """A computer file is a resource for storing information, which is available to a computer program and is usually based on some kind of durable storage. A file is "durable" in the sense that it remains available for other programs to use after the program that created it has finished executing. Computer files can be considered as the modern counterpart of paper documents which traditionally are kept in office and library files, and this is the source of the term.
+
+http://dbpedia.org/page/Computer_file"""^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LogicExploit> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Logic> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Observable> a owl:Class ;
+    rdfs:comment """Observables are the “base” construct within the STIX architecture. Observables are stateful properties or measurable events pertinent to the operation of computers and networks. Information about a file (name, hash, size, etc.), a registry key value, a service being started, or an HTTP request being sent are all simple examples of observables. STIX leverages CybOX for its representation of Observables.
+
+Source: https://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#PrivilegeEsc> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfConf> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Product> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Hardware> <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Software> ) ] .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Source> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:Network a owl:Class ;
+    rdfs:comment """A network is defined as the connection of at least two computer systems, either by a cable or a wireless connection. The simplest network is a combination of two computers connected by a cable. This type of network is called a peer-to-peer network. There is no hierarchy in this network; both participants have equal privileges. Each computer has access to the data of the other device and can share resources such as disk space, applications or peripheral devices (printers, etc.).
+
+Source: https://www.ionos.com/digitalguide/server/know-how/what-is-a-network/""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:Account a owl:Class ;
+    rdfs:comment "",
+        """An online account is a private, secure account that you create with a business or
+website to access and save personal information specific to you and that
+website/business. An online account is created with your personal information,
+including a username and password, so you can access it later. 
+
+Source: https://www.browncountylibrary.org/wp-content/uploads/2022/01/JobGuide_IntrotoOnlineAccounts.pdf""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Probe> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DirectoryExposure> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MitnickAttack> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#RemoteAccess> a owl:Class ;
+    rdfs:seeAlso "http://en.wikipedia.org/wiki/Remote_Access_Trojans_(RATs)"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#PrivilegeEsc> ] .
+
+uco:BaseGroup a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfConf> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MaliciousCodeExecution> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Arbitrary_code_execution"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#NetworkState> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Software> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/ontology/Software"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:EnvironmentalGroup a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:StatementType a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CWE> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasSeverityScore> a owl:DatatypeProperty .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DataCorruption> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#LossOfIntegrity> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#DenialOfService> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Denial-of-service_attack"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Address> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:Indicator a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attacker> a owl:Class ;
+    rdfs:comment """EquivalentClass: ThreatActor
+ThreatActors are characterizations of malicious actors (or adversaries) representing a cyber attack threat including presumed intent and historically observed behavior.
+
+Source: https://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    owl:equivalentClass <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#ThreatActor> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident> a owl:Class ;
+    rdfs:comment """Incidents are discrete instances of Indicators affecting an organization along with information discovered or decided during an incident response investigation.
+
+Source: https://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Process> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Category:Process_(computing)"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:Malware a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Campaign> a owl:Class ;
+    rdfs:comment """Campaigns are instances of ThreatActors pursuing an intent, as observed through sets of Incidents and/or TTP, potentially across organizations.
+
+Source: https://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf""" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack> ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#usesAttacks> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#CourseofAction> a owl:Class ;
+    rdfs:comment """CoursesOfAction are specific measures to be taken to address threat whether they are corrective or preventative to address ExploitTargets, or responsive to counter or mitigate the potential impacts of Incidents.
+
+Source: https://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:Victim a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MeansOrConsequence> ;
+    owl:equivalentClass <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Observable> .
+
+xsd:string rdfs:comment "Campaigns are instances of ThreatActors pursuing an intent, as observed through sets of Incidents and/or TTP, potentially across organizations." .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#BotnetAttack> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Botnet"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack> a owl:Class ;
+    rdfs:comment """An attack (noun) is the use of an exploit(s) by an adversary to take advantage of a weakness(s) with the intent of achieving a negative technical impact(s).
+
+Source: https://capec.mitre.org/about/glossary.html#Attack
+
+From the bove definition, "the use of an exploit(s)" is means, "an adversary" is attacker, and "negative technical impact(s)" is consequence.""" ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasConsequence> ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#hasMeans> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Incident> .
+
+uco:Exploit a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Web> a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Source> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> a owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:domain <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> ;
+    rdfs:range <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Means> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#resultsIn> ;
+            owl:someValuesFrom <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Consequence> ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#MeansOrConsequence> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty uco:behaviour ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:unionOf ( uco:AttackPattern uco:Exploit uco:Malware ) ] ],
+        <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#TTP> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#System> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Computer"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Vulnerability> a owl:Class ;
+    rdfs:seeAlso "http://dbpedia.org/resource/Vulnerability_(computing)"^^xsd:anyURI ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+uco:AttackPattern a owl:Class ;
+    rdfs:subClassOf <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> .
+
+<http://ffrdc.ebiquity.umbc.edu/ns/ontology/#UCOThing> a owl:Class .
+
+[] a owl:Axiom ;
+    rdfs:comment """An attack (noun) is the use of an exploit(s) by an adversary to take advantage of a weakness(s) with the intent of achieving a negative technical impact(s).
+
+Source: https://capec.mitre.org/about/glossary.html#Attack
+
+From the bove definition, "the use of an exploit(s)" is means, "an adversary" is attacker, and "to take advantage of... with the intent of achieving a negative technical impact(s)" is consequence.""" ;
+    owl:annotatedProperty rdfs:comment ;
+    owl:annotatedSource <http://ffrdc.ebiquity.umbc.edu/ns/ontology/#Attack> ;
+    owl:annotatedTarget """An attack (noun) is the use of an exploit(s) by an adversary to take advantage of a weakness(s) with the intent of achieving a negative technical impact(s).
+
+Source: https://capec.mitre.org/about/glossary.html#Attack
+
+From the bove definition, "the use of an exploit(s)" is means, "an adversary" is attacker, and "negative technical impact(s)" is consequence.""" .
+

@@ -1,0 +1,26 @@
+# --- Data Manipulation & Analysis ---
+pandas
+
+# --- Natural Language Processing ---
+nltk
+spacy
+sentence-transformers
+transformers
+
+# --- Machine Learning & Math ---
+torch
+scikit-learn
+scipy
+
+# --- Semantic Web & Ontologies ---
+rdflib
+owlready2
+
+# --- Progress Bars & Utils ---
+tqdm
+
+# --- Excel Engine ---
+openpyxl
+
+# --- Utility per RDFLib ---
+isodate

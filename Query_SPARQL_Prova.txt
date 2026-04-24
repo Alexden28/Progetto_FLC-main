@@ -1,0 +1,68 @@
+1) Estrae incidenti, classi e attori mappati
+
+PREFIX hash: <http://ffrdc.ebiquity.umbc.edu/ns/ontology#>
+PREFIX slash: <http://ffrdc.ebiquity.umbc.edu/ns/ontology/>
+
+SELECT ?incidente ?data ?attore
+WHERE {
+  ?incidente slash:hasEventDate ?data .
+  OPTIONAL { ?incidente hash:isLaunchedBy ?attore . }
+}
+LIMIT 25
+
+2) Conta gli attacchi per attore
+
+PREFIX hash: <http://ffrdc.ebiquity.umbc.edu/ns/ontology#>
+PREFIX slash: <http://ffrdc.ebiquity.umbc.edu/ns/ontology/>
+
+SELECT ?attore (COUNT(?incidente) AS ?numeroAttacchi)
+WHERE {
+  ?incidente hash:isLaunchedBy ?attore .
+}
+GROUP BY ?attore
+ORDER BY DESC(?numeroAttacchi)
+
+3) Mostra l'incidente con il suo tipo
+
+PREFIX slash: <http://ffrdc.ebiquity.umbc.edu/ns/ontology/>
+
+SELECT ?incidente ?tipoEvento ?data
+WHERE {
+  ?incidente slash:hasEventType ?tipoEvento .
+  ?incidente slash:hasEventDate ?data .
+}
+LIMIT 20
+
+4) Incrocia le aziende con le industrie
+
+PREFIX slash: <http://ffrdc.ebiquity.umbc.edu/ns/ontology/>
+
+SELECT ?organizzazione ?industria ?incidente
+WHERE {
+  ?incidente slash:hasOrganization ?organizzazione .
+  ?incidente slash:hasIndustry ?industria .
+}
+
+5) Visualizza i settori più colpiti
+
+PREFIX slash: <http://ffrdc.ebiquity.umbc.edu/ns/ontology/>
+
+SELECT ?industria (COUNT(?incidente) AS ?totale)
+WHERE {
+  ?incidente slash:hasIndustry ?industria .
+}
+GROUP BY ?industria
+ORDER BY DESC(?totale)
+
+6) Filtra gli eventi per data specifica
+
+PREFIX slash: <http://ffrdc.ebiquity.umbc.edu/ns/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?incidente ?data ?tipo
+WHERE {
+  ?incidente slash:hasEventDate ?data .
+  ?incidente slash:hasEventType ?tipo .
+  FILTER(?data > "2020-01-01T00:00:00"^^xsd:dateTime)
+}
+ORDER BY ?data

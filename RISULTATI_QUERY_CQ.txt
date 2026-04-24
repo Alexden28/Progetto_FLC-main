@@ -1,0 +1,1284 @@
+COMPETENCY QUESTIONS REPORT
+Timestamp: 2026-04-13 13:31:14
+
+QUERY: 1. Estrazione Incidenti-Date-Attori
+incidente | data | tipoAttore
+217427ccefeef93a | 2024-03-06T00:00:00 | None
+3d47b3eb1504b854 | 2024-03-06T00:00:00 | Criminal
+8ad62aff29887e75 | 2024-03-06T00:00:00 | Criminal
+d360983bca018d8c | 2024-03-06T00:00:00 | Criminal
+0d0fe43b1659ad47 | 2024-03-06T00:00:00 | Hacktivist
+61a881aebca6435c | 2024-03-06T00:00:00 | Criminal
+c25a87e8cf43fa59 | 2024-03-06T00:00:00 | Criminal
+25d303249d037fe0 | 2023-05-01T00:00:00 | None
+d40eb091f19c7083 | 2023-05-01T00:00:00 | Criminal
+6a2d9632788b91d6 | 2023-05-01T00:00:00 | Criminal
+9cf1504a01a49c8b | 2023-05-01T00:00:00 | Criminal
+a3556cdd7662a023 | 2023-05-01T00:00:00 | Criminal
+a6a71ba92242d319 | 2023-05-01T00:00:00 | Criminal
+abe5315b4da71859 | 2023-05-01T00:00:00 | Criminal
+4a049cf7989dc5ab | 2023-05-01T00:00:00 | Criminal
+72910e26f4526e38 | 2023-05-01T00:00:00 | Nation-State
+80bf3d7e4615d8f5 | 2023-05-01T00:00:00 | Criminal
+cb324791a108a3c0 | 2023-05-01T00:00:00 | Nation-State
+3accedc2e2c131be | 2022-03-30T00:00:00 | Criminal
+1c9278ac8a8f121b | 2022-03-30T00:00:00 | Criminal
+89f3fe1f19c03d01 | 2022-03-30T00:00:00 | Criminal
+b19eb94612d8c3e7 | 2022-03-30T00:00:00 | Criminal
+ceb7ce049fa508bf | 2022-03-30T00:00:00 | Criminal
+49220d29cf89d935 | 2024-09-17T00:00:00 | None
+ijeut4337y1aplwf | 2024-09-17T00:00:00 | Criminal
+v50lb3jmznjo4zkp | 2024-09-17T00:00:00 | Criminal
+4a6103353e454369 | 2022-02-26T00:00:00 | Hacktivist
+23030304b64acaed | 2022-02-26T00:00:00 | Hacktivist
+1f1bf912ca8b9427 | 2022-02-26T00:00:00 | Criminal
+5ae77ece8ec96302 | 2022-02-26T00:00:00 | Hacktivist
+4f6267b26994dbee | 2023-11-10T00:00:00 | None
+b66c835279ec3f8b | 2023-11-10T00:00:00 | None
+e68cecaa7726757d | 2023-11-10T00:00:00 | Criminal
+2d619349753fb1df | 2023-11-10T00:00:00 | Criminal
+741e546894eab8ac | 2023-11-10T00:00:00 | Criminal
+8af83ace72ef7c49 | 2023-11-10T00:00:00 | Criminal
+db252606f956e8ff | 2023-11-10T00:00:00 | Criminal
+5e281e41787238d2 | 2024-09-27T00:00:00 | None
+04b9883b6b3540d0 | 2024-09-27T00:00:00 | Nation-State
+83e2171f812c92c3 | 2024-09-27T00:00:00 | Criminal
+a83af30f0325ccc2 | 2024-09-27T00:00:00 | Criminal
+206f647ad7d202ce | 2024-09-27T00:00:00 | Nation-State
+e3018a04717af726 | 2024-09-27T00:00:00 | Criminal
+88d0000642bbcceb | 2024-09-05T00:00:00 | None
+81045c8ec0eeeede | 2024-09-05T00:00:00 | Nation-State
+9e9538d8e3d8ee24 | 2024-09-05T00:00:00 | Criminal
+93cbc04541901cb7 | 2022-02-27T00:00:00 | Hacktivist
+5abce45e825852f9 | 2022-02-27T00:00:00 | Hacktivist
+4791f1df8022b771 | 2022-02-27T00:00:00 | Criminal
+ad514c2aaf303f52 | 2022-02-27T00:00:00 | Hacktivist
+
+--------------------------------------------------
+
+QUERY: 2. Analisi quantitativa per Attore
+tipoAttore | n
+Criminal | 11218
+Hacktivist | 2010
+Nation-State | 907
+Hobbyist | 194
+Terrorist | 30
+
+--------------------------------------------------
+
+QUERY: 3. Correlazione Tipo-Data
+incidente | tipo | data
+217427ccefeef93a | Disruptive | 2024-03-06T00:00:00
+5e281e41787238d2 | Disruptive | 2024-09-27T00:00:00
+0278a76036af8f8f | Disruptive | 2016-05-10T00:00:00
+045b51fcc5d640d4 | Disruptive | 2015-07-21T00:00:00
+055ec32bc23764d5 | Disruptive | 2015-08-19T00:00:00
+0c67314bcfb15a0b | Disruptive | 2022-07-26T00:00:00
+0dacdc690228af80 | Disruptive | 2018-04-17T00:00:00
+0f6a0971c35269b2 | Disruptive | 2023-08-14T00:00:00
+1389e2776dea37ba | Disruptive | 2014-01-03T00:00:00
+149ed806d5daa9ba | Disruptive | 2016-06-29T00:00:00
+18f4e090b3c53fda | Disruptive | 2016-06-26T00:00:00
+19be30d2bd2df859 | Disruptive | 2024-10-02T00:00:00
+1ad1235226a4ef58 | Disruptive | 2021-10-26T00:00:00
+1f56c3e510f3c5af | Disruptive | 2016-06-21T00:00:00
+241dc38e0fhu5qmp | Disruptive | 2025-01-21T00:00:00
+24a5ece841a2f93e | Disruptive | 2016-12-17T00:00:00
+2f056a5071owsmu5 | Disruptive | 2025-01-27T00:00:00
+353797edd329cff7 | Disruptive | 2018-04-23T00:00:00
+396f04aafb5685f0 | Disruptive | 2015-02-24T00:00:00
+3e8a2558e16b6a91 | Disruptive | 2016-12-09T00:00:00
+
+--------------------------------------------------
+
+QUERY: 4. Mapping Organizzazione-Industria
+org | ind
+Russia | Public Administration
+Western Sydney University | Educational Services
+Western Sydney University | Educational Services
+Doctor Web | Professional, Scientific, and Technical Services
+New Zealand Government | Public Administration
+AFP (Agence France-Presse) | Information
+Tewkesbury Borough Council | Public Administration
+Relevant personnel of the European Parliament | Public Administration
+Banham Poultry | Accommodation and Food Services
+Niconico | Information
+5-cont.com | Administrative and Support and Waste Management and Remediation Services
+Anglesey Secondary Schools | Educational Services
+mariavision.com | Other Services (except Public Administration)
+Election Comission | Public Administration
+Utkal University (utkaluniversity.ac.in) | Educational Services
+Bring Me the Horizon Webpage | Arts, Entertainment, and Recreation
+Habana Labs | Professional, Scientific, and Technical Services
+furydown.com | Information
+chromeplay.com | Information
+mumsnet | Information
+
+--------------------------------------------------
+
+QUERY: 5. Classifica Settori per Volume
+industria | totale
+Public Administration | 2812
+Health Care and Social Assistance | 2002
+Information | 1517
+Finance and Insurance | 1429
+Educational Services | 1377
+Professional, Scientific, and Technical Services | 1243
+Other Services (except Public Administration) | 941
+Manufacturing | 690
+Retail Trade | 502
+Transportation and Warehousing | 466
+Arts, Entertainment, and Recreation | 447
+Accommodation and Food Services | 312
+Utilities | 286
+Administrative and Support and Waste Management and Remediation Services | 193
+Wholesale Trade | 109
+Real Estate and Rental and Leasing | 84
+Mining, Quarrying, and Oil and Gas Extraction | 77
+Construction | 50
+Management of Companies and Enterprises | 20
+Agriculture, Forestry, Fishing and Hunting | 18
+Finance and insurance | 7
+Mining, Quarrying, and Oil & Gas Extraction | 1
+
+--------------------------------------------------
+
+QUERY: 6. Analisi Temporale post-2020
+incidente | data
+599ad49561d10617 | 2020-01-02T00:00:00
+9b98cd2a278cb17d | 2020-01-02T00:00:00
+8d0b6d5c49125517 | 2020-01-03T00:00:00
+69a95b3427def7fa | 2020-01-03T00:00:00
+8423cfd76ab13be7 | 2020-01-03T00:00:00
+b3944e6b3438f48f | 2020-01-03T00:00:00
+938fc0690d3c056a | 2020-01-04T00:00:00
+ceeb0cfca194e0c4 | 2020-01-04T00:00:00
+0ebae5f7c93ece67 | 2020-01-04T00:00:00
+3ce44b9ddc8d6cdd | 2020-01-04T00:00:00
+c8b0cbe90bf73466 | 2020-01-06T00:00:00
+184449a2a63c9a32 | 2020-01-06T00:00:00
+37866b9889128a82 | 2020-01-06T00:00:00
+75517b4a83ae600f | 2020-01-06T00:00:00
+b421ab6ee6f5a86f | 2020-01-06T00:00:00
+e5f7ed30ed08bd43 | 2020-01-06T00:00:00
+523471725f2abe7e | 2020-01-06T00:00:00
+de4ab97c3b72c268 | 2020-01-07T00:00:00
+0f0712d1067367fe | 2020-01-07T00:00:00
+bd45325af51455e9 | 2020-01-07T00:00:00
+
+--------------------------------------------------
+
+QUERY: 7. Distribuzione Sottotipi per Settore
+industria | sottotipo | n
+Accommodation and Food Services | Exploitation of Application Server | 107
+Accommodation and Food Services | Exploitation of Sensors | 80
+Accommodation and Food Services | Data Attack | 46
+Accommodation and Food Services | Exploitation of End Hosts | 20
+Accommodation and Food Services | Data Attack,Exploitation of Application Server | 10
+Accommodation and Food Services | Message Manipulation | 9
+Accommodation and Food Services | Internal Denial of Service | 4
+Accommodation and Food Services | External Denial of Service | 4
+Accommodation and Food Services | Exploitation of Data in Transit | 3
+Accommodation and Food Services | Exploitation of Network Infrastructure | 2
+Accommodation and Food Services | Exploitation of Application Server,Exploitation of Sensors | 2
+Accommodation and Food Services | Data Attack,Undetermined | 1
+Accommodation and Food Services | Internal Denial of Service,Exploitation of Application Server | 1
+Accommodation and Food Services | Message Manipulation,Exploitation of Application Server | 1
+Accommodation and Food Services | Exploitation of Application Server,Exploitation of End Hosts | 1
+Accommodation and Food Services | Data Attack,External Denial of Service | 1
+Accommodation and Food Services | Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Sensors | 1
+Accommodation and Food Services | Data Attack,Exploitation of Application Server,Message Manipulation | 1
+Administrative and Support and Waste Management and Remediation Services | Exploitation of Application Server | 91
+Administrative and Support and Waste Management and Remediation Services | Data Attack | 35
+Administrative and Support and Waste Management and Remediation Services | External Denial of Service | 21
+Administrative and Support and Waste Management and Remediation Services | Exploitation of End Hosts | 9
+Administrative and Support and Waste Management and Remediation Services | Data Attack,Exploitation of Application Server | 9
+Administrative and Support and Waste Management and Remediation Services | Message Manipulation | 5
+Administrative and Support and Waste Management and Remediation Services | Internal Denial of Service | 2
+Administrative and Support and Waste Management and Remediation Services | Exploitation of Application Server,Exploitation of End Hosts | 2
+Administrative and Support and Waste Management and Remediation Services | Data Attack,External Denial of Service | 1
+Administrative and Support and Waste Management and Remediation Services | Exploitation of Sensors | 1
+Administrative and Support and Waste Management and Remediation Services | Data Attack,Undetermined | 1
+Administrative and Support and Waste Management and Remediation Services | Message Manipulation,Exploitation of Application Server,Exploitation of End Hosts | 1
+Administrative and Support and Waste Management and Remediation Services | Exploitation of Application Server,Exploitation of Data in Transit | 1
+Administrative and Support and Waste Management and Remediation Services | Exploitation of Network Infrastructure | 1
+Agriculture, Forestry, Fishing and Hunting | Data Attack | 6
+Agriculture, Forestry, Fishing and Hunting | Data Attack,Exploitation of Application Server | 4
+Agriculture, Forestry, Fishing and Hunting | Exploitation of Application Server | 3
+Agriculture, Forestry, Fishing and Hunting | External Denial of Service | 3
+Agriculture, Forestry, Fishing and Hunting | Message Manipulation,Exploitation of Application Server | 1
+Agriculture, Forestry, Fishing and Hunting | Data Attack,Undetermined | 1
+Arts, Entertainment, and Recreation | Exploitation of Application Server | 175
+Arts, Entertainment, and Recreation | Message Manipulation | 94
+Arts, Entertainment, and Recreation | External Denial of Service | 49
+Arts, Entertainment, and Recreation | Exploitation of End Hosts | 41
+Arts, Entertainment, and Recreation | Data Attack | 32
+Arts, Entertainment, and Recreation | Data Attack,Exploitation of Application Server | 10
+Arts, Entertainment, and Recreation | Exploitation of Sensors | 7
+Arts, Entertainment, and Recreation | Data Attack,Undetermined | 4
+Arts, Entertainment, and Recreation | Message Manipulation,Exploitation of Application Server | 3
+Arts, Entertainment, and Recreation | Internal Denial of Service | 2
+Arts, Entertainment, and Recreation | Exploitation of Application Server,Exploitation of End Hosts | 2
+Arts, Entertainment, and Recreation | Data Attack,External Denial of Service | 2
+Arts, Entertainment, and Recreation | Message Manipulation,Exploitation of End Hosts | 2
+Arts, Entertainment, and Recreation | Exploitation of Network Infrastructure | 2
+Arts, Entertainment, and Recreation | Message Manipulation,External Denial of Service | 1
+Arts, Entertainment, and Recreation | Data Attack,Message Manipulation | 1
+Arts, Entertainment, and Recreation | Data Attack,Physical Attack,Internal Denial of Service | 1
+Arts, Entertainment, and Recreation | Data Attack,Exploitation of Application Server,Internal Denial of Service | 1
+Arts, Entertainment, and Recreation | Exploitation of Data in Transit | 1
+Arts, Entertainment, and Recreation | Exploitation of End Hosts,Exploitation of Data in Transit | 1
+Arts, Entertainment, and Recreation | Exploitation of Application Server,Exploitation of Sensors | 1
+Arts, Entertainment, and Recreation | Data Attack,Message Manipulation,Exploitation of Application Server,Exploitation of End Hosts | 1
+Construction | Data Attack | 25
+Construction | Exploitation of Application Server | 9
+Construction | External Denial of Service | 7
+Construction | Data Attack,Exploitation of Application Server | 4
+Educational Services | Exploitation of Application Server | 458
+Educational Services | Data Attack | 396
+Educational Services | Message Manipulation | 111
+Educational Services | Exploitation of End Hosts | 80
+Educational Services | Data Attack,Exploitation of Application Server | 78
+Educational Services | External Denial of Service | 58
+Educational Services | Exploitation of Application Server,Exploitation of End Hosts | 55
+Educational Services | Data Attack,External Denial of Service | 14
+Educational Services | Message Manipulation,Exploitation of Application Server | 10
+Educational Services | Internal Denial of Service | 9
+Educational Services | Data Attack,Undetermined | 7
+Educational Services | Exploitation of Sensors | 3
+Educational Services | Data Attack,Message Manipulation | 3
+Educational Services | Exploitation of Network Infrastructure | 3
+Educational Services | Data Attack,External Denial of Service,Internal Denial of Service | 2
+Educational Services | Internal Denial of Service,Message Manipulation | 2
+Educational Services | Data Attack,Exploitation of End Hosts | 2
+Educational Services | Data Attack,Exploitation of Application Server,External Denial of Service,Internal Denial of Service | 2
+Educational Services | External Denial of Service,Internal Denial of Service | 1
+Educational Services | Internal Denial of Service,Exploitation of Application Server | 1
+Educational Services | Physical Attack | 1
+Educational Services | Internal Denial of Service,Exploitation of Application Server,Message Manipulation | 1
+Educational Services | Message Manipulation,Exploitation of End Hosts | 1
+Educational Services | Message Manipulation,External Denial of Service | 1
+Educational Services | Exploitation of Data in Transit | 1
+Educational Services | Exploitation of End Hosts,Exploitation of Sensors | 1
+Educational Services | Physical Attack,Exploitation of Application Server,Exploitation of End Hosts | 1
+Educational Services | Data Attack,Exploitation of Application Server,External Denial of Service | 1
+Finance and Insurance | Exploitation of Application Server | 616
+Finance and Insurance | External Denial of Service | 217
+Finance and Insurance | Data Attack | 149
+Finance and Insurance | Exploitation of End Hosts | 132
+Finance and Insurance | Data Attack,Exploitation of Application Server | 34
+Finance and Insurance | Message Manipulation | 32
+Finance and Insurance | Exploitation of Sensors | 21
+Finance and Insurance | Exploitation of Application Server,Exploitation of End Hosts | 21
+Finance and Insurance | Exploitation of Data in Transit | 13
+Finance and Insurance | Message Manipulation,Exploitation of Application Server | 10
+Finance and Insurance | Exploitation of Network Infrastructure | 7
+Finance and Insurance | Message Manipulation,Exploitation of End Hosts | 6
+Finance and Insurance | Data Attack,External Denial of Service | 3
+Finance and Insurance | External Denial of Service,Exploitation of Application Server | 3
+Finance and Insurance | External Denial of Service,Internal Denial of Service | 3
+Finance and Insurance | Exploitation of End Hosts,Exploitation of Data in Transit | 3
+Finance and Insurance | Exploitation of Application Server,Exploitation of Sensors | 3
+Finance and Insurance | Data Attack,Undetermined | 3
+Finance and Insurance | Exploitation of Application Server,Exploitation of Data in Transit | 2
+Finance and Insurance | Message Manipulation,External Denial of Service | 1
+Finance and Insurance | Internal Denial of Service | 1
+Finance and Insurance | Exploitation of End Hosts,Exploitation of Data in Transit,Internal Denial of Service | 1
+Finance and Insurance | Internal Denial of Service,Exploitation of Application Server,Exploitation of Network Infrastructure | 1
+Finance and Insurance | Message Manipulation,Exploitation of Application Server,Exploitation of Data in Transit | 1
+Finance and Insurance | Message Manipulation,Exploitation of End Hosts,Exploitation of Data in Transit | 1
+Finance and Insurance | Exploitation of End Hosts,Exploitation of Sensors | 1
+Finance and Insurance | Exploitation of Network Infrastructure,Exploitation of Data in Transit | 1
+Finance and Insurance | Data Attack,Message Manipulation | 1
+Finance and Insurance | Message Manipulation,Exploitation of End Hosts,External Denial of Service,Exploitation of Data in Transit | 1
+Finance and Insurance | Internal Denial of Service,Exploitation of Application Servers | 1
+Finance and Insurance | Data Attack,Exploitation of Application Server,Internal Denial of Service | 1
+Finance and Insurance | Exploitation of Application Server,Exploitation of Network Infrastructure | 1
+Finance and Insurance | Message Manipulation,Exploitation of Application Server,Exploitation of End Hosts | 1
+Finance and Insurance | Data Attack,Exploitation of Application Server,External Denial of Service | 1
+Finance and Insurance | Internal Denial of Service,Exploitation of Application Server | 1
+Finance and insurance | Exploitation of Application Server | 6
+Finance and insurance | Exploitation of End Hosts | 1
+Health Care and Social Assistance | Exploitation of Application Server | 766
+Health Care and Social Assistance | Data Attack | 460
+Health Care and Social Assistance | Exploitation of End Hosts | 278
+Health Care and Social Assistance | Data Attack,Exploitation of Application Server | 213
+Health Care and Social Assistance | External Denial of Service | 28
+Health Care and Social Assistance | Message Manipulation | 23
+Health Care and Social Assistance | Exploitation of Application Server,Exploitation of End Hosts | 21
+Health Care and Social Assistance | Internal Denial of Service | 10
+Health Care and Social Assistance | Message Manipulation,Exploitation of Application Server | 9
+Health Care and Social Assistance | Exploitation of Network Infrastructure | 7
+Health Care and Social Assistance | Data Attack,External Denial of Service | 7
+Health Care and Social Assistance | Data Attack,Undetermined | 7
+Health Care and Social Assistance | Internal Denial of Service,Exploitation of Application Server | 3
+Health Care and Social Assistance | Data Attack,Exploitation of End Hosts | 3
+Health Care and Social Assistance | Physical Attack | 2
+Health Care and Social Assistance | Exploitation of Sensors | 2
+Health Care and Social Assistance | Message Manipulation,External Denial of Service | 1
+Health Care and Social Assistance | External Denial of Service,Internal Denial of Service | 1
+Health Care and Social Assistance | Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Sensors | 1
+Health Care and Social Assistance | Exploitation of Network Server | 1
+Health Care and Social Assistance | Data Attack,Message Manipulation | 1
+Health Care and Social Assistance | Data Attack,Exploitation of  Network Infrastructure | 1
+Health Care and Social Assistance | External Denial of Service,Exploitation of Application Server | 1
+Health Care and Social Assistance | Exploitation of Data in Transit | 1
+Health Care and Social Assistance | Exploitation of Application Server,Exploitation of Data in Transit | 1
+Health Care and Social Assistance | Data Attack,Exploitation of Application Server,External Denial of Service | 1
+Information | Exploitation of Application Server | 561
+Information | External Denial of Service | 295
+Information | Message Manipulation | 193
+Information | Data Attack | 154
+Information | Exploitation of End Hosts | 101
+Information | Data Attack,Exploitation of Application Server | 36
+Information | Exploitation of Network Infrastructure | 23
+Information | Exploitation of Application Server,Exploitation of End Hosts | 21
+Information | Message Manipulation,Exploitation of Application Server | 16
+Information | Internal Denial of Service | 13
+Information | Exploitation of Data in Transit | 5
+Information | Physical Attack | 5
+Information | Message Manipulation,External Denial of Service | 4
+Information | Data Attack,External Denial of Service | 4
+Information | Exploitation of Application Server,Exploitation of Network Infrastructure | 3
+Information | Exploitation of Application Server,Exploitation of Data in Transit | 3
+Information | Exploitation of Sensors | 3
+Information | Exploitation of End Hosts,Internal Denial of Service | 2
+Information | Data Attack,Exploitation of End Hosts | 2
+Information | External Denial of Service,Exploitation of End Hosts | 2
+Information | Message Manipulation,Exploitation of End Hosts | 1
+Information | Message Manipulation,Exploitation of End Hosts,Exploitation of Data in Transit | 1
+Information | Message Manipulation,Exploitation of Application Server,Exploitation of End Hosts | 1
+Information | External Denial of Service,Message Manipulation,Exploitation of Application Server | 1
+Information | Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Data in Transit | 1
+Information | Data Attack,Internal Denial of Service | 1
+Information | Message Manipulation,External Denial of Service,Internal Denial of Service, Physical Attack | 1
+Information | Data Attack,Undetermined | 1
+Information | Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Network Infrastructure | 1
+Information | Exploitation of application server | 1
+Management of Companies and Enterprises | Exploitation of Application Server | 7
+Management of Companies and Enterprises | Data Attack | 6
+Management of Companies and Enterprises | Data Attack,Exploitation of Application Server | 3
+Management of Companies and Enterprises | External Denial of Service | 2
+Management of Companies and Enterprises | Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Data in Transit | 1
+Management of Companies and Enterprises | Message Manipulation | 1
+Manufacturing | Data Attack | 267
+Manufacturing | Exploitation of Application Server | 162
+Manufacturing | External Denial of Service | 64
+Manufacturing | Data Attack,Exploitation of Application Server | 60
+Manufacturing | Exploitation of End Hosts | 38
+Manufacturing | Message Manipulation | 24
+Manufacturing | Exploitation of Application Server,Exploitation of End Hosts | 10
+Manufacturing | Internal Denial of Service | 5
+Manufacturing | Physical Attack | 4
+Manufacturing | Data Attack,Undetermined | 3
+Manufacturing | Exploitation of Network Infrastructure | 2
+Manufacturing | Data Attack,Exploitation of Application Server,External Denial of Service | 2
+Manufacturing | Message Manipulation,External Denial of Service | 2
+Manufacturing | Message Manipulation,Exploitation of Data in Transit | 1
+Manufacturing | Exploitation of End Hosts,Exploitation of Application Servers | 1
+Manufacturing | Data Attack,Exploitation of Application Server,Internal Denial of Service | 1
+Manufacturing | Internal Denial of Service,Exploitation of Application Server | 1
+Manufacturing | Data Attack,External Denial of Service,Internal Denial of Service | 1
+Manufacturing | Data Attack,Exploitation of Network Infrastructure | 1
+Manufacturing | Exploitation of Sensors | 1
+Mining, Quarrying, and Oil & Gas Extraction | Data Attack | 1
+Mining, Quarrying, and Oil and Gas Extraction | Exploitation of Application Server | 25
+Mining, Quarrying, and Oil and Gas Extraction | Data Attack | 19
+Mining, Quarrying, and Oil and Gas Extraction | Data Attack,Exploitation of Application Server | 6
+Mining, Quarrying, and Oil and Gas Extraction | External Denial of Service | 5
+Mining, Quarrying, and Oil and Gas Extraction | Message Manipulation | 5
+Mining, Quarrying, and Oil and Gas Extraction | Physical Attack | 5
+Mining, Quarrying, and Oil and Gas Extraction | Exploitation of End Hosts | 3
+Mining, Quarrying, and Oil and Gas Extraction | Exploitation of Application Server,Exploitation of End Hosts | 2
+Mining, Quarrying, and Oil and Gas Extraction | Data Attack,External Denial of Service | 2
+Mining, Quarrying, and Oil and Gas Extraction | Internal Denial of Service | 1
+Other Services (except Public Administration) | Exploitation of Application Server | 325
+Other Services (except Public Administration) | Message Manipulation | 168
+Other Services (except Public Administration) | Exploitation of End Hosts | 155
+Other Services (except Public Administration) | External Denial of Service | 85
+Other Services (except Public Administration) | Data Attack | 78
+Other Services (except Public Administration) | Exploitation of Application Server,Exploitation of End Hosts | 46
+Other Services (except Public Administration) | Data Attack,Exploitation of Application Server | 18
+Other Services (except Public Administration) | Message Manipulation,Exploitation of Application Server | 11
+Other Services (except Public Administration) | Exploitation of Sensors | 9
+Other Services (except Public Administration) | Exploitation of End Hosts,Exploitation of Data in Transit | 5
+Other Services (except Public Administration) | Exploitation of Application Server,Exploitation of Data in Transit | 5
+Other Services (except Public Administration) | Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Data in Transit | 4
+Other Services (except Public Administration) | Message Manipulation,External Denial of Service | 3
+Other Services (except Public Administration) | External Denial of Service,Exploitation of Application Server | 2
+Other Services (except Public Administration) | Message Manipulation,Exploitation of Data in Transit | 2
+Other Services (except Public Administration) | Data Attack,Message Manipulation | 2
+Other Services (except Public Administration) | Data Attack,Exploitation of Application Server,Internal Denial of Service | 1
+Other Services (except Public Administration) | Exploitation of Data in Transit | 1
+Other Services (except Public Administration) | Internal Denial of Service | 1
+Other Services (except Public Administration) | Data Attack,Undetermined | 1
+Other Services (except Public Administration) | Data Attack,External Denial of Service | 1
+Other Services (except Public Administration) | Internal Denial of Service,Message Manipulation | 1
+Professional, Scientific, and Technical Services | Exploitation of Application Server | 555
+Professional, Scientific, and Technical Services | Data Attack | 300
+Professional, Scientific, and Technical Services | Data Attack,Exploitation of Application Server | 101
+Professional, Scientific, and Technical Services | Exploitation of End Hosts | 54
+Professional, Scientific, and Technical Services | External Denial of Service | 38
+Professional, Scientific, and Technical Services | Message Manipulation | 34
+Professional, Scientific, and Technical Services | Exploitation of Application Server,Exploitation of End Hosts | 25
+Professional, Scientific, and Technical Services | Exploitation of Network Infrastructure | 11
+Professional, Scientific, and Technical Services | Internal Denial of Service | 6
+Professional, Scientific, and Technical Services | Message Manipulation,Exploitation of Application Server | 5
+Professional, Scientific, and Technical Services | Data Attack,External Denial of Service | 5
+Professional, Scientific, and Technical Services | Exploitation of Data in Transit | 4
+Professional, Scientific, and Technical Services | Exploitation of Sensors | 4
+Professional, Scientific, and Technical Services | Exploitation of Application Server,Exploitation of Network Infrastructure | 3
+Professional, Scientific, and Technical Services | Data Attack,Exploitation of End Hosts | 3
+Professional, Scientific, and Technical Services | Data Attack,Undetermined | 3
+Professional, Scientific, and Technical Services | Exploitation of End Hosts,Exploitation of Network Infrastructure | 2
+Professional, Scientific, and Technical Services | Message Manipulation,Exploitation of End Hosts | 2
+Professional, Scientific, and Technical Services | External Denial of Service,Internal Denial of Service | 1
+Professional, Scientific, and Technical Services | Exploitation of Network Infrastructure,Internal Denial of Service | 1
+Professional, Scientific, and Technical Services | Internal Denial of Service,Exploitation of Application Server,Exploitation of Network Infrastructure | 1
+Professional, Scientific, and Technical Services | Message Manipulation,External Denial of Service | 1
+Professional, Scientific, and Technical Services | Exploitation of Application Server,Exploitation of Sensors | 1
+Public Administration | Exploitation of Application Server | 709
+Public Administration | External Denial of Service | 500
+Public Administration | Data Attack | 481
+Public Administration | Message Manipulation | 408
+Public Administration | Exploitation of End Hosts | 238
+Public Administration | Exploitation of Application Server,Exploitation of End Hosts | 86
+Public Administration | Data Attack,Exploitation of Application Server | 70
+Public Administration | Data Attack,External Denial of Service | 27
+Public Administration | Message Manipulation,Exploitation of Application Server | 21
+Public Administration | Data Attack,Undetermined | 20
+Public Administration | Message Manipulation,External Denial of Service | 15
+Public Administration | Internal Denial of Service | 14
+Public Administration | Exploitation of Network Infrastructure | 12
+Public Administration | Physical Attack | 9
+Public Administration | Exploitation of Sensors | 7
+Public Administration | External Denial of Service,Exploitation of Application Server | 7
+Public Administration | Exploitation of Data in Transit | 4
+Public Administration | External Denial of Service,Internal Denial of Service | 4
+Public Administration | Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Data in Transit | 4
+Public Administration | Data Attack,Internal Denial of Service | 3
+Public Administration | Message Manipulation,Exploitation of End Hosts | 2
+Public Administration | Data Attack,Exploitation of Application Server,External Denial of Service | 2
+Public Administration | Data Attack,Exploitation of End Hosts | 2
+Public Administration | Exploitation of Application Server,Exploitation of End Hosts,Internal Denial of Service | 2
+Public Administration | Data Attack,Message Manipulation,Exploitation of Application Server,External Denial of Service | 2
+Public Administration | Data Attack,External Denial of Service,Internal Denial of Service | 2
+Public Administration | Physical Attack,Exploitation of Application Server | 1
+Public Administration | Exploitation of Application Server,Exploitation of Network Infrastructure,Exploitation of Sensors | 1
+Public Administration | External Denial of Service,Exploitation of End Hosts | 1
+Public Administration | Data Attack,Exploitation of Application Server,External Denial of Service,Internal Denial of Service | 1
+Public Administration | Message Manipulation,Exploitation of Application Server,Exploitation of End Hosts | 1
+Public Administration | Internal Denial of Service,Message Manipulation | 1
+Public Administration | Data Attack,Message Manipulation,Exploitation of Application Server,Exploitation of End Hosts | 1
+Public Administration | External Denial of Service,Message Manipulation,Exploitation of Application Server | 1
+Public Administration | Internal Denial of Service,Exploitation of Application Server | 1
+Public Administration | Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Sensors | 1
+Public Administration | Data Attack,External Denial of Service,Physical Attack | 1
+Public Administration | Exploitation of Application Server,Exploitation of End Hosts,External Denial of Service | 1
+Real Estate and Rental and Leasing | Exploitation of Application Server | 32
+Real Estate and Rental and Leasing | Data Attack | 20
+Real Estate and Rental and Leasing | Data Attack,Exploitation of Application Server | 6
+Real Estate and Rental and Leasing | Message Manipulation | 4
+Real Estate and Rental and Leasing | Exploitation of End Hosts | 4
+Real Estate and Rental and Leasing | External Denial of Service | 3
+Real Estate and Rental and Leasing | Message Manipulation,Exploitation of Application Server | 2
+Real Estate and Rental and Leasing | External Denial of Service,Physical Attack | 1
+Real Estate and Rental and Leasing | Exploitation of Network Infrastructure | 1
+Real Estate and Rental and Leasing | Data Attack,Message Manipulation,Exploitation of End Hosts | 1
+Real Estate and Rental and Leasing | Exploitation of End Hosts,Exploitation of Data in Transit | 1
+Real Estate and Rental and Leasing | Exploitation of Application Server,Exploitation of End Hosts | 1
+Real Estate and Rental and Leasing | Data Attack,External Denial of Service,Internal Denial of Service | 1
+Real Estate and Rental and Leasing | Data Attack,Undetermined | 1
+Retail Trade | Exploitation of Application Server | 234
+Retail Trade | Data Attack | 79
+Retail Trade | Exploitation of End Hosts | 53
+Retail Trade | Data Attack,Exploitation of Application Server | 33
+Retail Trade | Exploitation of Sensors | 27
+Retail Trade | Exploitation of Application Server,Exploitation of End Hosts | 11
+Retail Trade | Message Manipulation | 9
+Retail Trade | External Denial of Service | 7
+Retail Trade | External Denial of Service,Exploitation of Application Server | 4
+Retail Trade | Data Attack,Undetermined | 3
+Retail Trade | Data Attack,External Denial of Service | 2
+Retail Trade | Data Attack,Message Manipulation | 1
+Retail Trade | Exploitation of Data in Transit | 1
+Retail Trade | Internal Denial of Service | 1
+Retail Trade | Data Attack,Exploitation of Application Server,External Denial of Service | 1
+Retail Trade | Exploitation of Application Server,Exploitation of Sensors | 1
+Retail Trade | Physical Attack | 1
+Retail Trade | Exploitation of Network Infrastructure | 1
+Transportation and Warehousing | External Denial of Service | 126
+Transportation and Warehousing | Exploitation of Application Server | 110
+Transportation and Warehousing | Data Attack | 96
+Transportation and Warehousing | Message Manipulation | 22
+Transportation and Warehousing | Data Attack,Exploitation of Application Server | 20
+Transportation and Warehousing | Exploitation of End Hosts | 14
+Transportation and Warehousing | Physical Attack | 9
+Transportation and Warehousing | Data Attack,External Denial of Service | 4
+Transportation and Warehousing | External Denial of Service,Internal Denial of Service | 4
+Transportation and Warehousing | Exploitation of Application Server,Exploitation of End Hosts | 4
+Transportation and Warehousing | Exploitation of Data in Transit | 3
+Transportation and Warehousing | Exploitation of Sensors | 3
+Transportation and Warehousing | Exploitation of Network Infrastructure | 2
+Transportation and Warehousing | Data Attack,Message Manipulation | 2
+Transportation and Warehousing | Internal Denial of Service | 1
+Transportation and Warehousing | External Denial of Service,Physical Attack | 1
+Transportation and Warehousing | Physical Attack,Exploitation of Application Server | 1
+Transportation and Warehousing | Data Attack,Exploitation of End Hosts | 1
+Transportation and Warehousing | Internal Denial of Service,Message Manipulation | 1
+Transportation and Warehousing | Data Attack,Exploitation of Application Server,External Denial of Service,Internal Denial of Service | 1
+Transportation and Warehousing | Data Attack,External Denial of Service,Internal Denial of Service | 1
+Transportation and Warehousing | Sabotage | 1
+Transportation and Warehousing | Data Attack,Exploitation of Application Server,External Denial of Service | 1
+Transportation and Warehousing | Data Attack,Undetermined | 1
+Transportation and Warehousing | Data Attack,Physical Attack | 1
+Utilities | Data Attack | 71
+Utilities | Exploitation of Application Server | 67
+Utilities | External Denial of Service | 37
+Utilities | Physical Attack | 29
+Utilities | Data Attack,Exploitation of Application Server | 21
+Utilities | Exploitation of End Hosts | 8
+Utilities | Exploitation of Application Server,Exploitation of End Hosts | 7
+Utilities | Message Manipulation | 7
+Utilities | Data Attack,Internal Denial of Service | 2
+Utilities | Data Attack,External Denial of Service | 2
+Utilities | Data Attack,External Denial of Service,Physical Attack | 2
+Utilities | Physical Attack,Exploitation of Application Server | 1
+Utilities | Internal Denial of Service | 1
+Utilities | Exploitation of Data in Transit | 1
+Utilities | Data Attack,External Denial of Service,Message Manipulation | 1
+Utilities | Exploitation of Network Infrastructure | 1
+Utilities | Data Attack,Exploitation of Application Server,External Denial of Service | 1
+Wholesale Trade | Exploitation of Application Server | 41
+Wholesale Trade | Data Attack | 24
+Wholesale Trade | External Denial of Service | 13
+Wholesale Trade | Data Attack,Exploitation of Application Server | 10
+Wholesale Trade | Exploitation of End Hosts | 5
+Wholesale Trade | Data Attack,Internal Denial of Service | 1
+Wholesale Trade | Message Manipulation | 1
+Wholesale Trade | Exploitation of Sensors | 1
+Wholesale Trade | External Denial of Service,Internal Denial of Service | 1
+Wholesale Trade | Data Attack,Exploitation of End Hosts | 1
+Wholesale Trade | Data Attack,Undetermined | 1
+
+--------------------------------------------------
+
+QUERY: 8. Evoluzione TBox (Nuove Classi)
+classe | super
+BoundaryCondition | InputValidationError
+MalformedInput | InputValidationError
+BufferOverFlow | n89b95c2f36794621ab4df867ef4e9d17b1
+BufferOverFlow | Means
+ConfigurationError | Means
+SynFlood | Means
+UserEnumeration | Means
+ExIPPacketSize | Means
+ExICMPEchoReq | Means
+InputValidationError | Means
+IPFrag | Means
+Probe | Means
+RemoteAccess | Means
+MaliciousCodeExecution | Means
+BufferOverFlow | TTP
+ConfigurationError | TTP
+SynFlood | TTP
+ExIPPacketSize | TTP
+ExICMPEchoReq | TTP
+InputValidationError | TTP
+
+--------------------------------------------------
+
+QUERY: 9. Rilevamento Record Incompleti
+incompleti
+60
+
+--------------------------------------------------
+
+QUERY: 10. Validazione Relazioni isType_of
+incidente | tipo
+3accedc2e2c131be | Criminal
+00ee499d2ad3b032 | Criminal
+020788a581603eab | Criminal
+09be498fb83605a6 | Criminal
+09d6059247392b03 | Criminal
+0f6a0971c35269b2 | Criminal
+147caea9a670434b | Criminal
+1ad1235226a4ef58 | Criminal
+1bdee307a1f99169 | Criminal
+281b5b9f6b86dca9 | Criminal
+2e1c7efeb5c5604a | Criminal
+2e1eed769902543d | Criminal
+374876442773a011 | Criminal
+3f1bc38f00c02b6e | Criminal
+419768cc4fb043d9 | Criminal
+45450e2fb405b78c | Criminal
+4ce79b21f58a8885 | Criminal
+4ec8910a49c84edd | Criminal
+4ff6d1f8c43b3af1 | Criminal
+505fdcaca0ed1597 | Criminal
+
+--------------------------------------------------
+
+QUERY: 11. Trend Mensile degli Attacchi
+mese | n
+1 | 1477
+2 | 1127
+3 | 1299
+4 | 1155
+5 | 1107
+6 | 1186
+7 | 1255
+8 | 1368
+9 | 1240
+10 | 1291
+11 | 1229
+12 | 1112
+
+--------------------------------------------------
+
+QUERY: 12. Analisi Geografica degli Incidenti
+paese | n
+United States of America | 7141
+United Kingdom of Great Britain and Northern Ireland | 794
+Italy | 440
+Russian Federation | 432
+Ukraine | 414
+Canada | 383
+India | 338
+France | 284
+Australia | 269
+Germany | 260
+Israel | 208
+Japan | 177
+China | 163
+Brazil | 146
+Poland | 137
+Spain | 115
+Netherlands | 110
+Korea (the Republic of) | 86
+Switzerland | 85
+Pakistan | 84
+Singapore | 82
+Mexico | 77
+Lithuania | 76
+Thailand | 73
+Taiwan (Province of China) | 72
+Philippines | 71
+Belgium | 71
+New Zealand | 68
+South Africa | 68
+Turkey | 59
+Iran (Islamic Republic of) | 58
+Sweden | 57
+Saudi Arabia | 57
+Armenia | 56
+Latvia | 53
+Czechia | 51
+Malaysia | 49
+Ireland | 47
+Denmark | 43
+Norway | 42
+Argentina | 40
+Austria | 35
+Chile | 35
+Indonesia | 34
+Greece | 32
+Finland | 32
+Angola | 32
+Belarus | 31
+United Arab Emirates | 28
+Romania | 28
+Colombia | 26
+Egypt | 25
+Estonia | 25
+Azerbaijan | 24
+Cambodia | 23
+Portugal | 22
+Viet Nam | 22
+Slovakia | 20
+Venezuela (Bolivarian Republic of) | 20
+Moldova (the Republic of) | 20
+Afghanistan | 19
+Bangladesh | 18
+Nigeria | 17
+Kenya | 17
+Nepal | 16
+Costa Rica | 16
+Bulgaria | 15
+Hungary | 14
+Ecuador | 14
+Turkmenistan | 14
+Bahrain | 14
+Hong Kong | 14
+Lebanon | 13
+Panama | 12
+Malta | 12
+Morocco | 11
+Croatia | 11
+Jordan | 10
+Luxembourg | 10
+Syrian Arab Republic | 10
+Albania | 9
+Kuwait | 9
+Sri Lanka | 9
+Myanmar | 9
+Guatemala | 9
+Peru | 9
+Cyprus | 7
+Georgia | 7
+Palestine, State of | 7
+Trinidad and Tobago | 6
+Montenegro | 6
+Serbia | 6
+Kazakhstan | 6
+Qatar | 6
+Zimbabwe | 6
+Cayman Islands | 5
+Slovenia | 5
+El Salvador | 5
+Togo | 5
+Oman | 5
+Maldives | 5
+Dominican Republic | 5
+Uzbekistan | 5
+Fiji | 4
+Iraq | 4
+Barbados | 4
+Korea (the Democratic People's Republic of) | 4
+Seychelles | 4
+Ghana | 4
+Jamaica | 4
+Mongolia | 4
+Paraguay | 4
+Uganda | 4
+European Union | 3
+Bermuda | 3
+Namibia | 3
+Kiribati | 2
+Bolivia (Plurinational State of) | 2
+Guam | 2
+Bahamas | 2
+Algeria | 2
+Mali | 2
+Isle of Man | 2
+Malawi | 2
+Liechtenstein | 2
+Rwanda | 2
+Bosnia and Herzegovina | 2
+Palau | 2
+Uruguay | 2
+Gibraltar | 2
+Saint Vincent and the Grenadines | 2
+Holy See | 2
+Tanzania, United Republic of | 2
+Monaco | 2
+Lao People's Democratic Republic | 2
+Republic of North Macedonia | 1
+Macau | 1
+Andorra | 1
+Lesotho | 1
+Libya | 1
+Sint Maarten | 1
+Senegal | 1
+Ethiopia | 1
+Greenland | 1
+Gabon | 1
+Nauru | 1
+Tajikistan | 1
+Nicaragua | 1
+Papua New Guinea | 1
+Cabo Verde | 1
+American Samoa | 1
+Tonga | 1
+Iceland | 1
+Vanuatu | 1
+Puerto Rico | 1
+French Guiana | 1
+Tunisia | 1
+Guadeloupe | 1
+Saint Thomas | 1
+Kosovo | 1
+Sierra Leone | 1
+Kyrgyzstan | 1
+Cuba | 1
+Yemen | 1
+Sudan | 1
+Bonaire, Sint Eustatius and Saba | 1
+Zambia | 1
+
+--------------------------------------------------
+
+QUERY: 13. Correlazione Attore-Tipo Attacco
+tipoAttore | tipoAttacco | n
+Criminal | Exploitive | 6015
+Criminal | Disruptive | 2547
+Criminal | Mixed | 2485
+Hacktivist | Disruptive | 1469
+Nation-State | Exploitive | 575
+Hacktivist | Exploitive | 454
+Nation-State | Disruptive | 285
+Hobbyist | Disruptive | 142
+Hacktivist | Mixed | 79
+Hobbyist | Exploitive | 48
+Nation-State | Mixed | 40
+Terrorist | Exploitive | 25
+Terrorist | Disruptive | 5
+Hobbyist | Mixed | 4
+
+--------------------------------------------------
+
+QUERY: 14. Rilevamento Sottoclassi Senza Istanze
+classe
+BoundaryCondition
+BufferOverFlow
+ConfigurationError
+DistributedCode
+DomainExpert
+ExceptionCondition
+ExcessForks
+IPv4Address
+IPv6Address
+MACAddress
+MalformedInput
+MemoryConsumption
+PingOfDeath
+RSTProbe
+RaceCondition
+SerialError
+SynFlood
+SysCrash
+TCPConnect
+Time
+UserEnumeration
+WebBrowser
+AbleAccess
+AccessBreach
+AccessService
+AccessSystem
+AccountEmployee
+AccountGroup
+AccountInformation
+AccountUser
+ActorSystem
+ActorVictim
+AddressData
+AddressEmail
+AddressName
+AddressNumber
+AmongVictim
+AnonymousCollective
+AttackAttacker
+AttackBreach
+AttackComputer
+AttackCyber
+AttackData
+AttackDistrict
+AttackHacker
+AttackProvider
+AttackThreat
+AttackTwo
+AttackVictim
+BreachGroup
+BreachSensitive
+BreachSystem
+BreachThreat
+BreachVictim
+CompanyComputer
+CompanyEmail
+CompanyGroup
+CompanySoftware
+CompanyState
+CompanySystem
+CompanyVictim
+CompanyWebsite
+ComputerData
+ComputerFile
+ComputerInformation
+ComputerNetwork
+ComputerSystem
+ConfidentialFile
+CustomerSystem
+CveVulnerability
+CyberGroup
+DarkWeb
+DataFile
+DataGroup
+DataNetwork
+DataSite
+DataSoftware
+DataState
+DataSystem
+DataThreat
+DataUnauthorized
+DataVictim
+DataWeb
+DataWebsite
+EmailEmployee
+EmailInformation
+EmailName
+EmailNumber
+EmailService
+EmailSystem
+FileNetwork
+FileSystem
+GangVictim
+GovernmentGroup
+GroupInformation
+GroupOrganization
+GroupService
+GroupSystem
+GroupThreat
+GroupVictim
+GroupWebsite
+HackerState
+HackerSteal
+HackerSystem
+HealthSystem
+InformationNetwork
+InformationOnline
+InformationParty
+InformationSystem
+InformationWebsite
+NameWebsite
+NetworkParty
+NetworkSystem
+NetworkThreat
+NetworkWeb
+OnlineService
+OrganizationSystem
+OrganizationVictim
+OrganizationWebsite
+Password
+PersonalSystem
+PortalWeb
+SecuritySystem
+SecurityThreat
+SecurityVictim
+SecurityWebsite
+ServiceSystem
+ServiceWebsite
+SeveralWebsite
+SiteWeb
+SiteWebsite
+SocietyWeb
+StateVictim
+SystemThreat
+SystemU
+SystemVictim
+ThreatVictim
+ToolVictim
+UVictim
+ViceWeb
+IDPS
+Logic
+MitnickAttack
+KillChain
+TemporalGroup
+Username
+KillChainPhase
+DirectoryExposure
+InputValidationError
+OtherTechnicalTerms
+SelfPropagatingCode
+TriggeredCode
+CCE
+CVE
+ConfidenceType
+OSVDB
+Indicator
+Hardware
+KernelModule
+LossOfIntegrity
+OperatingSystem
+KillChainPhase
+email
+KillChain
+File
+IPAddress
+LogicExploit
+PrivilegeEsc
+Network
+Source
+Account
+CVSSScoreType
+MeansOrConsequence
+BaseGroup
+NetworkState
+RemoteAccess
+EnvironmentalGroup
+Product
+Software
+Address
+Process
+Victim
+Web
+Indicator
+CourseofAction
+System
+AttackPattern
+
+--------------------------------------------------
+
+QUERY: 15. Analisi delle Motivazioni prevalenti
+sottotipo | tot
+Exploitation of Application Server | 5138
+Data Attack | 2788
+External Denial of Service | 1584
+Exploitation of End Hosts | 1267
+Message Manipulation | 1159
+Data Attack,Exploitation of Application Server | 770
+Exploitation of Application Server,Exploitation of End Hosts | 316
+Exploitation of Sensors | 172
+Message Manipulation,Exploitation of Application Server | 89
+Exploitation of Network Infrastructure | 78
+Data Attack,External Denial of Service | 77
+Internal Denial of Service | 72
+Physical Attack | 67
+Data Attack,Undetermined | 60
+Exploitation of Data in Transit | 38
+Message Manipulation,External Denial of Service | 29
+External Denial of Service,Exploitation of Application Server | 17
+External Denial of Service,Internal Denial of Service | 15
+Message Manipulation,Exploitation of End Hosts | 14
+Data Attack,Exploitation of End Hosts | 14
+Exploitation of Application Server,Exploitation of Data in Transit | 12
+Data Attack,Message Manipulation | 11
+Data Attack,Exploitation of Application Server,External Denial of Service | 10
+Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Data in Transit | 10
+Exploitation of End Hosts,Exploitation of Data in Transit | 10
+Internal Denial of Service,Exploitation of Application Server | 9
+Exploitation of Application Server,Exploitation of Sensors | 8
+Data Attack,Internal Denial of Service | 7
+Exploitation of Application Server,Exploitation of Network Infrastructure | 7
+Data Attack,External Denial of Service,Internal Denial of Service | 7
+Data Attack,Exploitation of Application Server,Internal Denial of Service | 5
+Internal Denial of Service,Message Manipulation | 5
+Data Attack,Exploitation of Application Server,External Denial of Service,Internal Denial of Service | 4
+Message Manipulation,Exploitation of Application Server,Exploitation of End Hosts | 4
+Message Manipulation,Exploitation of Data in Transit | 3
+Physical Attack,Exploitation of Application Server | 3
+External Denial of Service,Exploitation of End Hosts | 3
+Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Sensors | 3
+Data Attack,External Denial of Service,Physical Attack | 3
+External Denial of Service,Physical Attack | 2
+Exploitation of End Hosts,Internal Denial of Service | 2
+Exploitation of End Hosts,Exploitation of Network Infrastructure | 2
+Exploitation of Application Server,Exploitation of End Hosts,Internal Denial of Service | 2
+Internal Denial of Service,Exploitation of Application Server,Exploitation of Network Infrastructure | 2
+Message Manipulation,Exploitation of End Hosts,Exploitation of Data in Transit | 2
+Data Attack,Message Manipulation,Exploitation of Application Server,External Denial of Service | 2
+External Denial of Service,Message Manipulation,Exploitation of Application Server | 2
+Exploitation of End Hosts,Exploitation of Sensors | 2
+Data Attack,Message Manipulation,Exploitation of Application Server,Exploitation of End Hosts | 2
+Exploitation of Application Server,Exploitation of Network Infrastructure,Exploitation of Sensors | 1
+Data Attack,External Denial of Service,Message Manipulation | 1
+Exploitation of End Hosts,Exploitation of Data in Transit,Internal Denial of Service | 1
+Exploitation of Network Infrastructure,Internal Denial of Service | 1
+Exploitation of End Hosts,Exploitation of Application Servers | 1
+Exploitation of Network Server | 1
+Message Manipulation,Exploitation of Application Server,Exploitation of Data in Transit | 1
+Data Attack,Message Manipulation,Exploitation of End Hosts | 1
+Data Attack,Physical Attack,Internal Denial of Service | 1
+Data Attack,Exploitation of  Network Infrastructure | 1
+Exploitation of Network Infrastructure,Exploitation of Data in Transit | 1
+Message Manipulation,Exploitation of End Hosts,External Denial of Service,Exploitation of Data in Transit | 1
+Sabotage | 1
+Internal Denial of Service,Exploitation of Application Servers | 1
+Message Manipulation,External Denial of Service,Internal Denial of Service, Physical Attack | 1
+Data Attack,Exploitation of Network Infrastructure | 1
+Internal Denial of Service,Exploitation of Application Server,Message Manipulation | 1
+Exploitation of Application Server,Exploitation of End Hosts,External Denial of Service | 1
+Physical Attack,Exploitation of Application Server,Exploitation of End Hosts | 1
+Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Network Infrastructure | 1
+Data Attack,Physical Attack | 1
+Exploitation of application server | 1
+Data Attack,Exploitation of Application Server,Message Manipulation | 1
+
+--------------------------------------------------
+
+QUERY: 16. Catena Attore -> Incidente -> Tipo
+tipoAttore | incidente | tipoAttacco | industria
+Criminal | 020788a581603eab | Exploitive | Public Administration
+Criminal | 0f6a0971c35269b2 | Disruptive | Finance and Insurance
+Criminal | 147caea9a670434b | Exploitive | Retail Trade
+Criminal | 1ad1235226a4ef58 | Disruptive | Utilities
+Criminal | 419768cc4fb043d9 | Exploitive | Public Administration
+Criminal | 45450e2fb405b78c | Exploitive | Finance and Insurance
+Criminal | 4ff6d1f8c43b3af1 | Exploitive | Professional, Scientific, and Technical Services
+Criminal | 505fdcaca0ed1597 | Exploitive | Manufacturing
+Criminal | 51178ef0ca60c158 | Exploitive | Professional, Scientific, and Technical Services
+Criminal | 539906fe020b1dc0 | Exploitive | Public Administration
+Criminal | 59ac7e148743e4ba | Disruptive | Finance and Insurance
+Criminal | 59d05a36cd8190f9 | Disruptive | Finance and Insurance
+Criminal | 5e85a89ca47500f5 | Disruptive | Finance and Insurance
+Criminal | 65b5a7798a10326e | Disruptive | Transportation and Warehousing
+Criminal | 6673bf129c24afa3 | Disruptive | Utilities
+Criminal | 6a00178ec56031a5 | Disruptive | Public Administration
+Criminal | 7a7c9039c2222e1f | Disruptive | Public Administration
+Criminal | 7b4783d55a615028 | Exploitive | Other Services (except Public Administration)
+Criminal | 7b4eff8436c90ad5 | Exploitive | Public Administration
+Criminal | 8285f869a6a6d2f2 | Disruptive | Public Administration
+
+--------------------------------------------------
+
+QUERY: 17. Identificazione Individui con Attributi Multipli
+Esito: Nessun dato rilevato
+
+--------------------------------------------------
+
+QUERY: 18. Analisi Behaviour per Settore
+industria | beh | n
+Accommodation and Food Services | Financial | 268
+Accommodation and Food Services | Protest | 9
+Accommodation and Food Services | Political_Espionage | 3
+Accommodation and Food Services | Sabotage | 1
+Administrative and Support and Waste Management and Remediation Services | Financial | 138
+Administrative and Support and Waste Management and Remediation Services | Protest | 27
+Administrative and Support and Waste Management and Remediation Services | Industrial_Espionage | 3
+Administrative and Support and Waste Management and Remediation Services | Political_Espionage | 2
+Agriculture, Forestry, Fishing and Hunting | Financial | 10
+Agriculture, Forestry, Fishing and Hunting | Protest | 4
+Agriculture, Forestry, Fishing and Hunting | Sabotage | 1
+Arts, Entertainment, and Recreation | Financial | 245
+Arts, Entertainment, and Recreation | Protest | 25
+Arts, Entertainment, and Recreation | Sabotage | 7
+Arts, Entertainment, and Recreation | Personal_Attack | 5
+Arts, Entertainment, and Recreation | Political_Espionage | 3
+Arts, Entertainment, and Recreation | Industrial_Espionage | 1
+Arts, Entertainment, and Recreation | Reputation | 1
+Construction | Financial | 35
+Construction | Protest | 8
+Construction | Industrial_Espionage | 2
+Educational Services | Financial | 934
+Educational Services | Protest | 58
+Educational Services | Political_Espionage | 18
+Educational Services | Industrial_Espionage | 4
+Educational Services | Personal_Attack | 3
+Educational Services | Sabotage | 3
+Educational Services | Protest_Financial | 1
+Finance and Insurance | Financial | 1038
+Finance and Insurance | Protest | 172
+Finance and Insurance | Sabotage | 47
+Finance and Insurance | Political_Espionage | 17
+Finance and Insurance | Personal_Attack | 1
+Finance and insurance | Financial | 7
+Health Care and Social Assistance | Financial | 1658
+Health Care and Social Assistance | Protest | 34
+Health Care and Social Assistance | Sabotage | 7
+Health Care and Social Assistance | Political_Espionage | 5
+Health Care and Social Assistance | Industrial_Espionage | 3
+Health Care and Social Assistance | Personal_Attack | 1
+Information | Financial | 577
+Information | Protest | 201
+Information | Sabotage | 87
+Information | Political_Espionage | 84
+Information | Industrial_Espionage | 7
+Information | Personal_Attack | 6
+Management of Companies and Enterprises | Financial | 13
+Management of Companies and Enterprises | Protest | 2
+Management of Companies and Enterprises | Political_Espionage | 1
+Management of Companies and Enterprises | Sabotage | 1
+Manufacturing | Financial | 500
+Manufacturing | Protest | 87
+Manufacturing | Industrial_Espionage | 30
+Manufacturing | Political_Espionage | 6
+Manufacturing | Sabotage | 5
+Mining, Quarrying, and Oil and Gas Extraction | Financial | 30
+Mining, Quarrying, and Oil and Gas Extraction | Protest | 26
+Mining, Quarrying, and Oil and Gas Extraction | Sabotage | 9
+Mining, Quarrying, and Oil and Gas Extraction | Political_Espionage | 2
+Mining, Quarrying, and Oil and Gas Extraction | Industrial_Espionage | 1
+Other Services (except Public Administration) | Financial | 270
+Other Services (except Public Administration) | Political_Espionage | 150
+Other Services (except Public Administration) | Protest | 108
+Other Services (except Public Administration) | Personal_Attack | 70
+Other Services (except Public Administration) | Sabotage | 24
+Professional, Scientific, and Technical Services | Financial | 864
+Professional, Scientific, and Technical Services | Protest | 50
+Professional, Scientific, and Technical Services | Political_Espionage | 31
+Professional, Scientific, and Technical Services | Industrial_Espionage | 21
+Professional, Scientific, and Technical Services | Sabotage | 11
+Professional, Scientific, and Technical Services | Personal_Attack | 2
+Public Administration | Financial | 941
+Public Administration | Protest | 718
+Public Administration | Political_Espionage | 343
+Public Administration | Sabotage | 80
+Public Administration | Industrial_Espionage | 14
+Public Administration | Personal_Attack | 4
+Public Administration | Political_Espionage_Industrial_Espionage | 2
+Public Administration | Protest_Political_Espionage | 1
+Real Estate and Rental and Leasing | Financial | 63
+Real Estate and Rental and Leasing | Protest | 5
+Real Estate and Rental and Leasing | Sabotage | 1
+Retail Trade | Financial | 414
+Retail Trade | Protest | 8
+Retail Trade | Sabotage | 6
+Retail Trade | Political_Espionage | 4
+Retail Trade | Personal_Attack | 1
+Transportation and Warehousing | Financial | 213
+Transportation and Warehousing | Protest | 131
+Transportation and Warehousing | Sabotage | 28
+Transportation and Warehousing | Political_Espionage | 7
+Transportation and Warehousing | Industrial_Espionage | 2
+Utilities | Financial | 130
+Utilities | Protest | 52
+Utilities | Sabotage | 44
+Utilities | Political_Espionage | 11
+Utilities | Industrial_Espionage | 4
+Wholesale Trade | Financial | 80
+Wholesale Trade | Protest | 15
+Wholesale Trade | Industrial_Espionage | 1
+
+--------------------------------------------------
+
+QUERY: 19. Behaviour vs Tipo
+beh | tipo | n
+Financial | Exploitive | 4506
+Financial | Mixed | 2396
+Financial | Disruptive | 1566
+Industrial_Espionage | Exploitive | 99
+Industrial_Espionage | Mixed | 2
+Personal_Attack | Exploitive | 64
+Personal_Attack | Disruptive | 27
+Personal_Attack | Mixed | 2
+Political_Espionage | Exploitive | 689
+Political_Espionage | Mixed | 30
+Political_Espionage | Disruptive | 15
+Political_Espionage_Industrial_Espionage | Exploitive | 3
+Protest | Disruptive | 1341
+Protest | Exploitive | 352
+Protest | Mixed | 60
+Protest_Financial | Mixed | 1
+Protest_Political_Espionage | Exploitive | 1
+Reputation | Disruptive | 1
+Sabotage | Disruptive | 300
+Sabotage | Exploitive | 43
+Sabotage | Mixed | 26
+
+--------------------------------------------------
+
+QUERY: 20. Individui per Classe Madre
+super | n
+UCOThing | 121949
+Vulnerability | 29655
+Indicator | 29644
+Campaign | 29644
+Indicator | 29644
+MeansOrConsequence | 22986
+n89b95c2f36794621ab4df867ef4e9d17b48 | 13527
+n89b95c2f36794621ab4df867ef4e9d17b42 | 11491
+BotnetAttack | 5839
+Malware | 3206
+DataLeak | 2061
+DataBreach | 2033
+Exploit | 1611
+DenialOfService | 1016
+Observable | 773
+Observable | 773
+Consequence | 773
+Observable | 773
+AttackPattern | 490
+DataCorruption | 268
+
+--------------------------------------------------
+

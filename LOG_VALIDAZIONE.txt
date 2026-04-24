@@ -1,0 +1,14 @@
+REPORT TECNICO
+
+Timestamp: 2026-04-13 13:31:55
+Esito: Consistent
+Durata: 560.09s
+
+Triple base: 316031
+Triple inferite (pulite): 513435
+Expansion: 62.46%
+
+Classi: 332
+Individui: 28512
+Proprietà: 174
+Depth: 12
