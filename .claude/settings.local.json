@@ -12,7 +12,22 @@
       "Read(//c/Program Files/GitHub CLI/**)",
       "Read(//c/Users/alexd/AppData/Local/GitHubCLI/**)",
       "Bash(git credential *)",
-      "Bash(gh --version)"
+      "Bash(gh --version)",
+      "Bash(command -v gh)",
+      "Bash(powershell.exe -NoProfile -Command \"gh --version\")",
+      "Bash(curl -s --max-time 15 \"https://api.github.com/repos/Alexden28/Progetto_FLC-main/pulls?head=Alexden28:fix/ensure-inverse-datatype-guard&state=all\")",
+      "Bash(where gh.exe)",
+      "Bash(winget install *)",
+      "Bash(export PATH=\"/c/Program Files/GitHub CLI:$PATH\")",
+      "Bash(gh auth *)",
+      "Bash(gh pr *)",
+      "Bash(python -m py_compile kbonto.py)",
+      "Bash(where.exe java.exe)",
+      "Read(//c/Program Files/**)",
+      "Bash(python -m py_compile main.py)",
+      "Bash(nvidia-smi.exe)",
+      "Bash(git fetch *)",
+      "Bash(git switch *)"
     ]
   }
 }
