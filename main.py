@@ -16,6 +16,7 @@ rather than silent exit codes.
 from __future__ import annotations
 
 import os
+import re
 import subprocess
 import sys
 import time
@@ -68,6 +69,66 @@ def install_requirements() -> None:
         print(f"Warning: pip install returned {exc.returncode}")
 
 
+_JAVA_ROOTS_WINDOWS = (
+    r"C:\Program Files\Java",
+    r"C:\Program Files\Microsoft",
+    r"C:\Program Files\Eclipse Adoptium",
+    r"C:\Program Files\Eclipse Foundation",
+    r"C:\Program Files\Zulu",
+    r"C:\Program Files (x86)\Java",
+    r"C:\Program Files (x86)\Common Files\Oracle\Java\java8path",
+    r"C:\Program Files\Common Files\Oracle\Java\javapath",
+)
+_VERSION_RE = re.compile(r'version "(\d+)(?:\.(\d+))?')
+
+
+def _java_major(exe: str) -> int:
+    """Return the major version reported by `<exe> -version`, or -1 on failure.
+
+    Handles both modern (`"25.0.1"`) and legacy (`"1.8.0_321"`) version strings.
+    """
+    try:
+        output = subprocess.check_output(
+            [exe, "-version"], stderr=subprocess.STDOUT, timeout=5,
+        ).decode(errors="replace")
+    except (subprocess.SubprocessError, OSError):
+        return -1
+    match = _VERSION_RE.search(output)
+    if not match:
+        return -1
+    major = int(match.group(1))
+    if major == 1 and match.group(2):
+        major = int(match.group(2))  # 1.8 -> 8
+    return major
+
+
+def _find_windows_java() -> str:
+    """Pick the newest java.exe under common Windows JDK install roots.
+
+    Falls back to plain `"java"` (resolved against PATH) when nothing
+    discoverable matches; the reasoner step will then surface a clear
+    Java/Pellet error rather than a silent miss.
+    """
+    candidates: list[str] = []
+    for root in _JAVA_ROOTS_WINDOWS:
+        if not os.path.isdir(root):
+            continue
+        # Some roots ARE a JDK home (java8path/javapath); others CONTAIN
+        # multiple JDK homes side-by-side.
+        direct = os.path.join(root, "java.exe")
+        if os.path.isfile(direct):
+            candidates.append(direct)
+            continue
+        for entry in os.listdir(root):
+            exe = os.path.join(root, entry, "bin", "java.exe")
+            if os.path.isfile(exe):
+                candidates.append(exe)
+    if not candidates:
+        return "java"
+    candidates.sort(key=_java_major, reverse=True)
+    return candidates[0]
+
+
 def setup_java() -> None:
     if sys.platform == "darwin":
         try:
@@ -78,14 +139,7 @@ def setup_java() -> None:
         except (subprocess.CalledProcessError, FileNotFoundError):
             owlready2.JAVA_EXE = "java"
     else:
-        for candidate in (
-            r"C:\Program Files (x86)\Common Files\Oracle\Java\java8path\java.exe",
-            r"C:\Program Files\Common Files\Oracle\Java\javapath\java.exe",
-            "java",
-        ):
-            if candidate == "java" or os.path.exists(candidate):
-                owlready2.JAVA_EXE = candidate
-                break
+        owlready2.JAVA_EXE = _find_windows_java()
     owlready2.reasoning.JAVA_MEMORY = JAVA_MEMORY_MB
 
 

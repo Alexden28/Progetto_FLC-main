@@ -54,6 +54,10 @@ _PILLAR_KEYWORDS = (
 _SKIP_VALUES = {"undetermined", "unknown", "n/a", "nan"}
 _NON_ALNUM = re.compile(r"[^a-zA-Z0-9_]")
 _YEAR_RE = re.compile(r"\d{4}")
+# General Punctuation dashes (U+2010..U+2015) plus the Math Minus (U+2212).
+# The source spreadsheets contain non-breaking hyphens (U+2011) that pandas
+# refuses to parse as date separators; normalise them to ASCII first.
+_UNICODE_DASHES = re.compile(r"[‐-―−]")
 
 
 def clean_iri(text: str) -> str:
@@ -62,16 +66,25 @@ def clean_iri(text: str) -> str:
 
 
 def adapt_value_by_range(val_str: str, prop):
-    """Coerce `val_str` to the datatype suggested by `prop.range`."""
+    """Coerce `val_str` to the datatype suggested by `prop.range`.
+
+    Returns `None` when the value cannot be coerced (e.g. a malformed date
+    string). Callers must skip the assignment in that case rather than write
+    `None` into the property.
+    """
     p_range = prop.range
+    raw = _UNICODE_DASHES.sub("-", str(val_str))
     if int in p_range or any("integer" in str(r).lower() for r in p_range):
-        digits = re.sub(r"\D", "", str(val_str))
+        digits = re.sub(r"\D", "", raw)
         return int(digits[:4]) if digits else 0
     if datetime in p_range or any("datetime" in str(r).lower() for r in p_range):
-        if _YEAR_RE.fullmatch(str(val_str)):
-            return datetime(int(val_str), 1, 1)
-        return pd.to_datetime(val_str).to_pydatetime()
-    return str(val_str)
+        if _YEAR_RE.fullmatch(raw):
+            return datetime(int(raw), 1, 1)
+        try:
+            return pd.to_datetime(raw).to_pydatetime()
+        except (ValueError, TypeError, OverflowError):
+            return None
+    return raw
 
 
 def _ensure_domain_and_range(prop) -> None:
@@ -211,12 +224,29 @@ def run_validated_injection() -> None:
                         op = obj_props[obj_sims.argmax()]
                         if "hascve_id" not in op.name.lower():
                             target_cls = _pick_target_class(str(col), all_classes)
-                            target_node = target_cls(clean_iri(val_str))
-                            if not target_node.comment:
-                                target_node.comment.append(f"Entity representing {val_str}")
-                            relation = getattr(main_inst, op.python_name)
-                            if target_node not in relation:
-                                relation.append(target_node)
+                            iri_local = clean_iri(val_str)
+                            # Reuse an existing individual if one already lives
+                            # at this local IRI. Calling `target_cls(iri)` a
+                            # second time triggers owlready2's class fusion,
+                            # which can crash with "object layout differs"
+                            # when bases mix metaclass-generated UCO classes
+                            # (e.g. UCOThing) with plain ThingClass.
+                            # `clean_iri` truncates to 40 chars, so such
+                            # collisions are routine across 14k+ rows.
+                            target_node = onto[iri_local]
+                            if target_node is None:
+                                try:
+                                    target_node = target_cls(iri_local)
+                                except TypeError:
+                                    target_node = None
+                            if target_node is not None:
+                                if not target_node.comment:
+                                    target_node.comment.append(
+                                        f"Entity representing {val_str}"
+                                    )
+                                relation = getattr(main_inst, op.python_name)
+                                if target_node not in relation:
+                                    relation.append(target_node)
 
                     dat_sims = util.cos_sim(col_emb, dat_embs)[0]
                     if dat_sims.max() > DATA_PROPERTY_SIMILARITY:
@@ -225,12 +255,13 @@ def run_validated_injection() -> None:
                             dp = prop_year
                         if hasattr(main_inst, dp.python_name):
                             final_val = adapt_value_by_range(val_str, dp)
-                            prop_attr = getattr(main_inst, dp.python_name)
-                            if isinstance(prop_attr, list):
-                                if final_val not in prop_attr:
-                                    prop_attr.append(final_val)
-                            else:
-                                setattr(main_inst, dp.python_name, final_val)
+                            if final_val is not None:
+                                prop_attr = getattr(main_inst, dp.python_name)
+                                if isinstance(prop_attr, list):
+                                    if final_val not in prop_attr:
+                                        prop_attr.append(final_val)
+                                else:
+                                    setattr(main_inst, dp.python_name, final_val)
 
         onto.save(file=str(temp_nt), format="ntriples")
 
