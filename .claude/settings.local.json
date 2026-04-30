@@ -27,7 +27,23 @@
       "Bash(python -m py_compile main.py)",
       "Bash(nvidia-smi.exe)",
       "Bash(git fetch *)",
-      "Bash(git switch *)"
+      "Bash(git switch *)",
+      "Bash(npm root *)",
+      "Bash(ls \"$\\(npm root -g\\)/docx\")",
+      "Bash(npm install *)",
+      "Bash(node build_report.js)",
+      "Bash(NODE_PATH=\"C:\\\\\\\\Users\\\\\\\\alexd\\\\\\\\AppData\\\\\\\\Roaming\\\\\\\\npm\\\\\\\\node_modules\" node build_report.js)",
+      "Bash(python \"C:\\\\\\\\Users\\\\\\\\alexd\\\\\\\\AppData\\\\\\\\Roaming\\\\\\\\Claude\\\\\\\\local-agent-mode-sessions\\\\\\\\skills-plugin\\\\\\\\8f73c056-98bf-41b6-94a7-ade13310faf2\\\\\\\\efa89da0-125f-4f20-9079-fa74179670cd\\\\\\\\skills\\\\\\\\docx\\\\\\\\scripts\\\\\\\\office\\\\\\\\validate.py\" \"C:\\\\\\\\Users\\\\\\\\alexd\\\\\\\\Documents\\\\\\\\GitHub\\\\\\\\Progetto_FLC-main\\\\\\\\Report_Progetto_FLC.docx\")",
+      "Read(//c/Users/alexd/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/8f73c056-98bf-41b6-94a7-ade13310faf2/efa89da0-125f-4f20-9079-fa74179670cd/skills/docx/**)",
+      "Read(//c/Users/alexd/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/**)",
+      "Bash(python /c/Users/alexd/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/8f73c056-98bf-41b6-94a7-ade13310faf2/efa89da0-125f-4f20-9079-fa74179670cd/skills/docx/scripts/office/validate.py /c/Users/alexd/Documents/GitHub/Progetto_FLC-main/Report_Progetto_FLC.docx)",
+      "Bash(cp \"/c/Users/alexd/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/8f73c056-98bf-41b6-94a7-ade13310faf2/efa89da0-125f-4f20-9079-fa74179670cd/skills/docx/scripts/office/validate.py\" /tmp/validate.py)",
+      "Bash(python /tmp/validate.py \"/c/Users/alexd/Documents/GitHub/Progetto_FLC-main/Report_Progetto_FLC.docx\")",
+      "Bash(ls -la \"C:\\\\\\\\Users\\\\\\\\alexd\\\\\\\\Documents\\\\\\\\GitHub\\\\\\\\Progetto_FLC-main\\\\\\\\Report_Progetto_FLC.docx\")",
+      "Bash(cp /c/Users/alexd/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/8f73c056-98bf-41b6-94a7-ade13310faf2/efa89da0-125f-4f20-9079-fa74179670cd/skills/docx/scripts/office/soffice.py /tmp/soffice.py)",
+      "Bash(python /tmp/soffice.py --headless --convert-to pdf \"/c/Users/alexd/Documents/GitHub/Progetto_FLC-main/Report_Progetto_FLC.docx\" --outdir /c/Users/alexd/Documents/GitHub/Progetto_FLC-main/.report_build)",
+      "Bash(where.exe soffice.exe)",
+      "Bash(NODE_PATH=\"C:\\\\\\\\Users\\\\\\\\alexd\\\\\\\\AppData\\\\\\\\Roaming\\\\\\\\npm\\\\\\\\node_modules\" node build_sections.js)"
     ]
   }
 }

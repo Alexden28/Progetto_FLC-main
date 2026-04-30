@@ -1,551 +1,856 @@
 COMPETENCY QUESTIONS REPORT
-Timestamp: 2026-04-25 20:08:20
-Source graph: C:\Users\alexd\Documents\GitHub\Progetto_FLC-main\UCO_INFERRED.ttl
+Timestamp: 2026-04-30 17:18:41
+Ontology: UCO_INFERRED.ttl
+Total triples: 513435
 
-SOMMARIO
-Totale CQ eseguite      : 20
-Informative (>=1 riga)  : 19  (rich >= 5: 18)
-Eseguite ma vuote       : 1
-Errore di esecuzione    : 0
+============================================================
+QUERY CLASSIFICATION SUMMARY
+============================================================
+Descriptive Queries: 3
+Analytical Queries: 11
+Structural Queries: 4
+Comparative Queries: 7
+Effective Queries: 10
+Total Queries: 35
 
-VERDETTO PER QUERY
-  CQ1 INFORMATIVE (RICH) : 50 righe
-  CQ2 INFORMATIVE (RICH) : 5 righe
-  CQ3 INFORMATIVE (RICH) : 20 righe
-  CQ4 INFORMATIVE (RICH) : 20 righe
-  CQ5 INFORMATIVE (RICH) : 22 righe
-  CQ6 INFORMATIVE (RICH) : 20 righe
-  CQ7 INFORMATIVE (RICH) : 390 righe
-  CQ8 INFORMATIVE (RICH) : 20 righe
-  CQ9 INFORMATIVE (SPARSE) : 1 righe
-  CQ10 INFORMATIVE (RICH) : 20 righe
-  CQ11 INFORMATIVE (RICH) : 12 righe
-  CQ12 INFORMATIVE (RICH) : 167 righe
-  CQ13 INFORMATIVE (RICH) : 14 righe
-  CQ14 INFORMATIVE (RICH) : 190 righe
-  CQ15 INFORMATIVE (RICH) : 72 righe
-  CQ16 INFORMATIVE (RICH) : 20 righe
-  CQ17 EXECUTED-EMPTY : 0 righe - la KB non contiene ancora dati per questo pattern
-  CQ18 INFORMATIVE (RICH) : 100 righe
-  CQ19 INFORMATIVE (RICH) : 21 righe
-  CQ20 INFORMATIVE (RICH) : 20 righe
+============================================================
+DETAILED RESULTS
+============================================================
 
-QUERY CQ1: Estrazione Incidenti-Date-Attori
-Intento   : Per ogni incidente datato, quale tipo di attore risulta associato?
-Atteso    : Righe incidente-data con valore di tipoAttore quando noto.
-Stato     : CQ1 INFORMATIVE (RICH) : 50 righe
-Commento  : Per ogni incidente datato, quale tipo di attore risulta associato? - la KB risponde con 50 righe, classificate come 'rich'.
-Campi     : incidente | data | tipoAttore
-  - 217427ccefeef93a | 2024-03-06T00:00:00 | None
-  - 3d47b3eb1504b854 | 2024-03-06T00:00:00 | Criminal
-  - 8ad62aff29887e75 | 2024-03-06T00:00:00 | Criminal
-  - d360983bca018d8c | 2024-03-06T00:00:00 | Criminal
-  - 0d0fe43b1659ad47 | 2024-03-06T00:00:00 | Hacktivist
-  - 61a881aebca6435c | 2024-03-06T00:00:00 | Criminal
-  - c25a87e8cf43fa59 | 2024-03-06T00:00:00 | Criminal
-  - 25d303249d037fe0 | 2023-05-01T00:00:00 | None
-  - d40eb091f19c7083 | 2023-05-01T00:00:00 | Criminal
-  - 6a2d9632788b91d6 | 2023-05-01T00:00:00 | Criminal
-  - 9cf1504a01a49c8b | 2023-05-01T00:00:00 | Criminal
-  - a3556cdd7662a023 | 2023-05-01T00:00:00 | Criminal
-  - a6a71ba92242d319 | 2023-05-01T00:00:00 | Criminal
-  - abe5315b4da71859 | 2023-05-01T00:00:00 | Criminal
-  - 4a049cf7989dc5ab | 2023-05-01T00:00:00 | Criminal
-  - 72910e26f4526e38 | 2023-05-01T00:00:00 | Nation-State
-  - 80bf3d7e4615d8f5 | 2023-05-01T00:00:00 | Criminal
-  - cb324791a108a3c0 | 2023-05-01T00:00:00 | Nation-State
-  - 3accedc2e2c131be | 2022-03-30T00:00:00 | Criminal
-  - 1c9278ac8a8f121b | 2022-03-30T00:00:00 | Criminal
-  ... (+30 righe)
+QUERY: CQ01_Descriptive - Extraction of Incidents-Dates-Actors
+--------------------------------------------------
+Status: INFORMATIVE (50 results) - Time: 0.1325s
 
-------------------------------------------------------------
+incidente | data | tipoAttore
+------------------------------
+217427ccefeef93a | 2024-03-06T00:00:00 | None
+3d47b3eb1504b854 | 2024-03-06T00:00:00 | Criminal
+8ad62aff29887e75 | 2024-03-06T00:00:00 | Criminal
+d360983bca018d8c | 2024-03-06T00:00:00 | Criminal
+0d0fe43b1659ad47 | 2024-03-06T00:00:00 | Hacktivist
+61a881aebca6435c | 2024-03-06T00:00:00 | Criminal
+c25a87e8cf43fa59 | 2024-03-06T00:00:00 | Criminal
+25d303249d037fe0 | 2023-05-01T00:00:00 | None
+d40eb091f19c7083 | 2023-05-01T00:00:00 | Criminal
+6a2d9632788b91d6 | 2023-05-01T00:00:00 | Criminal
+9cf1504a01a49c8b | 2023-05-01T00:00:00 | Criminal
+a3556cdd7662a023 | 2023-05-01T00:00:00 | Criminal
+a6a71ba92242d319 | 2023-05-01T00:00:00 | Criminal
+abe5315b4da71859 | 2023-05-01T00:00:00 | Criminal
+4a049cf7989dc5ab | 2023-05-01T00:00:00 | Criminal
+72910e26f4526e38 | 2023-05-01T00:00:00 | Nation-State
+80bf3d7e4615d8f5 | 2023-05-01T00:00:00 | Criminal
+cb324791a108a3c0 | 2023-05-01T00:00:00 | Nation-State
+3accedc2e2c131be | 2022-03-30T00:00:00 | Criminal
+1c9278ac8a8f121b | 2022-03-30T00:00:00 | Criminal
+... and 30 more rows
 
-QUERY CQ2: Analisi quantitativa per Attore
-Intento   : Qual e' la distribuzione degli incidenti per tipo di attore?
-Atteso    : Classifica aggregata tipo-attore -> conteggio.
-Stato     : CQ2 INFORMATIVE (RICH) : 5 righe
-Commento  : Qual e' la distribuzione degli incidenti per tipo di attore? - la KB risponde con 5 righe, classificate come 'rich'.
-Campi     : tipoAttore | n
-  - Criminal | 11218
-  - Hacktivist | 2010
-  - Nation-State | 907
-  - Hobbyist | 194
-  - Terrorist | 30
+==================================================
 
-------------------------------------------------------------
+QUERY: CQ02_Analytical - Quantitative Analysis by Actor Type
+--------------------------------------------------
+Status: INFORMATIVE (5 results) - Time: 0.2162s
 
-QUERY CQ3: Correlazione Tipo-Data
-Intento   : Quali tipi di evento sono stati osservati in quali date?
-Atteso    : Incrocio incidente-tipo-data.
-Stato     : CQ3 INFORMATIVE (RICH) : 20 righe
-Commento  : Quali tipi di evento sono stati osservati in quali date? - la KB risponde con 20 righe, classificate come 'rich'.
-Campi     : incidente | tipo | data
-  - 217427ccefeef93a | Disruptive | 2024-03-06T00:00:00
-  - 3d47b3eb1504b854 | Disruptive | 2024-03-06T00:00:00
-  - 8ad62aff29887e75 | Exploitive | 2024-03-06T00:00:00
-  - d360983bca018d8c | Mixed | 2024-03-06T00:00:00
-  - 0d0fe43b1659ad47 | Disruptive | 2024-03-06T00:00:00
-  - 61a881aebca6435c | Exploitive | 2024-03-06T00:00:00
-  - c25a87e8cf43fa59 | Exploitive | 2024-03-06T00:00:00
-  - d40eb091f19c7083 | Exploitive | 2023-05-01T00:00:00
-  - 6a2d9632788b91d6 | Exploitive | 2023-05-01T00:00:00
-  - 9cf1504a01a49c8b | Exploitive | 2023-05-01T00:00:00
-  - a3556cdd7662a023 | Exploitive | 2023-05-01T00:00:00
-  - a6a71ba92242d319 | Exploitive | 2023-05-01T00:00:00
-  - abe5315b4da71859 | Exploitive | 2023-05-01T00:00:00
-  - 4a049cf7989dc5ab | Mixed | 2023-05-01T00:00:00
-  - 72910e26f4526e38 | Exploitive | 2023-05-01T00:00:00
-  - 80bf3d7e4615d8f5 | Mixed | 2023-05-01T00:00:00
-  - cb324791a108a3c0 | Exploitive | 2023-05-01T00:00:00
-  - 1c9278ac8a8f121b | Exploitive | 2022-03-30T00:00:00
-  - 89f3fe1f19c03d01 | Mixed | 2022-03-30T00:00:00
-  - b19eb94612d8c3e7 | Mixed | 2022-03-30T00:00:00
+tipoAttore | n
+------------------------------
+Criminal | 11218
+Hacktivist | 2010
+Nation-State | 907
+Hobbyist | 194
+Terrorist | 30
 
-------------------------------------------------------------
+==================================================
 
-QUERY CQ4: Mapping Organizzazione-Industria
-Intento   : Quale settore industriale e' stato colpito per ciascuna organizzazione vittima?
-Atteso    : Coppie organizzazione-industria.
-Stato     : CQ4 INFORMATIVE (RICH) : 20 righe
-Commento  : Quale settore industriale e' stato colpito per ciascuna organizzazione vittima? - la KB risponde con 20 righe, classificate come 'rich'.
-Campi     : org | ind
-  - Russia | Public Administration
-  - New Zealand Government | Public Administration
-  - Tewkesbury Borough Council | Public Administration
-  - Relevant personnel of the European Parliament | Public Administration
-  - Election Comission | Public Administration
-  - insights.london.nhs.uk | Public Administration
-  - European Parliament | Public Administration
-  - South Yorkshire Police | Public Administration
-  - Ukranian state organizations | Public Administration
-  - Prison in south Thailand | Public Administration
-  - Philippine Statistics Authority | Public Administration
-  - Vladislav Surkov | Public Administration
-  - The International Criminal Court (ICC) | Public Administration
-  - City of Winston-Salem | Public Administration
-  - UK National Crime Agency | Public Administration
-  - civilsupplieskerala.gov (Kerala government's civil supplies department) | Public Administration
-  - e-Devlet | Public Administration
-  - India Ministry of Health & Family Welfare | Public Administration
-  - Instituto de la Funcion Registral del Estado Mexico (IFREM) | Public Administration
-  - Spanish Ministry of Labor and Social Economy (MITES) | Public Administration
+QUERY: CQ03_Descriptive - Correlation between Type and Date
+--------------------------------------------------
+Status: INFORMATIVE (20 results) - Time: 0.0055s
 
-------------------------------------------------------------
+incidente | tipo | data
+------------------------------
+217427ccefeef93a | Disruptive | 2024-03-06T00:00:00
+5e281e41787238d2 | Disruptive | 2024-09-27T00:00:00
+0278a76036af8f8f | Disruptive | 2016-05-10T00:00:00
+045b51fcc5d640d4 | Disruptive | 2015-07-21T00:00:00
+055ec32bc23764d5 | Disruptive | 2015-08-19T00:00:00
+0c67314bcfb15a0b | Disruptive | 2022-07-26T00:00:00
+0dacdc690228af80 | Disruptive | 2018-04-17T00:00:00
+0f6a0971c35269b2 | Disruptive | 2023-08-14T00:00:00
+1389e2776dea37ba | Disruptive | 2014-01-03T00:00:00
+149ed806d5daa9ba | Disruptive | 2016-06-29T00:00:00
+18f4e090b3c53fda | Disruptive | 2016-06-26T00:00:00
+19be30d2bd2df859 | Disruptive | 2024-10-02T00:00:00
+1ad1235226a4ef58 | Disruptive | 2021-10-26T00:00:00
+1f56c3e510f3c5af | Disruptive | 2016-06-21T00:00:00
+241dc38e0fhu5qmp | Disruptive | 2025-01-21T00:00:00
+24a5ece841a2f93e | Disruptive | 2016-12-17T00:00:00
+2f056a5071owsmu5 | Disruptive | 2025-01-27T00:00:00
+353797edd329cff7 | Disruptive | 2018-04-23T00:00:00
+396f04aafb5685f0 | Disruptive | 2015-02-24T00:00:00
+3e8a2558e16b6a91 | Disruptive | 2016-12-09T00:00:00
 
-QUERY CQ5: Classifica Settori per Volume
-Intento   : Quali settori risultano maggiormente bersagliati?
-Atteso    : Aggregato industria -> conteggio incidenti, ordinato discendente.
-Stato     : CQ5 INFORMATIVE (RICH) : 22 righe
-Commento  : Quali settori risultano maggiormente bersagliati? - la KB risponde con 22 righe, classificate come 'rich'.
-Campi     : industria | totale
-  - Public Administration | 2812
-  - Health Care and Social Assistance | 2002
-  - Information | 1517
-  - Finance and Insurance | 1429
-  - Educational Services | 1377
-  - Professional, Scientific, and Technical Services | 1243
-  - Other Services (except Public Administration) | 941
-  - Manufacturing | 690
-  - Retail Trade | 502
-  - Transportation and Warehousing | 466
-  - Arts, Entertainment, and Recreation | 447
-  - Accommodation and Food Services | 312
-  - Utilities | 286
-  - Administrative and Support and Waste Management and Remediation Services | 193
-  - Wholesale Trade | 109
-  - Real Estate and Rental and Leasing | 84
-  - Mining, Quarrying, and Oil and Gas Extraction | 77
-  - Construction | 50
-  - Management of Companies and Enterprises | 20
-  - Agriculture, Forestry, Fishing and Hunting | 18
-  ... (+2 righe)
+==================================================
 
-------------------------------------------------------------
+QUERY: CQ04_Descriptive - Organization-Industry Mapping
+--------------------------------------------------
+Status: INFORMATIVE (20 results) - Time: 0.0055s
 
-QUERY CQ6: Analisi Temporale post-2020
-Intento   : Quali incidenti sono stati registrati dal 2020 in poi?
-Atteso    : Elenco incidente-data filtrato temporalmente.
-Stato     : CQ6 INFORMATIVE (RICH) : 20 righe
-Commento  : Quali incidenti sono stati registrati dal 2020 in poi? - la KB risponde con 20 righe, classificate come 'rich'.
-Campi     : incidente | data
-  - 599ad49561d10617 | 2020-01-02T00:00:00
-  - 9b98cd2a278cb17d | 2020-01-02T00:00:00
-  - 8d0b6d5c49125517 | 2020-01-03T00:00:00
-  - 69a95b3427def7fa | 2020-01-03T00:00:00
-  - 8423cfd76ab13be7 | 2020-01-03T00:00:00
-  - b3944e6b3438f48f | 2020-01-03T00:00:00
-  - 938fc0690d3c056a | 2020-01-04T00:00:00
-  - ceeb0cfca194e0c4 | 2020-01-04T00:00:00
-  - 0ebae5f7c93ece67 | 2020-01-04T00:00:00
-  - 3ce44b9ddc8d6cdd | 2020-01-04T00:00:00
-  - c8b0cbe90bf73466 | 2020-01-06T00:00:00
-  - 184449a2a63c9a32 | 2020-01-06T00:00:00
-  - 37866b9889128a82 | 2020-01-06T00:00:00
-  - 75517b4a83ae600f | 2020-01-06T00:00:00
-  - b421ab6ee6f5a86f | 2020-01-06T00:00:00
-  - e5f7ed30ed08bd43 | 2020-01-06T00:00:00
-  - 523471725f2abe7e | 2020-01-06T00:00:00
-  - de4ab97c3b72c268 | 2020-01-07T00:00:00
-  - 0f0712d1067367fe | 2020-01-07T00:00:00
-  - bd45325af51455e9 | 2020-01-07T00:00:00
+org | ind
+------------------------------
+Russia | Public Administration
+Western Sydney University | Educational Services
+Western Sydney University | Educational Services
+Doctor Web | Professional, Scientific, and Technical Services
+New Zealand Government | Public Administration
+AFP (Agence France-Presse) | Information
+Tewkesbury Borough Council | Public Administration
+Relevant personnel of the European Parliament | Public Administration
+Banham Poultry | Accommodation and Food Services
+Niconico | Information
+5-cont.com | Administrative and Support and Waste Management and Remediation Services
+Anglesey Secondary Schools | Educational Services
+mariavision.com | Other Services (except Public Administration)
+Election Comission | Public Administration
+Utkal University (utkaluniversity.ac.in) | Educational Services
+Bring Me the Horizon Webpage | Arts, Entertainment, and Recreation
+Habana Labs | Professional, Scientific, and Technical Services
+furydown.com | Information
+chromeplay.com | Information
+mumsnet | Information
 
-------------------------------------------------------------
+==================================================
 
-QUERY CQ7: Distribuzione Sottotipi per Settore
-Intento   : Quali sottotipi di evento prevalgono in ciascun settore?
-Atteso    : Aggregato industria-sottotipo -> conteggio.
-Stato     : CQ7 INFORMATIVE (RICH) : 390 righe
-Commento  : Quali sottotipi di evento prevalgono in ciascun settore? - la KB risponde con 390 righe, classificate come 'rich'.
-Campi     : industria | sottotipo | n
-  - Accommodation and Food Services | Exploitation of Application Server | 107
-  - Accommodation and Food Services | Exploitation of Sensors | 80
-  - Accommodation and Food Services | Data Attack | 46
-  - Accommodation and Food Services | Exploitation of End Hosts | 20
-  - Accommodation and Food Services | Data Attack,Exploitation of Application Server | 10
-  - Accommodation and Food Services | Message Manipulation | 9
-  - Accommodation and Food Services | External Denial of Service | 4
-  - Accommodation and Food Services | Internal Denial of Service | 4
-  - Accommodation and Food Services | Exploitation of Data in Transit | 3
-  - Accommodation and Food Services | Exploitation of Network Infrastructure | 2
-  - Accommodation and Food Services | Exploitation of Application Server,Exploitation of Sensors | 2
-  - Accommodation and Food Services | Exploitation of Application Server,Exploitation of End Hosts | 1
-  - Accommodation and Food Services | Message Manipulation,Exploitation of Application Server | 1
-  - Accommodation and Food Services | Data Attack,External Denial of Service | 1
-  - Accommodation and Food Services | Internal Denial of Service,Exploitation of Application Server | 1
-  - Accommodation and Food Services | Data Attack,Undetermined | 1
-  - Accommodation and Food Services | Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Sensors | 1
-  - Accommodation and Food Services | Data Attack,Exploitation of Application Server,Message Manipulation | 1
-  - Administrative and Support and Waste Management and Remediation Services | Exploitation of Application Server | 91
-  - Administrative and Support and Waste Management and Remediation Services | Data Attack | 35
-  ... (+370 righe)
+QUERY: CQ05_Analytical - Industry Ranking by Volume
+--------------------------------------------------
+Status: INFORMATIVE (22 results) - Time: 0.2013s
 
-------------------------------------------------------------
+industria | totale
+------------------------------
+Public Administration | 2812
+Health Care and Social Assistance | 2002
+Information | 1517
+Finance and Insurance | 1429
+Educational Services | 1377
+Professional, Scientific, and Technical Services | 1243
+Other Services (except Public Administration) | 941
+Manufacturing | 690
+Retail Trade | 502
+Transportation and Warehousing | 466
+Arts, Entertainment, and Recreation | 447
+Accommodation and Food Services | 312
+Utilities | 286
+Administrative and Support and Waste Management and Remediation Services | 193
+Wholesale Trade | 109
+Real Estate and Rental and Leasing | 84
+Mining, Quarrying, and Oil and Gas Extraction | 77
+Construction | 50
+Management of Companies and Enterprises | 20
+Agriculture, Forestry, Fishing and Hunting | 18
+... and 2 more rows
 
-QUERY CQ8: Evoluzione TBox (Nuove Classi)
-Intento   : Quali nuove classi sono state aggiunte sotto classi padre non standard?
-Atteso    : Coppie subclasse-superclasse ristrette al namespace UCO.
-Stato     : CQ8 INFORMATIVE (RICH) : 20 righe
-Commento  : Quali nuove classi sono state aggiunte sotto classi padre non standard? - la KB risponde con 20 righe, classificate come 'rich'.
-Campi     : classe | super
-  - KillChain | UCOThing
-  - CCE | UCOThing
-  - CVE | UCOThing
-  - CVSSScoreType | UCOThing
-  - KillChainPhase | UCOThing
-  - MeansOrConsequence | UCOThing
-  - OSVDB | UCOThing
-  - OtherTechnicalTerms | UCOThing
-  - TemporalGroup | UCOThing
-  - File | UCOThing
-  - Hardware | UCOThing
-  - Network | UCOThing
-  - Account | UCOThing
-  - Source | UCOThing
-  - TTP | UCOThing
-  - Observable | UCOThing
-  - BaseGroup | UCOThing
-  - NetworkState | UCOThing
-  - Product | UCOThing
-  - EnvironmentalGroup | UCOThing
+==================================================
 
-------------------------------------------------------------
+QUERY: CQ06_Analytical - Temporal Analysis Post-2020
+--------------------------------------------------
+Status: INFORMATIVE (20 results) - Time: 1.1892s
 
-QUERY CQ9: Rilevamento Record Incompleti
-Intento   : Quanti incidenti sono privi di organizzazione vittima?
-Atteso    : Conteggio unico incidenti con data ma senza organizzazione.
-Stato     : CQ9 INFORMATIVE (SPARSE) : 1 righe
-Commento  : Quanti incidenti sono privi di organizzazione vittima? - la KB risponde con 1 righe, classificate come 'sparse'.
-Campi     : incompleti
-  - 60
+incidente | data
+------------------------------
+599ad49561d10617 | 2020-01-02T00:00:00
+9b98cd2a278cb17d | 2020-01-02T00:00:00
+8d0b6d5c49125517 | 2020-01-03T00:00:00
+69a95b3427def7fa | 2020-01-03T00:00:00
+8423cfd76ab13be7 | 2020-01-03T00:00:00
+b3944e6b3438f48f | 2020-01-03T00:00:00
+938fc0690d3c056a | 2020-01-04T00:00:00
+ceeb0cfca194e0c4 | 2020-01-04T00:00:00
+0ebae5f7c93ece67 | 2020-01-04T00:00:00
+3ce44b9ddc8d6cdd | 2020-01-04T00:00:00
+c8b0cbe90bf73466 | 2020-01-06T00:00:00
+184449a2a63c9a32 | 2020-01-06T00:00:00
+37866b9889128a82 | 2020-01-06T00:00:00
+75517b4a83ae600f | 2020-01-06T00:00:00
+b421ab6ee6f5a86f | 2020-01-06T00:00:00
+e5f7ed30ed08bd43 | 2020-01-06T00:00:00
+523471725f2abe7e | 2020-01-06T00:00:00
+de4ab97c3b72c268 | 2020-01-07T00:00:00
+0f0712d1067367fe | 2020-01-07T00:00:00
+bd45325af51455e9 | 2020-01-07T00:00:00
 
-------------------------------------------------------------
+==================================================
 
-QUERY CQ10: Validazione Relazioni isType_of
-Intento   : Quali incidenti vengono classificati tramite la relazione inversa isType_of?
-Atteso    : Coppie incidente-tipo derivanti dall'inversa generata.
-Stato     : CQ10 INFORMATIVE (RICH) : 20 righe
-Commento  : Quali incidenti vengono classificati tramite la relazione inversa isType_of? - la KB risponde con 20 righe, classificate come 'rich'.
-Campi     : incidente | tipo
-  - 3accedc2e2c131be | Criminal
-  - 00ee499d2ad3b032 | Criminal
-  - 020788a581603eab | Criminal
-  - 09be498fb83605a6 | Criminal
-  - 09d6059247392b03 | Criminal
-  - 0f6a0971c35269b2 | Criminal
-  - 147caea9a670434b | Criminal
-  - 1ad1235226a4ef58 | Criminal
-  - 1bdee307a1f99169 | Criminal
-  - 281b5b9f6b86dca9 | Criminal
-  - 2e1c7efeb5c5604a | Criminal
-  - 2e1eed769902543d | Criminal
-  - 374876442773a011 | Criminal
-  - 3f1bc38f00c02b6e | Criminal
-  - 419768cc4fb043d9 | Criminal
-  - 45450e2fb405b78c | Criminal
-  - 4ce79b21f58a8885 | Criminal
-  - 4ec8910a49c84edd | Criminal
-  - 4ff6d1f8c43b3af1 | Criminal
-  - 505fdcaca0ed1597 | Criminal
+QUERY: CQ07_Analytical - Subtype Distribution by Industry
+--------------------------------------------------
+Status: INFORMATIVE (390 results) - Time: 1.1384s
 
-------------------------------------------------------------
+industria | sottotipo | n
+------------------------------
+Accommodation and Food Services | Exploitation of Application Server | 107
+Accommodation and Food Services | Exploitation of Sensors | 80
+Accommodation and Food Services | Data Attack | 46
+Accommodation and Food Services | Exploitation of End Hosts | 20
+Accommodation and Food Services | Data Attack,Exploitation of Application Server | 10
+Accommodation and Food Services | Message Manipulation | 9
+Accommodation and Food Services | Internal Denial of Service | 4
+Accommodation and Food Services | External Denial of Service | 4
+Accommodation and Food Services | Exploitation of Data in Transit | 3
+Accommodation and Food Services | Exploitation of Network Infrastructure | 2
+Accommodation and Food Services | Exploitation of Application Server,Exploitation of Sensors | 2
+Accommodation and Food Services | Data Attack,Undetermined | 1
+Accommodation and Food Services | Internal Denial of Service,Exploitation of Application Server | 1
+Accommodation and Food Services | Message Manipulation,Exploitation of Application Server | 1
+Accommodation and Food Services | Exploitation of Application Server,Exploitation of End Hosts | 1
+Accommodation and Food Services | Data Attack,External Denial of Service | 1
+Accommodation and Food Services | Exploitation of Application Server,Exploitation of End Hosts,Exploitation of Sensors | 1
+Accommodation and Food Services | Data Attack,Exploitation of Application Server,Message Manipulation | 1
+Administrative and Support and Waste Management and Remediation Services | Exploitation of Application Server | 91
+Administrative and Support and Waste Management and Remediation Services | Data Attack | 35
+... and 370 more rows
 
-QUERY CQ11: Trend Mensile degli Attacchi
-Intento   : Come si distribuiscono gli attacchi nei mesi dell'anno?
-Atteso    : Aggregato mese -> conteggio.
-Stato     : CQ11 INFORMATIVE (RICH) : 12 righe
-Commento  : Come si distribuiscono gli attacchi nei mesi dell'anno? - la KB risponde con 12 righe, classificate come 'rich'.
-Campi     : mese | n
-  - 1 | 1477
-  - 2 | 1127
-  - 3 | 1299
-  - 4 | 1155
-  - 5 | 1107
-  - 6 | 1186
-  - 7 | 1255
-  - 8 | 1368
-  - 9 | 1240
-  - 10 | 1291
-  - 11 | 1229
-  - 12 | 1112
+==================================================
 
-------------------------------------------------------------
+QUERY: CQ08_Structural - TBox Evolution - New Classes
+--------------------------------------------------
+Status: EXECUTED (No results returned) - Time: 0.0090s
+Result Table: [Empty]
 
-QUERY CQ12: Analisi Geografica degli Incidenti
-Intento   : Da quali paesi provengono gli incidenti?
-Atteso    : Aggregato paese -> conteggio, discendente.
-Stato     : CQ12 INFORMATIVE (RICH) : 167 righe
-Commento  : Da quali paesi provengono gli incidenti? - la KB risponde con 167 righe, classificate come 'rich'.
-Campi     : paese | n
-  - United States of America | 7141
-  - United Kingdom of Great Britain and Northern Ireland | 794
-  - Italy | 440
-  - Russian Federation | 432
-  - Ukraine | 414
-  - Canada | 383
-  - India | 338
-  - France | 284
-  - Australia | 269
-  - Germany | 260
-  - Israel | 208
-  - Japan | 177
-  - China | 163
-  - Brazil | 146
-  - Poland | 137
-  - Spain | 115
-  - Netherlands | 110
-  - Korea (the Republic of) | 86
-  - Switzerland | 85
-  - Pakistan | 84
-  ... (+147 righe)
+==================================================
 
-------------------------------------------------------------
+QUERY: CQ09_Analytical - Detection of Incomplete Records
+--------------------------------------------------
+Status: INFORMATIVE (1 results) - Time: 0.0079s
 
-QUERY CQ13: Correlazione Attore-Tipo Attacco
-Intento   : Quali tipi di attacco sono preferiti da ciascun tipo di attore?
-Atteso    : Aggregato attore-tipo -> conteggio.
-Stato     : CQ13 INFORMATIVE (RICH) : 14 righe
-Commento  : Quali tipi di attacco sono preferiti da ciascun tipo di attore? - la KB risponde con 14 righe, classificate come 'rich'.
-Campi     : tipoAttore | tipoAttacco | n
-  - Criminal | Exploitive | 6015
-  - Criminal | Disruptive | 2547
-  - Criminal | Mixed | 2485
-  - Hacktivist | Disruptive | 1469
-  - Nation-State | Exploitive | 575
-  - Hacktivist | Exploitive | 454
-  - Nation-State | Disruptive | 285
-  - Hobbyist | Disruptive | 142
-  - Hacktivist | Mixed | 79
-  - Hobbyist | Exploitive | 48
-  - Nation-State | Mixed | 40
-  - Terrorist | Exploitive | 25
-  - Terrorist | Disruptive | 5
-  - Hobbyist | Mixed | 4
+incompleti
+------------------------------
+60
 
-------------------------------------------------------------
+==================================================
 
-QUERY CQ14: Rilevamento Sottoclassi Senza Istanze
-Intento   : Quali classi UCO non hanno ancora individui associati?
-Atteso    : Lista classi popolabili ma vuote.
-Stato     : CQ14 INFORMATIVE (RICH) : 190 righe
-Commento  : Quali classi UCO non hanno ancora individui associati? - la KB risponde con 190 righe, classificate come 'rich'.
-Campi     : classe
-  - AbleAccess
-  - AccessBreach
-  - AccessService
-  - AccessSystem
-  - AccountEmployee
-  - AccountGroup
-  - AccountInformation
-  - AccountUser
-  - ActorSystem
-  - ActorVictim
-  - AddressData
-  - AddressEmail
-  - AddressName
-  - AddressNumber
-  - AmongVictim
-  - AnonymousCollective
-  - AttackAttacker
-  - AttackBreach
-  - AttackComputer
-  - AttackCyber
-  ... (+170 righe)
+QUERY: CQ10_Structural - Validation of isType_of Relations
+--------------------------------------------------
+Status: INFORMATIVE (20 results) - Time: 0.5668s
 
-------------------------------------------------------------
+incidente | tipo
+------------------------------
+3accedc2e2c131be | Criminal
+00ee499d2ad3b032 | Criminal
+020788a581603eab | Criminal
+09be498fb83605a6 | Criminal
+09d6059247392b03 | Criminal
+0f6a0971c35269b2 | Criminal
+147caea9a670434b | Criminal
+1ad1235226a4ef58 | Criminal
+1bdee307a1f99169 | Criminal
+281b5b9f6b86dca9 | Criminal
+2e1c7efeb5c5604a | Criminal
+2e1eed769902543d | Criminal
+374876442773a011 | Criminal
+3f1bc38f00c02b6e | Criminal
+419768cc4fb043d9 | Criminal
+45450e2fb405b78c | Criminal
+4ce79b21f58a8885 | Criminal
+4ec8910a49c84edd | Criminal
+4ff6d1f8c43b3af1 | Criminal
+505fdcaca0ed1597 | Criminal
 
-QUERY CQ15: Analisi delle Motivazioni prevalenti
-Intento   : Quali sottotipi di evento risultano piu' frequenti?
-Atteso    : Aggregato sottotipo -> conteggio.
-Stato     : CQ15 INFORMATIVE (RICH) : 72 righe
-Commento  : Quali sottotipi di evento risultano piu' frequenti? - la KB risponde con 72 righe, classificate come 'rich'.
-Campi     : sottotipo | tot
-  - Exploitation of Application Server | 5138
-  - Data Attack | 2788
-  - External Denial of Service | 1584
-  - Exploitation of End Hosts | 1267
-  - Message Manipulation | 1159
-  - Data Attack,Exploitation of Application Server | 770
-  - Exploitation of Application Server,Exploitation of End Hosts | 316
-  - Exploitation of Sensors | 172
-  - Message Manipulation,Exploitation of Application Server | 89
-  - Exploitation of Network Infrastructure | 78
-  - Data Attack,External Denial of Service | 77
-  - Internal Denial of Service | 72
-  - Physical Attack | 67
-  - Data Attack,Undetermined | 60
-  - Exploitation of Data in Transit | 38
-  - Message Manipulation,External Denial of Service | 29
-  - External Denial of Service,Exploitation of Application Server | 17
-  - External Denial of Service,Internal Denial of Service | 15
-  - Message Manipulation,Exploitation of End Hosts | 14
-  - Data Attack,Exploitation of End Hosts | 14
-  ... (+52 righe)
+==================================================
 
-------------------------------------------------------------
+QUERY: CQ11_Analytical - Monthly Attack Trends
+--------------------------------------------------
+Status: INFORMATIVE (12 results) - Time: 0.2111s
 
-QUERY CQ16: Catena Attore -> Incidente -> Tipo
-Intento   : Come si collegano attore, tipo di attacco e settore bersaglio?
-Atteso    : Tuple attore-incidente-tipo-industria.
-Stato     : CQ16 INFORMATIVE (RICH) : 20 righe
-Commento  : Come si collegano attore, tipo di attacco e settore bersaglio? - la KB risponde con 20 righe, classificate come 'rich'.
-Campi     : tipoAttore | incidente | tipoAttacco | industria
-  - Criminal | 020788a581603eab | Exploitive | Public Administration
-  - Criminal | 0f6a0971c35269b2 | Disruptive | Finance and Insurance
-  - Criminal | 147caea9a670434b | Exploitive | Retail Trade
-  - Criminal | 1ad1235226a4ef58 | Disruptive | Utilities
-  - Criminal | 419768cc4fb043d9 | Exploitive | Public Administration
-  - Criminal | 45450e2fb405b78c | Exploitive | Finance and Insurance
-  - Criminal | 4ff6d1f8c43b3af1 | Exploitive | Professional, Scientific, and Technical Services
-  - Criminal | 505fdcaca0ed1597 | Exploitive | Manufacturing
-  - Criminal | 51178ef0ca60c158 | Exploitive | Professional, Scientific, and Technical Services
-  - Criminal | 539906fe020b1dc0 | Exploitive | Public Administration
-  - Criminal | 59ac7e148743e4ba | Disruptive | Finance and Insurance
-  - Criminal | 59d05a36cd8190f9 | Disruptive | Finance and Insurance
-  - Criminal | 5e85a89ca47500f5 | Disruptive | Finance and Insurance
-  - Criminal | 65b5a7798a10326e | Disruptive | Transportation and Warehousing
-  - Criminal | 6673bf129c24afa3 | Disruptive | Utilities
-  - Criminal | 6a00178ec56031a5 | Disruptive | Public Administration
-  - Criminal | 7a7c9039c2222e1f | Disruptive | Public Administration
-  - Criminal | 7b4783d55a615028 | Exploitive | Other Services (except Public Administration)
-  - Criminal | 7b4eff8436c90ad5 | Exploitive | Public Administration
-  - Criminal | 8285f869a6a6d2f2 | Disruptive | Public Administration
+mese | n
+------------------------------
+1 | 1477
+2 | 1127
+3 | 1299
+4 | 1155
+5 | 1107
+6 | 1186
+7 | 1255
+8 | 1368
+9 | 1240
+10 | 1291
+11 | 1229
+12 | 1112
 
-------------------------------------------------------------
+==================================================
 
-QUERY CQ17: Individui con Attributi Multipli
-Intento   : Quali incidenti possiedono almeno quattro attributi letterali distinti?
-Atteso    : Incidenti con molti valori datatype -> indicatore di completezza.
-Stato     : CQ17 EXECUTED-EMPTY : 0 righe - la KB non contiene ancora dati per questo pattern
-Commento  : la query ha un pattern valido ma non trova istanze nella KB corrente. Potenziali cause: classi ancora senza istanze oppure proprieta' mai popolata.
+QUERY: CQ12_Analytical - Geographic Distribution of Incidents
+--------------------------------------------------
+Status: INFORMATIVE (167 results) - Time: 0.2152s
 
-------------------------------------------------------------
+paese | n
+------------------------------
+United States of America | 7141
+United Kingdom of Great Britain and Northern Ireland | 794
+Italy | 440
+Russian Federation | 432
+Ukraine | 414
+Canada | 383
+India | 338
+France | 284
+Australia | 269
+Germany | 260
+Israel | 208
+Japan | 177
+China | 163
+Brazil | 146
+Poland | 137
+Spain | 115
+Netherlands | 110
+Korea (the Republic of) | 86
+Switzerland | 85
+Pakistan | 84
+... and 147 more rows
 
-QUERY CQ18: Analisi Behaviour per Settore
-Intento   : Quale comportamento (behaviour) emerge nei diversi settori?
-Atteso    : Aggregato industria-behaviour -> conteggio.
-Stato     : CQ18 INFORMATIVE (RICH) : 100 righe
-Commento  : Quale comportamento (behaviour) emerge nei diversi settori? - la KB risponde con 100 righe, classificate come 'rich'.
-Campi     : industria | beh | n
-  - Accommodation and Food Services | Financial | 268
-  - Accommodation and Food Services | Protest | 9
-  - Accommodation and Food Services | Political_Espionage | 3
-  - Accommodation and Food Services | Sabotage | 1
-  - Administrative and Support and Waste Management and Remediation Services | Financial | 138
-  - Administrative and Support and Waste Management and Remediation Services | Protest | 27
-  - Administrative and Support and Waste Management and Remediation Services | Industrial_Espionage | 3
-  - Administrative and Support and Waste Management and Remediation Services | Political_Espionage | 2
-  - Agriculture, Forestry, Fishing and Hunting | Financial | 10
-  - Agriculture, Forestry, Fishing and Hunting | Protest | 4
-  - Agriculture, Forestry, Fishing and Hunting | Sabotage | 1
-  - Arts, Entertainment, and Recreation | Financial | 245
-  - Arts, Entertainment, and Recreation | Protest | 25
-  - Arts, Entertainment, and Recreation | Sabotage | 7
-  - Arts, Entertainment, and Recreation | Personal_Attack | 5
-  - Arts, Entertainment, and Recreation | Political_Espionage | 3
-  - Arts, Entertainment, and Recreation | Industrial_Espionage | 1
-  - Arts, Entertainment, and Recreation | Reputation | 1
-  - Construction | Financial | 35
-  - Construction | Protest | 8
-  ... (+80 righe)
+==================================================
 
-------------------------------------------------------------
+QUERY: CQ13_Analytical - Actor-Attack Type Correlation
+--------------------------------------------------
+Status: INFORMATIVE (14 results) - Time: 1.1031s
 
-QUERY CQ19: Behaviour vs Tipo di attacco
-Intento   : Quali behaviour risultano ricorrenti in quali tipi di attacco?
-Atteso    : Aggregato behaviour-tipo -> conteggio.
-Stato     : CQ19 INFORMATIVE (RICH) : 21 righe
-Commento  : Quali behaviour risultano ricorrenti in quali tipi di attacco? - la KB risponde con 21 righe, classificate come 'rich'.
-Campi     : beh | tipo | n
-  - Financial | Exploitive | 4506
-  - Financial | Mixed | 2396
-  - Financial | Disruptive | 1566
-  - Industrial_Espionage | Exploitive | 99
-  - Industrial_Espionage | Mixed | 2
-  - Personal_Attack | Exploitive | 64
-  - Personal_Attack | Disruptive | 27
-  - Personal_Attack | Mixed | 2
-  - Political_Espionage | Exploitive | 689
-  - Political_Espionage | Mixed | 30
-  - Political_Espionage | Disruptive | 15
-  - Political_Espionage_Industrial_Espionage | Exploitive | 3
-  - Protest | Disruptive | 1341
-  - Protest | Exploitive | 352
-  - Protest | Mixed | 60
-  - Protest_Financial | Mixed | 1
-  - Protest_Political_Espionage | Exploitive | 1
-  - Reputation | Disruptive | 1
-  - Sabotage | Disruptive | 300
-  - Sabotage | Exploitive | 43
-  ... (+1 righe)
+tipoAttore | tipoAttacco | n
+------------------------------
+Criminal | Exploitive | 6015
+Criminal | Disruptive | 2547
+Criminal | Mixed | 2485
+Hacktivist | Disruptive | 1469
+Nation-State | Exploitive | 575
+Hacktivist | Exploitive | 454
+Nation-State | Disruptive | 285
+Hobbyist | Disruptive | 142
+Hacktivist | Mixed | 79
+Hobbyist | Exploitive | 48
+Nation-State | Mixed | 40
+Terrorist | Exploitive | 25
+Terrorist | Disruptive | 5
+Hobbyist | Mixed | 4
 
-------------------------------------------------------------
+==================================================
 
-QUERY CQ20: Individui per Classe Madre
-Intento   : Come si distribuiscono gli individui tra le superclassi?
-Atteso    : Aggregato superclasse -> conteggio individui delle sottoclassi.
-Stato     : CQ20 INFORMATIVE (RICH) : 20 righe
-Commento  : Come si distribuiscono gli individui tra le superclassi? - la KB risponde con 20 righe, classificate come 'rich'.
-Campi     : super | n
-  - BotnetAttack | 5839
-  - Malware | 3206
-  - DataBreach | 2033
-  - Exploit | 1611
-  - DenialOfService | 1016
-  - Consequence | 745
-  - AttackPattern | 490
-  - UCOThing | 286
-  - DataCorruption | 268
-  - Phishing | 215
-  - RemoteAccess | 117
-  - UnauthUser | 51
-  - Means | 37
-  - MaliciousCodeExecution | 35
-  - Username | 30
-  - DataLeak | 27
-  - SelfPropagatingCode | 26
-  - Incident | 22
-  - n05a40361bd1f495a9c500d17d9ff2c79b79 | 17
-  - n05a40361bd1f495a9c500d17d9ff2c79b80 | 17
+QUERY: CQ15_Analytical - Analysis of Prevalent Motivations
+--------------------------------------------------
+Status: INFORMATIVE (72 results) - Time: 0.1953s
 
-------------------------------------------------------------
+sottotipo | tot
+------------------------------
+Exploitation of Application Server | 5138
+Data Attack | 2788
+External Denial of Service | 1584
+Exploitation of End Hosts | 1267
+Message Manipulation | 1159
+Data Attack,Exploitation of Application Server | 770
+Exploitation of Application Server,Exploitation of End Hosts | 316
+Exploitation of Sensors | 172
+Message Manipulation,Exploitation of Application Server | 89
+Exploitation of Network Infrastructure | 78
+Data Attack,External Denial of Service | 77
+Internal Denial of Service | 72
+Physical Attack | 67
+Data Attack,Undetermined | 60
+Exploitation of Data in Transit | 38
+Message Manipulation,External Denial of Service | 29
+External Denial of Service,Exploitation of Application Server | 17
+External Denial of Service,Internal Denial of Service | 15
+Message Manipulation,Exploitation of End Hosts | 14
+Data Attack,Exploitation of End Hosts | 14
+... and 52 more rows
 
+==================================================
+
+QUERY: CQ16_Structural - Chain Actor-Incident-Type
+--------------------------------------------------
+Status: INFORMATIVE (20 results) - Time: 0.1753s
+
+tipoAttore | incidente | tipoAttacco | industria
+------------------------------
+Criminal | 020788a581603eab | Exploitive | Public Administration
+Criminal | 0f6a0971c35269b2 | Disruptive | Finance and Insurance
+Criminal | 147caea9a670434b | Exploitive | Retail Trade
+Criminal | 1ad1235226a4ef58 | Disruptive | Utilities
+Criminal | 419768cc4fb043d9 | Exploitive | Public Administration
+Criminal | 45450e2fb405b78c | Exploitive | Finance and Insurance
+Criminal | 4ff6d1f8c43b3af1 | Exploitive | Professional, Scientific, and Technical Services
+Criminal | 505fdcaca0ed1597 | Exploitive | Manufacturing
+Criminal | 51178ef0ca60c158 | Exploitive | Professional, Scientific, and Technical Services
+Criminal | 539906fe020b1dc0 | Exploitive | Public Administration
+Criminal | 59ac7e148743e4ba | Disruptive | Finance and Insurance
+Criminal | 59d05a36cd8190f9 | Disruptive | Finance and Insurance
+Criminal | 5e85a89ca47500f5 | Disruptive | Finance and Insurance
+Criminal | 65b5a7798a10326e | Disruptive | Transportation and Warehousing
+Criminal | 6673bf129c24afa3 | Disruptive | Utilities
+Criminal | 6a00178ec56031a5 | Disruptive | Public Administration
+Criminal | 7a7c9039c2222e1f | Disruptive | Public Administration
+Criminal | 7b4783d55a615028 | Exploitive | Other Services (except Public Administration)
+Criminal | 7b4eff8436c90ad5 | Exploitive | Public Administration
+Criminal | 8285f869a6a6d2f2 | Disruptive | Public Administration
+
+==================================================
+
+QUERY: CQ18_Analytical - Behaviour Analysis by Industry
+--------------------------------------------------
+Status: INFORMATIVE (100 results) - Time: 0.9864s
+
+industria | beh | n
+------------------------------
+Accommodation and Food Services | Financial | 268
+Accommodation and Food Services | Protest | 9
+Accommodation and Food Services | Political_Espionage | 3
+Accommodation and Food Services | Sabotage | 1
+Administrative and Support and Waste Management and Remediation Services | Financial | 138
+Administrative and Support and Waste Management and Remediation Services | Protest | 27
+Administrative and Support and Waste Management and Remediation Services | Industrial_Espionage | 3
+Administrative and Support and Waste Management and Remediation Services | Political_Espionage | 2
+Agriculture, Forestry, Fishing and Hunting | Financial | 10
+Agriculture, Forestry, Fishing and Hunting | Protest | 4
+Agriculture, Forestry, Fishing and Hunting | Sabotage | 1
+Arts, Entertainment, and Recreation | Financial | 245
+Arts, Entertainment, and Recreation | Protest | 25
+Arts, Entertainment, and Recreation | Sabotage | 7
+Arts, Entertainment, and Recreation | Personal_Attack | 5
+Arts, Entertainment, and Recreation | Political_Espionage | 3
+Arts, Entertainment, and Recreation | Industrial_Espionage | 1
+Arts, Entertainment, and Recreation | Reputation | 1
+Construction | Financial | 35
+Construction | Protest | 8
+... and 80 more rows
+
+==================================================
+
+QUERY: CQ19_Analytical - Behaviour vs Type Correlation
+--------------------------------------------------
+Status: INFORMATIVE (21 results) - Time: 0.8694s
+
+beh | tipo | n
+------------------------------
+Financial | Exploitive | 4506
+Financial | Mixed | 2396
+Financial | Disruptive | 1566
+Industrial_Espionage | Exploitive | 99
+Industrial_Espionage | Mixed | 2
+Personal_Attack | Exploitive | 64
+Personal_Attack | Disruptive | 27
+Personal_Attack | Mixed | 2
+Political_Espionage | Exploitive | 689
+Political_Espionage | Mixed | 30
+Political_Espionage | Disruptive | 15
+Political_Espionage_Industrial_Espionage | Exploitive | 3
+Protest | Disruptive | 1341
+Protest | Exploitive | 352
+Protest | Mixed | 60
+Protest_Financial | Mixed | 1
+Protest_Political_Espionage | Exploitive | 1
+Reputation | Disruptive | 1
+Sabotage | Disruptive | 300
+Sabotage | Exploitive | 43
+... and 1 more rows
+
+==================================================
+
+QUERY: CQ20_Structural - Individuals per Parent Class
+--------------------------------------------------
+Status: INFORMATIVE (1 results) - Time: 0.0080s
+
+super | n
+------------------------------
+
+==================================================
+
+QUERY: CQ21_Comparative - New Classes from Inference
+--------------------------------------------------
+Status: INFORMATIVE (30 results) - Time: 0.0068s
+
+newClass
+------------------------------
+BoundaryCondition
+BufferOverFlow
+ConfigurationError
+DistributedCode
+DomainExpert
+ExceptionCondition
+ExcessForks
+IPv4Address
+IPv6Address
+MACAddress
+MalformedInput
+MemoryConsumption
+PingOfDeath
+RSTProbe
+RaceCondition
+SerialError
+SynFlood
+SysCrash
+TCPConnect
+Time
+... and 10 more rows
+
+==================================================
+
+QUERY: CQ22_Comparative - Property Coverage Analysis
+--------------------------------------------------
+Status: INFORMATIVE (20 results) - Time: 26.4938s
+
+prop | usage
+------------------------------
+comment | 28837
+isType_of | 28290
+hasType | 28290
+hasYear | 14847
+hasEventDate | 14847
+hasMonth | 14846
+associatedCampaigns | 14788
+is_associatedCampaigns_of | 14788
+hasOrganization | 14787
+hasEventType | 14650
+hasIndustry | 14583
+hasCountry | 14397
+hasActorType | 14359
+hasEventSubtype | 13931
+is_behaviour_of | 11636
+behaviour | 11636
+description | 11636
+hasActor | 6394
+hasCampaign | 5834
+isCampaign_of | 5834
+
+==================================================
+
+QUERY: CQ23_Comparative - Explicit vs Inferred Types Count
+--------------------------------------------------
+Status: INFORMATIVE (20 results) - Time: 12.2087s
+
+class | count
+------------------------------
+StatementType | 14826
+Attack | 14822
+Incident | 14822
+Attacker | 14509
+ThreatActor | 14509
+Campaign | 13527
+Weakness | 11634
+CWE | 11634
+Means | 11491
+TTP | 11491
+Ransomware | 2547
+BreachInformation | 1738
+CyberattackData | 1442
+DDoS | 1015
+CyberattackInformation | 885
+HackerSecurity | 885
+CyberattackSystem | 738
+AccountAttack | 691
+BreachSecurity | 580
+Phishing | 536
+
+==================================================
+
+QUERY: CQ24_Comparative - Deep Hierarchical Instances
+--------------------------------------------------
+Status: EXECUTED (No results returned) - Time: 0.0067s
+Result Table: [Empty]
+
+==================================================
+
+QUERY: CQ27_Comparative - Semantic Richness per Industry
+--------------------------------------------------
+Status: INFORMATIVE (20 results) - Time: 1.0847s
+
+ind | variety
+------------------------------
+Public Administration | 3
+Educational Services | 3
+Finance and Insurance | 3
+Professional, Scientific, and Technical Services | 3
+Information | 3
+Accommodation and Food Services | 3
+Administrative and Support and Waste Management and Remediation Services | 3
+Other Services (except Public Administration) | 3
+Arts, Entertainment, and Recreation | 3
+Health Care and Social Assistance | 3
+Mining, Quarrying, and Oil and Gas Extraction | 3
+Real Estate and Rental and Leasing | 3
+Utilities | 3
+Retail Trade | 3
+Transportation and Warehousing | 3
+Manufacturing | 3
+Wholesale Trade | 3
+Construction | 3
+Management of Companies and Enterprises | 3
+Agriculture, Forestry, Fishing and Hunting | 3
+
+==================================================
+
+QUERY: CQ28_Comparative - Cross-Domain Actor Analysis
+--------------------------------------------------
+Status: INFORMATIVE (4 results) - Time: 419.7514s
+
+actorType | ind1 | ind2 | n
+------------------------------
+Criminal | Health Care and Social Assistance | Public Administration | 2
+Criminal | Public Administration | Health Care and Social Assistance | 2
+Hacktivist | Health Care and Social Assistance | Public Administration | 1
+Hacktivist | Public Administration | Health Care and Social Assistance | 1
+
+==================================================
+
+QUERY: CQ29_Comparative - Inference Impact on Date Ranges
+--------------------------------------------------
+Status: INFORMATIVE (20 results) - Time: 0.0135s
+
+type | startDate | endDate
+------------------------------
+Attack | 2014-01-01T00:00:00 | 2025‑07‑24
+Incident | 2014-01-01T00:00:00 | 2025‑07‑24
+CyberattackInformation | 2014-01-13T00:00:00 | 2025-08-23T00:00:00
+BreachInformation | 2014-01-02T00:00:00 | 2025-08-27T00:00:00
+Attacker | 2014-01-01T00:00:00 | 2025‑07‑24
+ThreatActor | 2014-01-01T00:00:00 | 2025‑07‑24
+CyberattackSystem | 2014-02-18T00:00:00 | 2025-08-24T00:00:00
+StatementType | 2014-01-01T00:00:00 | 2025‑07‑24
+CyberattackData | 2014-01-06T00:00:00 | 2025‑07‑24
+AttackMalware | 2014-05-09T00:00:00 | 2025-08-22T00:00:00
+AttackMinistry | 2017-07-31T00:00:00 | 2023-11-10T00:00:00
+AccessAttack | 2014-07-31T00:00:00 | 2024-10-05T00:00:00
+HackerSecurity | 2014-01-01T00:00:00 | 2025-08-16T00:00:00
+AttackSchool | 2014-03-08T00:00:00 | 2024-11-25T00:00:00
+AccountAttack | 2014-01-06T00:00:00 | 2025-08-26T00:00:00
+DefaceHacker | 2014-01-21T00:00:00 | 2023-08-31T00:00:00
+HackerWebsite | 2015-01-29T00:00:00 | 2024-10-28T00:00:00
+Ransomware | 2014-10-07T00:00:00 | 2025-08-25T00:00:00
+DDoS | 2014-01-03T00:00:00 | 2025-08-25T00:00:00
+ActorMalware | 2015-11-03T00:00:00 | 2024-11-19T00:00:00
+
+==================================================
+
+QUERY: CQ31_Effective - Identification of Actionable Targets (Top Countries)
+--------------------------------------------------
+Status: INFORMATIVE (15 results) - Time: 0.0123s
+
+org | paese | tipoAttacco
+------------------------------
+Tewkesbury Borough Council | United Kingdom of Great Britain and Northern Ireland | Exploitive
+Banham Poultry | United Kingdom of Great Britain and Northern Ireland | Exploitive
+Bring Me the Horizon Webpage | United States of America | Exploitive
+chromeplay.com | United Kingdom of Great Britain and Northern Ireland | Exploitive
+mumsnet | United Kingdom of Great Britain and Northern Ireland | Disruptive
+mumsnet | United Kingdom of Great Britain and Northern Ireland | Exploitive
+mumsnet | United Kingdom of Great Britain and Northern Ireland | Disruptive
+forum.chumpcar.com | United States of America | Exploitive
+University of Bristol | United Kingdom of Great Britain and Northern Ireland | Exploitive
+Century 21 | United States of America | Mixed
+insights.london.nhs.uk | United Kingdom of Great Britain and Northern Ireland | Disruptive
+duelyst.com | United States of America | Exploitive
+Difference Games | United States of America | Exploitive
+Difference Games | United States of America | Exploitive
+www.the-athenaeum.org | United States of America | Exploitive
+
+==================================================
+
+QUERY: CQ32_Effective - Critical Incident Filtering: Financial Motivation
+--------------------------------------------------
+Status: INFORMATIVE (15 results) - Time: 0.0119s
+
+incidente | org | sottotipo
+------------------------------
+None | Western Sydney University | Exploitation of Application Server
+None | Dutch Bangla Bank | Exploitation of Sensors
+None | Individuals in South Korea | Exploitation of End Hosts
+None | University of York | Exploitation of Application Server
+None | PayPal | External Denial of Service
+None | PayPal | Exploitation of End Hosts
+None | Amazon | Data Attack
+None | Amazon | Exploitation of Application Server,Exploitation of End Hosts
+None | Amazon | Exploitation of Application Server
+None | Mega.nz | Exploitation of End Hosts
+None | Commercial Bank of Ceylon | Exploitation of Application Server
+None | Mobile Guardian | Exploitation of Application Server
+None | King's College London | Exploitation of Application Server
+None | Honda | Data Attack
+None | France Tvisions | Exploitation of Application Server
+
+==================================================
+
+QUERY: CQ33_Effective - Active Chain Detection for Mitigation
+--------------------------------------------------
+Status: INFORMATIVE (15 results) - Time: 0.0045s
+
+actor | target
+------------------------------
+Criminal | Yakult Australia
+Criminal | Pinnacle Midlands Health Network
+Criminal | Harcourts
+Criminal | Optimism Foundation
+Criminal | Ukranian marketplace
+Criminal | Dorben Group
+Criminal | NAF, Inc.
+Criminal | U.S. military procurement system and Taiwan-based organization
+Criminal | Municipality of Padua (Comune di Padova)
+Criminal | MSH International Canada
+Criminal | Fortress
+Criminal | 3Commas
+Criminal | Grinding Gear Games (developer of Path 2 Exile 2)
+Criminal | Judicial Power of the City of Mendoza
+Criminal | Atherfield Medical & Skin Cancer Clinic
+
+==================================================
+
+QUERY: CQ34_Effective - Mapping High-Frequency Attack Subtypes
+--------------------------------------------------
+Status: INFORMATIVE (8 results) - Time: 0.2280s
+
+sottotipo | freq
+------------------------------
+Exploitation of Application Server | 5138
+Data Attack | 2788
+External Denial of Service | 1584
+Exploitation of End Hosts | 1267
+Message Manipulation | 1159
+Data Attack,Exploitation of Application Server | 770
+Exploitation of Application Server,Exploitation of End Hosts | 316
+Exploitation of Sensors | 172
+
+==================================================
+
+QUERY: CQ35_Effective - Validation of Operational Subtype Consistency
+--------------------------------------------------
+Status: INFORMATIVE (20 results) - Time: 0.0051s
+
+inc | sub
+------------------------------
+0079622517f37b91 | Exploitation of Application Server
+0079622517f37b91 | Exploitation of Application Server
+0079622517f37b91 | Exploitation of Application Server
+0079622517f37b91 | Exploitation of Application Server
+0079622517f37b91 | Exploitation of Application Server
+01b9156fb9ba6c7a | Exploitation of Application Server
+01b9156fb9ba6c7a | Exploitation of Application Server
+01b9156fb9ba6c7a | Exploitation of Application Server
+01b9156fb9ba6c7a | Exploitation of Application Server
+01b9156fb9ba6c7a | Exploitation of Application Server
+04fc44bce70a15d9 | Exploitation of Application Server
+04fc44bce70a15d9 | Exploitation of Application Server
+04fc44bce70a15d9 | Exploitation of Application Server
+04fc44bce70a15d9 | Exploitation of Application Server
+04fc44bce70a15d9 | Exploitation of Application Server
+05b4b35d0884be44 | Exploitation of Application Server
+05b4b35d0884be44 | Exploitation of Application Server
+05b4b35d0884be44 | Exploitation of Application Server
+05b4b35d0884be44 | Exploitation of Application Server
+05b4b35d0884be44 | Exploitation of Application Server
+
+==================================================
+
+QUERY: CQ36_Effective - Cross-Reference Actor-Motivation for Triage
+--------------------------------------------------
+Status: INFORMATIVE (15 results) - Time: 0.5719s
+
+attore | motivo | c
+------------------------------
+Criminal | Exploitation of Application Server | 4231
+Criminal | Data Attack | 2566
+Criminal | Exploitation of End Hosts | 1053
+Hacktivist | External Denial of Service | 899
+Criminal | Data Attack,Exploitation of Application Server | 750
+Criminal | External Denial of Service | 573
+Hacktivist | Message Manipulation | 513
+Criminal | Message Manipulation | 435
+Hacktivist | Exploitation of Application Server | 367
+Nation-State | Exploitation of Application Server | 202
+Criminal | Exploitation of Application Server,Exploitation of End Hosts | 187
+Nation-State | Data Attack | 187
+Nation-State | Exploitation of End Hosts | 162
+Criminal | Exploitation of Sensors | 154
+Hobbyist | Message Manipulation | 120
+
+==================================================
+
+QUERY: CQ37_Effective - Temporal Alert for Recurring Patterns
+--------------------------------------------------
+Status: INFORMATIVE (10 results) - Time: 1.1737s
+
+org | data
+------------------------------
+Cisco Systems (CRM provider) | 2025‑07‑24
+Google corporate Salesforce instance | 2025‑06‑01
+Federal Emergency Management Agency (FEMA) | 2025-08-29T00:00:00
+Surbhi Chandna Productions | 2025-08-27T00:00:00
+Auchan | 2025-08-26T00:00:00
+West Chester Township | 2025-08-26T00:00:00
+Salesloft | 2025-08-26T00:00:00
+Xserver (エックスサーバー) sv13279 server | 2025-08-25T00:00:00
+Centre de services scolaire des Appalaches (CSSA) | 2025-08-25T00:00:00
+Maryland Transit Administration (MTA) | 2025-08-24T00:00:00
+
+==================================================
+
+QUERY: CQ38_Effective - Dependency Validation: Actor-to-Behavior Linkage
+--------------------------------------------------
+Status: INFORMATIVE (15 results) - Time: 0.1903s
+
+attore | comportamento | org
+------------------------------
+Criminal | Financial | Yakult Australia
+Criminal | Financial | Pinnacle Midlands Health Network
+Criminal | Financial | Harcourts
+Criminal | Financial | Optimism Foundation
+Criminal | Protest | Ukranian marketplace
+Criminal | Financial | Dorben Group
+Criminal | Financial | NAF, Inc.
+Criminal | Political_Espionage | U.S. military procurement system and Taiwan-based organization
+Criminal | Financial | Municipality of Padua (Comune di Padova)
+Criminal | Financial | MSH International Canada
+Criminal | Financial | Fortress
+Criminal | Financial | 3Commas
+Criminal | Financial | Grinding Gear Games (developer of Path 2 Exile 2)
+Criminal | Financial | Judicial Power of the City of Mendoza
+Criminal | Financial | Atherfield Medical & Skin Cancer Clinic
+
+==================================================
+
+QUERY: CQ39_Effective - Filtering High-Impact Industry Events: Financial Sector
+--------------------------------------------------
+Status: INFORMATIVE (8 results) - Time: 2.0797s
+
+ind | attore | n
+------------------------------
+Health Care and Social Assistance | Criminal | 1925
+Finance and Insurance | Criminal | 1146
+Finance and Insurance | Hacktivist | 176
+Finance and Insurance | Nation-State | 82
+Health Care and Social Assistance | Hacktivist | 39
+Health Care and Social Assistance | Nation-State | 17
+Finance and Insurance | Hobbyist | 7
+Health Care and Social Assistance | Hobbyist | 3
+
+==================================================
+
+QUERY: CQ40_Effective - Execution Logic: Recent Critical Assets Exposure
+--------------------------------------------------
+Status: INFORMATIVE (15 results) - Time: 2.0031s
+
+org | data | tipo
+------------------------------
+Cisco Systems (CRM provider) | 2025‑07‑24 | Exploitive
+Google corporate Salesforce instance | 2025‑06‑01 | Exploitive
+Federal Emergency Management Agency (FEMA) | 2025-08-29T00:00:00 | Exploitive
+Surbhi Chandna Productions | 2025-08-27T00:00:00 | Disruptive
+Auchan | 2025-08-26T00:00:00 | Exploitive
+West Chester Township | 2025-08-26T00:00:00 | Exploitive
+Salesloft | 2025-08-26T00:00:00 | Exploitive
+Xserver (エックスサーバー) sv13279 server | 2025-08-25T00:00:00 | Disruptive
+Centre de services scolaire des Appalaches (CSSA) | 2025-08-25T00:00:00 | Mixed
+Nevada State Government (multiple agencies) | 2025-08-24T00:00:00 | Mixed
+Miljödata (IT supplier for municipalities) | 2025-08-23T00:00:00 | Mixed
+Internet Rimon (Kosher Internet provider) | 2025-08-23T00:00:00 | Disruptive
+Several Iranian Ships (Fanava-linked network) | 2025-08-22T00:00:00 | Disruptive
+Government, tech, academic & telecom entities; global | 2025-08-22T00:00:00 | Exploitive
+Delta Telekom | 2025-08-21T00:00:00 | Disruptive
+
+==================================================
+
+============================================================
+SUMMARY
+============================================================
+Queries Executed: 35/35
+Informative Queries: 33/35
+Coverage: 94.3%

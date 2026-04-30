@@ -1,69 +1,60 @@
-"""OOPS!-inspired structural checks over the final ontology.
-
-Flags three families of issues:
-- [P08] classes, individuals or properties without rdfs:comment
-- [P11] object properties without explicit rdfs:domain / rdfs:range
-- [P13] object properties without an inverse (warning only)
-
-The function returns a plain list of strings, so the caller decides whether
-to print, log, or pipe them into a report.
 """
-from pathlib import Path
+Structural Validator Module
+
+Performs structural validation of the ontology checking for common pitfalls:
+- Missing comments on classes and properties [P08]
+- Missing domain/range definitions for object properties [P11]
+- Missing inverse relations [P13]
+
+Returns a list of issues found during validation.
+"""
 
 import rdflib
-from rdflib import OWL, RDF, RDFS
+from rdflib import RDF, RDFS, OWL
+import os
 
 
-def _short_name(uri) -> str:
-    return str(uri).split("/")[-1].split("#")[-1]
-
-
-def _parse(file_path: Path) -> rdflib.Graph:
+def run_structural_check(file_path: str) -> list:
     g = rdflib.Graph()
-    ext = file_path.suffix.lower()
-    fmt = "xml" if ext in (".xml", ".owl") else "turtle"
-    g.parse(str(file_path), format=fmt)
-    return g
-
-
-def run_structural_check(file_path) -> list[str]:
-    g = _parse(Path(file_path))
-    issues: list[str] = []
-
+    
+    ext = os.path.splitext(file_path)[1].lower()
+    if ext in [".xml", ".owl"]:
+        g.parse(file_path, format="xml")
+    else:
+        g.parse(file_path, format="turtle")
+    
+    issues = []
+    
     for cls in g.subjects(RDF.type, OWL.Class):
         if not list(g.objects(cls, RDFS.comment)):
-            issues.append(f"[P08] Missing comment for Class: {_short_name(cls)}")
-
-    seen = set()
-    for s in g.subjects(RDF.type, None):
-        if s in seen:
-            continue
-        seen.add(s)
-        is_class = (s, RDF.type, OWL.Class) in g
-        is_obj_prop = (s, RDF.type, OWL.ObjectProperty) in g
-        if is_class or is_obj_prop:
-            continue
-        if not list(g.objects(s, RDFS.comment)):
-            issues.append(
-                f"[P08] Missing comment for Individual/Property: {_short_name(s)}"
-            )
+            issues.append(f"[P08] Missing comment for Class: {str(cls).split('/')[-1].split('#')[-1]}")
+            
+    for individual in g.subjects(RDF.type, None):
+        is_class = (individual, RDF.type, OWL.Class) in g
+        is_obj_prop = (individual, RDF.type, OWL.ObjectProperty) in g
+        if not is_class and not is_obj_prop:
+            if not list(g.objects(individual, RDFS.comment)):
+                issues.append(f"[P08] Missing comment for Individual/Property: {str(individual).split('/')[-1].split('#')[-1]}")
 
     for prop in g.subjects(RDF.type, OWL.ObjectProperty):
-        name = _short_name(prop)
         if not list(g.objects(prop, RDFS.domain)):
-            issues.append(f"[P11] Missing Domain for Property: {name}")
+            issues.append(f"[P11] Missing Domain for Property: {str(prop).split('/')[-1].split('#')[-1]}")
         if not list(g.objects(prop, RDFS.range)):
-            issues.append(f"[P11] Missing Range for Property: {name}")
+            issues.append(f"[P11] Missing Range for Property: {str(prop).split('/')[-1].split('#')[-1]}")
+
+    for prop in g.subjects(RDF.type, OWL.ObjectProperty):
         if not list(g.objects(prop, OWL.inverseOf)):
-            issues.append(f"[P13-Warning] No inverse relation for: {name}")
+            issues.append(f"[P13-Warning] No inverse relation for: {str(prop).split('/')[-1].split('#')[-1]}")
 
     return issues
 
 
 if __name__ == "__main__":
-    from config import UCO_FINAL_COMP_TTL, UCO_FINAL_COMP_XML
-
-    candidate = UCO_FINAL_COMP_XML if UCO_FINAL_COMP_XML.exists() else UCO_FINAL_COMP_TTL
-    if candidate.exists():
-        for issue in run_structural_check(candidate):
-            print(issue)
+    file_to_check = "UCO_FINAL_COMP.xml"
+    if not os.path.exists(file_to_check):
+        file_to_check = "UCO_FINAL_COMP.ttl"
+        
+    if os.path.exists(file_to_check):
+        results = run_structural_check(file_to_check)
+        for issue in results:
+            pass

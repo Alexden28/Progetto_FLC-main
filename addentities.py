@@ -1,76 +1,63 @@
-"""Step 4/6 of the enrichment pipeline.
-
-Adds the manually curated concepts from `ontologyadd.xlsx` to the baseline UCO
-TBox as new `owl:Class` axioms, each subclass of the UCO class suggested by
-the previous step (falling back to `owl:Thing` when the suggested parent
-cannot be resolved). All new IRIs are minted under the canonical UCO
-namespace defined in `config.py`, so downstream SPARQL queries do not need
-to UNION over multiple prefixes.
-
-Input : uco_1_5.ttl, ontologyadd.xlsx
-Output: uco_1_5_enriched.ttl
 """
+Step 4: TBox Enrichment
+
+This module enriches the ontology's TBox by adding new classes derived from 
+the semantic mapping step. It reads mappings from ontologyadd.xlsx and creates 
+new classes as subclasses of matched parent classes using RDFLib.
+
+The enriched ontology is saved in Turtle format for downstream ABox injection.
+"""
+
 import pandas as pd
-from rdflib import Graph, Literal, OWL, RDF, RDFS
-
-from config import (
-    BASELINE_TBOX_TTL,
-    ENRICHED_TBOX_TTL,
-    ONTOLOGY_ADD_XLSX,
-    UCO,
-    UCO_PREFIX,
-)
+from rdflib import Graph, Literal, RDF, RDFS, OWL, Namespace, URIRef
+import os
 
 
-def _build_class_map(g: Graph) -> dict:
-    """Short-name (lowercase) -> class URI, for parent lookups."""
-    class_map: dict = {}
-    for s in g.subjects(RDF.type, OWL.Class):
-        short_name = str(s).split("#")[-1].split("/")[-1].lower()
-        class_map[short_name] = s
-    return class_map
-
-
-def _resolve_parent(class_map: dict, parent_label: str):
-    parent_uri = class_map.get(parent_label)
-    if parent_uri is not None:
-        return parent_uri
-    for name, uri in class_map.items():
-        if parent_label in name:
-            return uri
-    return OWL.Thing
-
-
-def enrich_tbox_rdflib() -> int:
-    """Enrich the baseline TBox with rows from ontologyadd.xlsx.
-
-    Returns the number of classes actually added.
-    """
+def enrich_tbox_rdflib():
+    INPUT_TTL = "uco_1_5.ttl"
+    EXCEL_ADD = "ontologyadd.xlsx"
+    OUTPUT_TTL = "uco_1_5_enriched.ttl"
+    
     g = Graph()
-    g.parse(str(BASELINE_TBOX_TTL), format="turtle")
-    g.bind(UCO_PREFIX, UCO)
+    g.parse(INPUT_TTL, format="turtle")
+    
+    UCO = Namespace("http://ffrdc.ebiquity.umbc.edu/ns/ontology/")
+    g.bind("uco", UCO)
 
-    df = pd.read_excel(ONTOLOGY_ADD_XLSX)
-    class_map = _build_class_map(g)
+    df = pd.read_excel(EXCEL_ADD)
+ 
+    class_map = {}
+    for cls in g.subjects(RDF.type, OWL.Class):
+        short_name = str(cls).split('#')[-1].split('/')[-1].lower()
+        class_map[short_name] = cls
 
-    added = 0
+    added_count = 0
     for _, row in df.iterrows():
-        concept = str(row["Concept"]).strip()
-        parent_label = str(row["UCO_Parent_Class"]).strip().lower()
-
-        class_name = concept.title().replace(" ", "")
-        new_class_uri = UCO[class_name]
-        parent_uri = _resolve_parent(class_map, parent_label)
+        concept = str(row['Concept']).strip()
+        parent_label = str(row['UCO_Parent_Class']).strip().lower()
+        
+        class_name_formatted = concept.title().replace(" ", "")
+        new_class_uri = UCO[class_name_formatted]
+        
+        parent_uri = class_map.get(parent_label)
+        
+        if not parent_uri:
+            for name, uri in class_map.items():
+                if parent_label in name:
+                    parent_uri = uri
+                    break
+        
+        if not parent_uri:
+            parent_uri = OWL.Thing
 
         g.add((new_class_uri, RDF.type, OWL.Class))
         g.add((new_class_uri, RDFS.subClassOf, parent_uri))
         g.add((new_class_uri, RDFS.label, Literal(concept)))
 
-        class_map[class_name.lower()] = new_class_uri
-        added += 1
+        class_map[class_name_formatted.lower()] = new_class_uri
+        added_count += 1
 
-    g.serialize(destination=str(ENRICHED_TBOX_TTL), format="turtle")
-    return added
+    g.serialize(destination=OUTPUT_TTL, format="turtle")
 
 
 if __name__ == "__main__":

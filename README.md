@@ -1,179 +1,213 @@
-# Progetto FLC — Arricchimento Automatico della UCO
+# Cybersecurity Ontology Enrichment Pipeline
 
-Pipeline end-to-end per estendere l'ontologia **UCO (Unified Cybersecurity Ontology)**
-con conoscenza estratta dal *Cyber Events Database*, validarla tramite il
-reasoner **Pellet** e interrogarla tramite **Competency Questions SPARQL**.
+## Overview
 
-## Obiettivi
+This pipeline automates the enrichment of the Unified Cybersecurity Ontology (UCO) by extracting knowledge from a structured database of cyber events, performing semantic mapping, injecting instances, and validating the resulting knowledge base through logical reasoning and competency questions.
 
-1. **Estrarre concetti** dal corpus `Cyber_Events_Database.xlsx` tramite
-   analisi di co-occorrenze e mapping semantico contro la TBox UCO.
-2. **Arricchire la TBox** aggiungendo nuove classi sotto-classate alle UCO
-   piu' affini.
-3. **Iniettare ABox**: per ogni riga del dataset creare un individuo
-   collegato alla classe piu' plausibile e popolare le sue proprieta'.
-4. **Validare** la KB risultante con Pellet (coerenza logica), controlli
-   strutturali (pitfall OOPS!) e 20 Competency Questions SPARQL.
-5. **Comparare** KB iniziale e finale per evidenziare l'effettivo
-   contributo della pipeline.
+## Pipeline Objectives
 
-## Struttura della Pipeline
+1. **Extract co-occurrence relationships** from cyber event descriptions
+2. **Map extracted terms** to existing ontology classes using semantic similarity
+3. **Enrich the TBox** with new classes derived from data analysis
+4. **Inject ABox individuals** from the Cyber_Events_Database.xlsx
+5. **Validate** the enriched ontology through structural checks and SPARQL queries
+6. **Perform inference** using the Pellet reasoner to derive implicit knowledge
+
+## Architecture
 
 ```
 Cyber_Events_Database.xlsx
-        |
-        v
- [1] cooccorrenze.py          --> matrice_cooccorrenze.xlsx
-        |
-        v
- [2] cooccorrenzeclassifier.py --> classifica_cooccorrenze.xlsx
-        |
-        v                             +-- uco_1_5.ttl (baseline)
- [3] findcouples.py            -------+
-        |                             v
-        +--> ontologyadd.xlsx   (manualmente curato)
-        |
-        v
- [4] addentities.py            --> uco_1_5_enriched.ttl
-        |
-        v
- [5] kbonto.py                 --> UCO_FINAL_COMP.{ttl,xml}
-        |
-        v
- [6] main.py (reasoning)       --> UCO_FINAL.{ttl,xml}, UCO_INFERRED.ttl
-        |
-        v
- [7] Report                    --> LOG_VALIDAZIONE.txt,
-                                  RISULTATI_QUERY_CQ.txt,
-                                  KB_COMPARISON.txt
+    │
+    ▼
+┌─────────────────────┐
+│  cooccorrenze.py    │ → matrice_cooccorrenze.xlsx
+│  (Step 1)           │
+└─────────────────────┘
+    │
+    ▼
+┌─────────────────────┐
+│  cooccorrenzeclassifier.py │ → classifica_cooccorrenze.xlsx
+│  (Step 2)                  │
+└─────────────────────┘
+    │
+    ▼
+┌─────────────────────┐      uco_1_5.ttl
+│  findcouples.py     │ ←──────────┐
+│  (Step 3)           │            │
+└─────────────────────┘            │
+    │                              │
+    ▼                              │
+ontologyadd.xlsx                   │
+    │                              │
+    ▼                              │
+┌─────────────────────┐            │
+│  addentities.py     │ ←──────────┘
+│  (Step 4)           │
+└─────────────────────┘
+    │
+    ▼
+uco_1_5_enriched.ttl
+    │
+    ▼
+┌─────────────────────┐      Cyber_Events_Database.xlsx
+│  kbonto.py          │ ←──────────────────────────┐
+│  (Step 5)           │                            │
+└─────────────────────┘                            │
+    │                                              │
+    ▼                                              │
+UCO_FINAL_COMP.xml/ttl ←───────────────────────────┘
+    │
+    ▼
+┌─────────────────────┐
+│  main_tag.py        │ → UCO_INFERRED.ttl
+│  (Step 6 - Reasoning│   LOG_VALIDAZIONE.txt
+│   & Validation)     │   RISULTATI_QUERY_CQ.txt
+└─────────────────────┘
 ```
 
-Ogni stage comunica tramite file; i path e le soglie sono definiti in
-`config.py`.
+## Module Descriptions
 
-## Moduli
+### Step 1: Co-occurrence Matrix Generation (`cooccorrenze.py`)
+- **Input**: `Cyber_Events_Database.xlsx`
+- **Output**: `matrice_cooccorrenze.xlsx`
+- **Purpose**: Extracts term co-occurrences from event descriptions using NLP preprocessing (tokenization, stopword removal, lemmatization). Identifies top 1000 frequent terms and builds a symmetric co-occurrence matrix.
 
-| Modulo | Ingresso | Uscita | Ruolo |
-| ------ | -------- | ------ | ----- |
-| `cooccorrenze.py` | `Cyber_Events_Database.xlsx` | `matrice_cooccorrenze.xlsx` | Tokenizza, lemmatizza, costruisce la matrice dei primi 1000 termini |
-| `cooccorrenzeclassifier.py` | matrice | `classifica_cooccorrenze.xlsx` | Ordina le coppie con co-occorrenza > soglia |
-| `findcouples.py` | classifica + `uco_1_5.ttl` | `ontologyadd.xlsx` | Mappa ogni coppia alla classe UCO piu' simile (embedding + cosine) |
-| `addentities.py` | `ontologyadd.xlsx` + `uco_1_5.ttl` | `uco_1_5_enriched.ttl` | Aggiunge nuove `owl:Class` alla TBox |
-| `kbonto.py` | TBox arricchita + dataset | `UCO_FINAL_COMP.{ttl,xml}` | Inietta ABox, coerenza domini/range, genera inverse |
-| `main.py` | `UCO_FINAL_COMP.xml` | `UCO_INFERRED.ttl`, `UCO_FINAL.{ttl,xml}`, report | Orchestratore: reasoning, validazione, CQ, confronto KB |
-| `main_tag.py` | `UCO_FINAL_COMP.xml` | come sopra | Shortcut: salta l'arricchimento e ri-esegue solo inferenza/validazione |
-| `structural_validator.py` | grafo finale | lista di criticita' | Pitfall strutturali (P08, P11, P13) |
-| `competecy_questions.py` | `UCO_INFERRED.ttl` | `RISULTATI_QUERY_CQ.txt` | 20 CQ SPARQL con verdetto informative/empty/error |
-| `kb_comparison.py` | baseline + finale | `KB_COMPARISON.txt` | Confronto qualitativo tra TBox iniziale e KB finale |
-| `namespace_utils.py` | grafo | grafo | Normalizza tutti gli IRI sul namespace UCO canonico |
-| `config.py` | — | — | Path, soglie, modelli, namespace |
+### Step 2: Co-occurrence Classification (`cooccorrenzeclassifier.py`)
+- **Input**: `matrice_cooccorrenze.xlsx`
+- **Output**: `classifica_cooccorrenze.xlsx`
+- **Purpose**: Filters co-occurrences above a threshold (100) and produces a ranked list of term pairs for semantic mapping.
 
-## Requisiti e Setup
+### Step 3: Semantic Mapping (`findcouples.py`)
+- **Input**: `classifica_cooccorrenze.xlsx`, `uco_1_5.ttl`
+- **Output**: `ontologyadd.xlsx`
+- **Purpose**: Uses sentence-transformers (all-distilroberta-v1) to compute semantic similarity between extracted term pairs and existing ontology classes. Maps candidates to parent classes with similarity ≥ 0.45.
 
-```bash
-pip install -r requirements.txt
+### Step 4: TBox Enrichment (`addentities.py`)
+- **Input**: `uco_1_5.ttl`, `ontologyadd.xlsx`
+- **Output**: `uco_1_5_enriched.ttl`
+- **Purpose**: Adds new classes to the ontology as subclasses of mapped parent classes using RDFLib.
 
-python -c "import nltk; nltk.download('stopwords'); nltk.download('wordnet'); nltk.download('omw-1.4'); nltk.download('punkt')"
-python -m spacy download en_core_web_sm
+### Step 5: ABox Injection (`kbonto.py`)
+- **Input**: `uco_1_5_enriched.ttl`, `Cyber_Events_Database.xlsx`
+- **Output**: `UCO_FINAL_COMP.xml`, `UCO_FINAL_COMP.ttl`
+- **Purpose**: Injects individuals from the database into the ontology using semantic matching (sentence-transformers all-mpnet-base-v2). Creates instances, assigns types, and populates object/datatype properties based on column semantics.
+
+### Step 6: Reasoning & Validation (`main_tag.py`)
+- **Input**: `UCO_FINAL_COMP.xml`
+- **Output**: `UCO_INFERRED.ttl`, `LOG_VALIDAZIONE.txt`, `RISULTATI_QUERY_CQ.txt`
+- **Purpose**: Runs Pellet reasoner for consistency checking and inference, performs structural validation, executes competency questions (SPARQL), and generates metrics reports.
+
+## Requirements
+
+### Python Dependencies
+Install via `pip install -r requirements.txt`:
+```
+rdflib>=6.3.0
+owlready2>=0.44
+pandas>=2.0.0
+torch>=2.0.0
+transformers>=4.30.0
+spacy>=3.5.0
+scikit-learn>=1.3.0
+tqdm>=4.65.0
+sentence-transformers>=2.2.0
+openpyxl>=3.1.0
 ```
 
-Serve **Java** raggiungibile da `owlready2` per Pellet. Su Windows il
-percorso di default e' quello di Oracle Java 8; se Java e' altrove,
-modificare `main.setup_java()`.
+### External Tools
+- **Java 8+**: Required for Pellet reasoner
+- **NLTK Data**: 
+  ```python
+  import nltk
+  nltk.download('stopwords')
+  nltk.download('wordnet')
+  nltk.download('omw-1.4')
+  nltk.download('punkt')
+  ```
+- **spaCy Model**:
+  ```bash
+  python -m spacy download en_core_web_sm
+  ```
 
-## Modalita' di Esecuzione
+## Execution
 
-**Pipeline completa** (dalla matrice di co-occorrenze al report finale):
-
+### Full Pipeline
 ```bash
 python main.py
 ```
+Runs the complete pipeline from co-occurrence extraction to final validation.
 
-**Solo validazione / reasoning** (assume `UCO_FINAL_COMP.xml` gia' prodotto):
-
+### Reasoning & Validation Only
 ```bash
 python main_tag.py
 ```
+Executes only the reasoning and validation steps on existing `UCO_FINAL_COMP.xml`.
 
-**Solo confronto KB iniziale vs finale** (richiede i due grafi):
+## Input/Output Files
 
-```bash
-python kb_comparison.py
-```
+| File | Type | Description |
+|------|------|-------------|
+| `Cyber_Events_Database.xlsx` | Input | Source database of cyber events |
+| `uco_1_5.ttl` | Input | Base cybersecurity ontology |
+| `matrice_cooccorrenze.xlsx` | Intermediate | Term co-occurrence matrix |
+| `classifica_cooccorrenze.xlsx` | Intermediate | Ranked term pairs |
+| `ontologyadd.xlsx` | Intermediate | Semantic mappings |
+| `uco_1_5_enriched.ttl` | Intermediate | TBox-enriched ontology |
+| `UCO_FINAL_COMP.xml/ttl` | Output | Final ontology with ABox |
+| `UCO_INFERRED.ttl` | Output | Inferred knowledge base |
+| `LOG_VALIDAZIONE.txt` | Output | Validation report with metrics |
+| `RISULTATI_QUERY_CQ.txt` | Output | Competency question results |
 
-**Solo CQ sul grafo inferito**:
+## Metrics & Evaluation
 
-```bash
-python competecy_questions.py
-```
+The pipeline computes the following metrics:
 
-## Scelte Progettuali
+| Metric | Description |
+|--------|-------------|
+| **Expansion Coefficient** | Percentage increase in triples after inference |
+| **Relational Density** | Average connections per individual |
+| **Semantic Richness** | Ratio of properties to classes |
+| **Hierarchical Depth** | Maximum subclass depth |
+| **Connectivity Ratio** | Ratio of individuals to classes |
 
-### Soglie
-| Parametro | Valore | Rationale |
-| --------- | ------ | --------- |
-| `TOP_TOKEN_COUNT` | 1000 | Frontiera fra costo computazionale (matrice 1000x1000) e copertura del corpus |
-| `COOCCURRENCE_THRESHOLD` | 100 | Filtra coppie rare che tipicamente sono hapax; mantiene ~1k candidate |
-| `SEMANTIC_SIMILARITY_THRESHOLD` | 0.45 | Sopra 0.50 si perdono varianti lessicali; sotto 0.40 entrano falsi positivi |
-| `OBJECT_PROPERTY_SIMILARITY` | 0.30 | Le proprieta' di oggetto richiedono piu' evidenza perche' un mismatch collega due individui sbagliati |
-| `DATA_PROPERTY_SIMILARITY` | 0.25 | Piu' permissiva: un literal errato e' solo dato orfano |
-| `SECONDARY_CLASS_SIMILARITY` | 0.60 | Un individuo puo' appartenere a piu' classi solo con evidenza forte |
-| `CQ_RICH_MIN_ROWS` | 5 | Soglia per classificare una CQ come *rich* nel verdetto |
+## Competency Questions
 
-### Modelli
-- `sentence-transformers/all-distilroberta-v1` in `findcouples.py`
-  (compatto, testi brevi ~5 token per coppia).
-- `all-mpnet-base-v2` in `kbonto.py` (piu' forte: descrizioni lunghe, le
-  decisioni influenzano la ABox).
-- Pellet via `owlready2.sync_reasoner_pellet` per inferenza di proprieta'
-  (OWL-DL) con 16 GB di heap Java.
+The pipeline includes 20+ SPARQL queries organized by type:
 
-### Namespace RDF
-L'ontologia UCO usa `http://ffrdc.ebiquity.umbc.edu/ns/ontology/` (forma
-con slash). `owlready2` durante la serializzazione tende ad aggiungere
-`#` al fragment, generando IRI nel formato `ontology/#Nome`. Il modulo
-`namespace_utils.normalize()` riscrive tutti gli IRI nella forma
-canonica definita in `config.UCO_NS_IRI`, cosi' le Competency Questions
-non devono piu' fare `UNION` su due prefissi.
+### Descriptive Queries (CQ1-CQ7)
+Extract basic information about incidents, actors, dates, and industries.
 
-### Euristiche ABox
-- Scelta del *pillar*: per ogni descrizione si misura la similarita' con
-  le classi figlie di `Attack / Malware / Incident / Vulnerability /
-  Exploit / Consequence` e si instanzia sotto la piu' vicina.
-- Classi secondarie: si aggiungono fino a 2 classi ulteriori quando la
-  descrizione supera `SECONDARY_CLASS_SIMILARITY` con esse.
-- Target di object property: se il nome di colonna contiene `victim` si
-  mappa su `Victim*`, se contiene `actor` o `launched` su `ThreatActor*`.
-- Generazione inversa: se una object property manca di `owl:inverseOf`,
-  se ne crea una derivata dal nome (`hasX` -> `isX_of`).
+### Analytical Queries (CQ8-CQ15)
+Perform aggregations, temporal analysis, and correlation studies.
 
-## Output
+### Structural Queries (CQ16-CQ20+)
+Validate ontology structure, detect empty classes, and analyze property chains.
 
-### LOG_VALIDAZIONE.txt
-Metriche di crescita inferenziale (coefficiente di espansione, densita'
-relazionale, ricchezza semantica), profondita' gerarchica, esito
-Pellet, esito CQ (informative/empty/error), elenco pitfall.
+## Design Choices
 
-### RISULTATI_QUERY_CQ.txt
-Per ciascuna delle 20 CQ:
-- `intent` (cosa chiede la query)
-- `expected` (cosa rappresenta una risposta utile)
-- **verdetto**: `INFORMATIVE (rich/sparse)` / `EXECUTED-EMPTY` / `ERROR`
-- commento e campione dei risultati
+### Thresholds
+- **Co-occurrence threshold (100)**: Filters statistical noise while retaining meaningful relationships
+- **Semantic similarity (0.45)**: Balances precision and recall in class mapping
+- **Top-N terms (1000)**: Ensures computational efficiency without losing coverage
 
-In testa un riepilogo con i conteggi per categoria.
+### Models
+- **all-distilroberta-v1**: Fast encoding for initial term mapping
+- **all-mpnet-base-v2**: Higher quality embeddings for instance injection
 
-### KB_COMPARISON.txt
-Confronto **iniziale vs finale**: triple, classi, individui,
-proprieta'. Include campioni commentati di:
-- classi nuove (nome, label, classe padre)
-- individui nuovi (IRI, classi, commento)
-- proprieta' ora popolate che la baseline dichiarava inutilizzate
+### Reasoner
+- **Pellet**: Chosen for OWL 2 DL completeness and property value inference
 
-## Riferimenti
+## Known Issues
+- Datatype restrictions on date properties must be removed manually before reasoning
+- Java path may need configuration in `main.py` for Pellet integration
 
-- Wisniewski, Potoniec, Lawrynowicz, Keet — *Competency Questions and
-  SPARQL-OWL Queries Dataset and Analysis*.
-  [arxiv.org/abs/1811.09529](https://arxiv.org/abs/1811.09529)
-- Gangemi, Lippolis, Lodi, Nuzzolese — *Automatically Drafting Ontologies
-  from Competency Questions with FrODO*, ISTC-CNR.
+## References
+
+1. Wisniewski, D., et al. "Competency Questions and SPARQL-OWL Queries Dataset and Analysis." *arXiv:1811.09529* (2018).
+2. Gangemi, A., et al. "Automatically Drafting Ontologies from Competency Questions with FrODO." *ISTC-CNR*.
+
+## License
+[Specify license if applicable]
+
+## Contact
+[Specify contact information if applicable]

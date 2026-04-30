@@ -1,164 +1,53 @@
-REPORT TECNICO DI VALIDAZIONE E METRICHE
+======================================================================
+COMPREHENSIVE VALIDATION AND INFERENCE REPORT
+======================================================================
 
-Timestamp esecuzione: 2026-04-25 20:08:40
-Esito coerenza logica: Error: Java error message is:
-Exception in thread "main" java.lang.UnsupportedClassVersionError: org/apache/jena/riot/lang/LangRDFXML has been compiled by a more recent version of the Java Runtime (class file version 69.0), this version of the Java Runtime only recognizes class file versions up to 61.0
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
-	at org.apache.jena.riot.RiotReader.createParser(RiotReader.java:128)
-	at org.apache.jena.riot.RDFParserRegistry$ReaderRIOTFactoryImpl$1.read(RDFParserRegistry.java:147)
-	at org.apache.jena.riot.RDFDataMgr.process(RDFDataMgr.java:751)
-	at org.apache.jena.riot.RDFDataMgr.read(RDFDataMgr.java:258)
-	at org.apache.jena.riot.RDFDataMgr.read(RDFDataMgr.java:244)
-	at org.apache.jena.riot.adapters.RDFReaderRIOT.read(RDFReaderRIOT.java:65)
-	at com.hp.hpl.jena.rdf.model.impl.ModelCom.read(ModelCom.java:276)
-	at com.hp.hpl.jena.ontology.OntDocumentManager.findMetadata(OntDocumentManager.java:891)
-	at com.hp.hpl.jena.ontology.OntDocumentManager.initialiseMetadata(OntDocumentManager.java:849)
-	at com.hp.hpl.jena.ontology.OntDocumentManager.<init>(OntDocumentManager.java:197)
-	at com.hp.hpl.jena.ontology.OntDocumentManager.<init>(OntDocumentManager.java:179)
-	at com.hp.hpl.jena.ontology.OntDocumentManager.<init>(OntDocumentManager.java:163)
-	at com.hp.hpl.jena.ontology.OntDocumentManager.getInstance(OntDocumentManager.java:241)
-	at com.hp.hpl.jena.ontology.OntModelSpec.getDocumentManager(OntModelSpec.java:320)
-	at com.hp.hpl.jena.ontology.OntModelSpec.<init>(OntModelSpec.java:207)
-	at org.mindswap.pellet.jena.PelletReasonerFactory.<clinit>(PelletReasonerFactory.java:57)
-	at org.mindswap.pellet.jena.JenaLoader.clear(JenaLoader.java:84)
-	at org.mindswap.pellet.jena.JenaLoader.<init>(JenaLoader.java:42)
-	at pellet.PelletCmdApp.getLoader(PelletCmdApp.java:262)
-	at pellet.PelletCmdApp.getLoader(PelletCmdApp.java:257)
-	at pellet.PelletCmdApp.getKB(PelletCmdApp.java:220)
-	at pellet.PelletRealize.run(PelletRealize.java:67)
-	at pellet.Pellet.run(Pellet.java:105)
-	at pellet.Pellet.main(Pellet.java:59)
+Timestamp: 2026-04-30 15:10:38
+Duration: 919.08s
+Inference Status: Consistent
 
-Durata totale pipeline: 5241.87s
+ONTOLOGY COMPARISON: PRE vs POST INFERENCE
+============================================================
 
-VALUTAZIONE CRESCITA INFERENZIALE
-Volume triple base: 316094
-Volume triple inferite: 380387
-Nuova conoscenza prodotta: 64293 affermazioni
-Coefficiente di espansione: 20.34%
+Metric                           Pre-Inference  Post-Inference       Change
+------------------------------------------------------------------------
+Total Triples                          316,031         513,435     +197,404
+Classes                                    332             332           +0
+Individuals                             28,512          28,512           +0
+Properties (total)                         174             174           +0
+  - Object Properties                      113             113             
+  - Datatype Properties                     61              61             
 
-DESCRITTORI STRUTTURALI E COMPLESSITA
-Classi totali: 339
-Individui totali: 28511
-Proprieta totali: 174
-Rapporto istanze per classe: 84.1
-Indice di ricchezza semantica: 0.51
-Grado di densita relazionale: 13.34
-Profondita gerarchica massima: 14
+Relational Density                       11.08           18.01        +6.93
+Connectivity Ratio                       85.88           85.88        +0.00
+Semantic Richness                         0.52            0.52        +0.00
+Hierarchical Depth                          11              12           +1
 
-EFFICACIA INFORMATIVA (COMPETENCY QUESTIONS)
-CQ informative: 19/20
-CQ eseguite ma vuote: 1
-CQ in errore: 0
+TRIPLE EXPANSION: 197,404 new triples (62.46%)
 
-PITFALLS E ANOMALIE RILEVATE
-[P08] Missing comment for Class: Na2aeb436b1ee4bd7a6ffa2bc65c9c3bd
-[P08] Missing comment for Class: Nc1f6f48c356b4998b5b7efef0205104a
-[P08] Missing comment for Class: N3f22ec1fd29045e691220cb666c4b20d
-[P08] Missing comment for Class: N14a1b361206948b7b19394fadbde2c41
-[P08] Missing comment for Class: Na0962f7b911648918ebd05df483cc5fd
-[P08] Missing comment for Class: Nb30135f942d74b16a4fe0f31e3da2d8f
-[P08] Missing comment for Class: N03a284d7d08b45d39dd0f5aff5cde9c5
-[P08] Missing comment for Individual/Property: Unknown
-[P08] Missing comment for Individual/Property: Remedy
-[P08] Missing comment for Individual/Property: None
-[P08] Missing comment for Individual/Property: Medium
-[P08] Missing comment for Individual/Property: High
-[P08] Missing comment for Individual/Property: Low
-[P08] Missing comment for Individual/Property: Response
-[P08] Missing comment for Individual/Property: hasMonth
-[P08] Missing comment for Individual/Property: chgGid
-[P08] Missing comment for Individual/Property: hasVendor
-[P08] Missing comment for Individual/Property: timeOfIntroduction
-[P08] Missing comment for Individual/Property: cweName
-[P08] Missing comment for Individual/Property: newPortsOpened
-[P08] Missing comment for Individual/Property: hasCodeSize
-[P08] Missing comment for Individual/Property: hasEventType
-[P08] Missing comment for Individual/Property: hasTitle
-[P08] Missing comment for Individual/Property: hasActorType
-[P08] Missing comment for Individual/Property: hasCounty
-[P08] Missing comment for Individual/Property: hasSourceURL
-[P08] Missing comment for Individual/Property: hasIndustry
-[P08] Missing comment for Individual/Property: hasCountry
-[P08] Missing comment for Individual/Property: hasAccessVector
-[P08] Missing comment for Individual/Property: numChildProcesses
-[P08] Missing comment for Individual/Property: hasDataSize
-[P08] Missing comment for Individual/Property: hasState
-[P08] Missing comment for Individual/Property: isNew
-[P08] Missing comment for Individual/Property: hasVulnerabilityTerm
-[P08] Missing comment for Individual/Property: score
-[P08] Missing comment for Individual/Property: hasSeverityScore
-[P08] Missing comment for Individual/Property: hasEventDate
-[P08] Missing comment for Individual/Property: newDestIP
-[P08] Missing comment for Individual/Property: hasIntegrityImpact
-[P08] Missing comment for Individual/Property: chgSUid
-[P08] Missing comment for Individual/Property: hasMotive
-[P08] Missing comment for Individual/Property: anomolousDataOutFlow
-[P08] Missing comment for Individual/Property: showsInfectionSigns
-[P08] Missing comment for Individual/Property: lastModifiedDateTime
-[P08] Missing comment for Individual/Property: numProcessesRunning
-[P08] Missing comment for Individual/Property: hasOrganization
-[P08] Missing comment for Individual/Property: chgUid
-[P08] Missing comment for Individual/Property: generated-on-datetime
-[P08] Missing comment for Individual/Property: publishedDateTime
-[P08] Missing comment for Individual/Property: selfDist
-[P08] Missing comment for Individual/Property: cweSummary
-[P08] Missing comment for Individual/Property: hasTime
-[P08] Missing comment for Individual/Property: hasDescription
-[P08] Missing comment for Individual/Property: opensPort
-[P08] Missing comment for Individual/Property: commonConsequences
-[P08] Missing comment for Individual/Property: hasActorCountry
-[P08] Missing comment for Individual/Property: numOpenFiles
-[P08] Missing comment for Individual/Property: description
-[P08] Missing comment for Individual/Property: hasLibSize
-[P08] Missing comment for Individual/Property: summary
-[P08] Missing comment for Individual/Property: hasYear
-[P08] Missing comment for Individual/Property: hasAccessComplexity
-[P08] Missing comment for Individual/Property: cweID
-[P08] Missing comment for Individual/Property: dataSize
-[P08] Missing comment for Individual/Property: hasAvailabilityImpact
-[P08] Missing comment for Individual/Property: cweExtendedSummary
-[P08] Missing comment for Individual/Property: discoveryTime
-[P08] Missing comment for Individual/Property: hasAuthentication
-[P08] Missing comment for Individual/Property: hasEventSubtype
-[P08] Missing comment for Individual/Property: chgPPid
-[P08] Missing comment for Individual/Property: hasConfidentialityImpact
-[P08] Missing comment for Individual/Property: hasActor
-[P08] Missing comment for Individual/Property: N1f9485187bed4b14aaecc428a6415728
-[P08] Missing comment for Individual/Property: N4a7b361756934ac4800b78debb25e0e3
-[P08] Missing comment for Individual/Property: N9b4458eba5d24e53b73551660fdf1e49
-[P08] Missing comment for Individual/Property: N94a81db6ed6d462b83bcad34f07d388e
-[P08] Missing comment for Individual/Property: Na1223fcffc2143e791e6668bbcd0173d
-[P08] Missing comment for Individual/Property: N81cefd57cbc2417ca2b42faee883112f
-[P08] Missing comment for Individual/Property: N2241243f00fa4a74906db8a4c9a20b9a
-[P08] Missing comment for Individual/Property: Nf3dec2a74cb645519885e9e943d74331
-[P08] Missing comment for Individual/Property: Ne634f0e007714342be3ca5e34294ee9a
-[P08] Missing comment for Individual/Property: Ndf918168d2584ef298fbcef5d5a65942
-[P08] Missing comment for Individual/Property: Nb415ccb797d347fcb99dc1f483d008e7
-[P08] Missing comment for Individual/Property: N6313c880349540c7b60169822f404974
-[P08] Missing comment for Individual/Property: Ne95b33244202496292857a4f8d4cad90
-[P08] Missing comment for Individual/Property: N62efe46792934fd090e2231708d13851
-[P08] Missing comment for Individual/Property: Nb8431c869ec84c6cbc6115496ac6c715
-[P08] Missing comment for Individual/Property: N0ef1fd44efa54092887953ed2a2e9998
-[P08] Missing comment for Individual/Property: Nbd45d13fbb184b43811e139047166fd7
-[P08] Missing comment for Individual/Property: N337d70123ca14342ba8481b11db95e77
-[P08] Missing comment for Individual/Property: N99c33e3a889c4a4ab0ebc045b522b442
-[P08] Missing comment for Individual/Property: N293cc10283c245c5972cd766ec373885
-[P08] Missing comment for Individual/Property: N56c238c92190453f8a181c4d35be043d
-[P08] Missing comment for Individual/Property: N8178e80a44894814ae9fc12a15968dd2
-[P08] Missing comment for Individual/Property: Ndbfc315a1786492d8cda39f4bf82e0a3
-[P08] Missing comment for Individual/Property: N44084d0b29be474fa9bbdf7e3813dd6c
-[P08] Missing comment for Individual/Property: N476efec2dd6f4c30ab21efc156bf354d
-[P08] Missing comment for Individual/Property: ontology
-[P13-Warning] No inverse relation for: connectedTo
-[P11] Missing Domain for Property: isMACAddress_of
-[P11] Missing Domain for Property: isConfidenceValue_of
-[P13-Warning] No inverse relation for: resultsIn
+============================================================
+STRUCTURAL VALIDATION RESULTS
+============================================================
+Found 158 issues:
+
+  [P08]: 98 occurrences
+  [P11]: 3 occurrences
+  [P13-Warning]: 57 occurrences
+
+============================================================
+COMPETENCY QUESTIONS SUMMARY
+============================================================
+Queries Executed: 35
+Informative Queries: 29
+Coverage: 82.9%
+
+============================================================
+NEW KNOWLEDGE EXAMPLES (from inference)
+============================================================
+
+Total Knowledge Expansion: 197,404 triples
+  This represents implicit knowledge made explicit by the reasoner.
+
+======================================================================
+END OF REPORT
+======================================================================
